@@ -10,10 +10,16 @@ spring:
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
 
-##githubÅäÖÃÐÅÐÄ
+##githubï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 github:
   client:
     id: 42e591d46be31af9c854
     secret: ee51a20d4185d65a1bfba0825f94daacaa9b1656
     callback: http://localhost:8888/callback
 
+
+# mybatis
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
