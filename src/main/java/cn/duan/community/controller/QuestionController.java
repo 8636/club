@@ -21,10 +21,7 @@ public class QuestionController {
     private QuestionMapper questionMapper;
 
 
-    @GetMapping("/question")
-    public String question(){
-        return "question";
-    }
+
 
     @PostMapping("/question")
     public String addQuestion(@RequestParam(value = "title",required = false) String title,
@@ -57,7 +54,6 @@ public class QuestionController {
         question.setGmtModified(System.currentTimeMillis());
         User user = userMapper.finbByToken(token);
         question.setCreator(Integer.parseInt(user.getId()));
-
         questionMapper.add(question);
         return "publish";
     }

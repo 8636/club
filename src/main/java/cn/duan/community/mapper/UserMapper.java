@@ -17,6 +17,6 @@ public interface UserMapper {
     User finbByToken(@Param("token") String value);
 
 
-    @Select("select * from user where #{id}")
+    @Select("select * from user where  id = #{id}")
     User findById(@Param("id") int creator);
 }

@@ -3,6 +3,7 @@ package cn.duan.community.mapper;
 import cn.duan.community.model.Question;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
@@ -17,4 +18,7 @@ public interface QuestionMapper {
 
     @Select("select * from question")
     List<Question> list();
+
+    @Select("select * from question where creator =#{id}")
+    List<Question> findQuestionById(@Param("id") String id);
 }
