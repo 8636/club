@@ -32,8 +32,11 @@ public class UserService {
         }else {
             //更新
             User dbUser = userList.get(0);
+            dbUser.setToken(user.getToken());
+            dbUser.setName(user.getName());
+            dbUser.setAvatarUrl(user.getAvatarUrl());
             dbUser.setGmtModified(System.currentTimeMillis());
-            userMapper.updateByPrimaryKey(dbUser);
+            userMapper.updateByPrimaryKeySelective(dbUser);
         }
     }
 }
