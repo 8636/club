@@ -16,7 +16,9 @@
     <div class="row">
         <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12 side">
             <h2><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>发现</h2>
-            <form action="/question" method="post">
+            <form action="/publish" method="post">
+                <!--隐藏域-->
+                <input type="hidden" name="id" th:value="${id}">
                 <div class="form-group">
                     <label for="title">问题标题（简单扼要）:</label>
                     <input type="text" class="form-control" id="title" th:value="${title}" name="title" placeholder="问题标题……">

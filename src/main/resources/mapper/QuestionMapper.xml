@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.duan.community.mapper.QuestionMapper">
+
+    <resultMap id="questionDto" type="cn.duan.community.dto.QuestionDTO">
+        <id column="id" property="id"/>
+        <result column="title" property="title"/>
+        <result column="description" property="description"/>
+        <result column="gmt_create" property="gmtCreate"/>
+        <result column="gmt_modified" property="gmtModified"/>
+        <result column="creator" property="creator"/>
+        <result column="comment_count" property="commentCount"/>
+        <result column="view_count" property="viewCount"/>
+        <result column="like_count" property="likeCount"/>
+        <result column="tag" property="tag"/>
+        <association property="user" javaType="cn.duan.community.model.User" >
+            <id column="u_id" property="id"/>
+            <result column="u_account_id" property="accountId"/>
+            <result column="u_name" property="name"/>
+            <result column="u_token" property="token"/>
+            <result column="u_gmt_create" property="gmtCreate"/>
+            <result column="u_gmt_modified" property="gmtModified"/>
+            <result column="u_bio" property="bio"/>
+            <result column="u_avatar_url" property="avatarUrl"/>
+        </association>
+    </resultMap>
+
+    <select id="selectQuestionDTO" resultMap="questionDto" parameterType="integer">
+            SELECT
+                question.*,
+                u.id AS u_id,
+                u.account_id AS u_account_id,
+                u.NAME AS u_name,
+                u.token AS u_token,
+                u.gmt_create AS u_gmt_create,
+                u.gmt_modified AS u_gmt_modified,
+                u.bio AS u_bio,
+                u.avatar_url AS u_avatar_url
+            FROM
+                question,
+                USER u
+            WHERE question.creator = u.id
+            <if test="id != null">
+                and u.id =#{id}
+            </if>
+    </select>
+
+    <update id="insViewCount" parameterType="cn.duan.community.model.Question">
+        update question
+        set view_count = view_count + #{viewCount}
+        where id = #{id}
+    </update>
+
+    <select id="find" resultType="cn.duan.community.model.Question">
+        select * from question
+    </select>
+
+    <select id="findQuestionsByCreator" parameterType="integer" resultType="cn.duan.community.model.Question">
+        select * from question where creator = #{creator}
+    </select>
+</mapper>

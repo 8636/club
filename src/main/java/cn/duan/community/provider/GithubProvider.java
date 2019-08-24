@@ -4,7 +4,6 @@ package cn.duan.community.provider;
 import cn.duan.community.dto.AccessTokenDTO;
 import cn.duan.community.dto.GithubUser;
 import com.alibaba.fastjson.JSON;
-import com.sun.org.apache.regexp.internal.RE;
 import okhttp3.*;
 import org.springframework.stereotype.Component;
 

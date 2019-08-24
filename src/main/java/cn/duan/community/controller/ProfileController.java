@@ -1,9 +1,8 @@
 package cn.duan.community.controller;
-
-import cn.duan.community.dto.PaginationDTO;
 import cn.duan.community.dto.QuestionDTO;
 import cn.duan.community.model.User;
-import cn.duan.community.service.QuestionService;
+import cn.duan.community.service.QuestionDTOService;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,7 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 @Controller
 public class ProfileController {
     @Autowired
-    private QuestionService questionService;
+    private QuestionDTOService questionService;
 
 
     @GetMapping("/profile/{action}")
@@ -35,12 +34,10 @@ public class ProfileController {
         if ("questions".equals(action)) {
             mv.addObject("section", "questions");
             mv.addObject("sectionName", "我的提问");
-            PaginationDTO<QuestionDTO> pagination = questionService.findQuestionById(user.getId(),page,size);
-            mv.addObject("pagination", pagination);
+            PageInfo<QuestionDTO> pageInfo = questionService.findQuestionByUserId(user.getId(), page, size);
+            mv.addObject("pageInfo",pageInfo);
         } else if ("replies".equals(action)) {
-//            PaginationDTO paginationDTO = notificationService.list(user.getId(), page, size);
             mv.addObject("section", "replies");
-//            mv.addObject("pagination", paginationDTO);
             mv.addObject("sectionName", "最新回复");
         }
         mv.setViewName("/profile");

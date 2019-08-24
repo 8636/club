@@ -2,9 +2,9 @@ package cn.duan.community.controller;
 
 import cn.duan.community.dto.AccessTokenDTO;
 import cn.duan.community.dto.GithubUser;
-import cn.duan.community.mapper.UserMapper;
 import cn.duan.community.model.User;
 import cn.duan.community.provider.GithubProvider;
+import cn.duan.community.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -26,7 +26,7 @@ public class AuthController {
     @Autowired
     private GithubProvider githubProvider;
     @Autowired
-    private UserMapper userMapper;
+    private UserService userService;
     @Value("${github.client.id}")
     private String cclient_id;
     @Value("${github.client.secret}")
@@ -52,10 +52,9 @@ public class AuthController {
         user.setName(githubUser.getName());
         user.setAccountId(String.valueOf(githubUser.getId()));
         String token = UUID.randomUUID().toString();
+        user.setAvatarUrl(githubUser.getAvatarUrl());
         user.setToken(token);
-        user.setGmtCreate(System.currentTimeMillis());
-        user.setGmtModetife(System.currentTimeMillis());
-        userMapper.add(user);
+        userService.insertOrUpdate(user);
         if (githubUser != null) {
             //获得用户信息，保存到session中
             response.addCookie(new Cookie("token",token));
@@ -63,5 +62,15 @@ public class AuthController {
         } else {
             return "redirect:/";
         }
+    }
+
+    @GetMapping("/logout")
+    public String logout(HttpServletRequest request,
+                       HttpServletResponse response){
+        request.getSession().removeAttribute("user");
+        Cookie cookie = new Cookie("token", null);
+        response.addCookie(cookie);
+        cookie.setMaxAge(0);
+        return  "redirect:/";
     }
 }
