@@ -41,5 +41,7 @@
         <if test="id != null">
             and comment.parent_id =#{id}
         </if>
+        order by gmt_create
+        desc
     </select>
 </mapper>
