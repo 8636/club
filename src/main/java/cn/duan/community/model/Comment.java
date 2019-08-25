@@ -2,12 +2,10 @@ package cn.duan.community.model;
 
 import lombok.Data;
 
-import javax.persistence.Id;
 
 @Data
 public class Comment {
 
-    @Id
     private Long id;
 
     /**

@@ -1,5 +1,6 @@
 package cn.duan.community.service;
 
+import cn.duan.community.dto.CommentDTO;
 import cn.duan.community.enums.CommentTypeEnum;
 import cn.duan.community.exception.CustomException;
 import cn.duan.community.enums.CustomizeErrorCode;
@@ -10,6 +11,8 @@ import cn.duan.community.model.Question;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Service
 public class CommentService {
@@ -76,5 +79,15 @@ public class CommentService {
         if (i == 0){
             throw new CustomException(CustomizeErrorCode.COMMENT_FAIL);
         }
+    }
+
+    /**
+     *  查询问题下的评论
+     * @param id
+     * @return
+     */
+    public List<CommentDTO> findCommentDTOList(Long id) {
+        List<CommentDTO> commentDTOList = commentMapper.findCommentDTOList(id);
+        return commentDTOList;
     }
 }

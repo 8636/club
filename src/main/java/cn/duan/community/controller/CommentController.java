@@ -2,10 +2,13 @@ package cn.duan.community.controller;
 
 import cn.duan.community.dto.CommentCreateDTO;
 import cn.duan.community.dto.ResultDTO;
+import cn.duan.community.enums.CustomizeErrorCode;
+import cn.duan.community.exception.CustomException;
 import cn.duan.community.model.Comment;
 import cn.duan.community.model.User;
 import cn.duan.community.service.CommentService;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -26,6 +29,12 @@ public class CommentController {
     public ResultDTO comment(@RequestBody CommentCreateDTO commentCreateDTO,
                              HttpServletRequest request){
         User user = (User)request.getSession().getAttribute("user");
+        if (user == null){
+            throw new CustomException(CustomizeErrorCode.NO_LOGIN);
+        }
+        if (commentCreateDTO == null || StringUtils.isBlank(commentCreateDTO.getContent())){
+            throw new CustomException(CustomizeErrorCode.CONTENT_IS_EMPTY);
+        }
         Comment comment = new Comment();
         comment.setParentId(commentCreateDTO.getParentId());
         comment.setContent(commentCreateDTO.getContent());

@@ -7,6 +7,7 @@
  */
 function post() {
     var questionId = $("#question_id").val();
+    alert(questionId);
     var content = $("#comment_content").val();
     comment2target(questionId, 1, content);
 }

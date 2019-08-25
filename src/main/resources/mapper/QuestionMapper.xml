@@ -25,7 +25,7 @@
         </association>
     </resultMap>
 
-    <select id="selectQuestionDTO" resultMap="questionDto" parameterType="integer">
+    <select id="selectQuestionDTO" resultMap="questionDto" parameterType="long">
             SELECT
                 question.*,
                 u.id AS u_id,

@@ -2,10 +2,14 @@ package cn.duan.community.dto;
 
 import cn.duan.community.model.User;
 import lombok.Data;
+
+import javax.persistence.Id;
 import javax.persistence.Transient;
 @Data
 public class QuestionDTO {
-    private Integer id;
+
+    @Id
+    private Long id;
 
     private String description;
 

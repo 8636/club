@@ -64,13 +64,20 @@ public class AuthController {
         }
     }
 
+    /**
+     * 退出
+     * @param request
+     * @param response
+     * @return
+     */
     @GetMapping("/logout")
     public String logout(HttpServletRequest request,
-                       HttpServletResponse response){
+                         HttpServletResponse response) {
         request.getSession().removeAttribute("user");
         Cookie cookie = new Cookie("token", null);
-        response.addCookie(cookie);
         cookie.setMaxAge(0);
-        return  "redirect:/";
+        response.addCookie(cookie);
+        return "redirect:/";
     }
+
 }
