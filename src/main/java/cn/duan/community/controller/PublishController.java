@@ -29,7 +29,7 @@ public class PublishController {
      * @return
      */
     @GetMapping("/publish/{id}")
-    public ModelAndView findById(@PathVariable("id") Integer id){
+    public ModelAndView findById(@PathVariable("id") Long id){
         QuestionDTO questionDTO = questionService.getById(id);
         ModelAndView mv = new ModelAndView();
         mv.addObject("title",questionDTO.getTitle());
@@ -43,7 +43,7 @@ public class PublishController {
     public String addQuestion(@RequestParam(value = "title",required = false) String title,
                               @RequestParam(value = "description",required = false) String description,
                               @RequestParam(value = "tag",required = false) String tag,
-                              @RequestParam(value = "id",required = false) Integer id,
+                              @RequestParam(value = "id",required = false) Long id,
                               @CookieValue("token") String token, Model model){
         //将输入的信息回显
         model.addAttribute("title",title);

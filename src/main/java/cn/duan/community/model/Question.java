@@ -11,7 +11,7 @@ import javax.persistence.Table;
 @Table(name = "question")
 public class Question {
     @Id
-    private Integer id;
+    private Long id;
 
     private String title;
 
@@ -19,7 +19,7 @@ public class Question {
 
     private Long gmtModified;
 
-    private Integer creator;
+    private Long creator;
 
     private Integer commentCount;
 

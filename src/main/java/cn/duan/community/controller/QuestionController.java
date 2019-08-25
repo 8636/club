@@ -15,7 +15,7 @@ public class QuestionController {
     private QuestionDTOService questionService;
 
     @GetMapping("/question/{id}")
-    public ModelAndView findById(@PathVariable("id") Integer id){
+    public ModelAndView findById(@PathVariable("id") Long id){
         QuestionDTO questionDTO = questionService.getById(id);
         ModelAndView mv = new ModelAndView();
         questionService.insViewCount(id);

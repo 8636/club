@@ -2,7 +2,7 @@ package cn.duan.community.service;
 
 import cn.duan.community.dto.QuestionDTO;
 import cn.duan.community.exception.CustomException;
-import cn.duan.community.exception.CustomizeErrorCode;
+import cn.duan.community.enums.CustomizeErrorCode;
 import cn.duan.community.mapper.QuestionMapper;
 import cn.duan.community.mapper.UserMapper;
 import cn.duan.community.model.Question;
@@ -12,10 +12,8 @@ import com.github.pagehelper.PageInfo;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
+
 
 @Service
 public class QuestionDTOService {
@@ -38,7 +36,15 @@ public class QuestionDTOService {
         return pageInfo;
 
     }
-    public PageInfo<QuestionDTO> findQuestionByUserId(Integer id, Integer page, Integer size) {
+
+    /**
+     *  根据用户ID 查询分页查询问题列表
+     * @param id
+     * @param page
+     * @param size
+     * @return
+     */
+    public PageInfo<QuestionDTO> findQuestionByUserId(Long id, Integer page, Integer size) {
         PageHelper.startPage(page,size);
         List<QuestionDTO> questionDTOList = questionMapper.selectQuestionDTO(id);
         PageInfo<QuestionDTO> pageInfo = new PageInfo<>(questionDTOList);
@@ -51,7 +57,7 @@ public class QuestionDTOService {
      * @param id
      * @return
      */
-    public QuestionDTO getById(Integer id) {
+    public QuestionDTO getById(Long id) {
         QuestionDTO questionDTO = new QuestionDTO();
         Question question = questionMapper.selectByPrimaryKey(id);
         if (question == null){
@@ -88,7 +94,12 @@ public class QuestionDTOService {
         }
     }
 
-    public void insViewCount(Integer id) {
+    /**
+     *  阅读数增加
+     * @param id
+     */
+
+    public void insViewCount(Long id) {
         Question question = new Question();
         question.setId(id);
         question.setViewCount(1);

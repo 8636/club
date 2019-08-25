@@ -58,4 +58,10 @@
     <select id="findQuestionsByCreator" parameterType="integer" resultType="cn.duan.community.model.Question">
         select * from question where creator = #{creator}
     </select>
+
+    <update id="insCommentCount" parameterType="cn.duan.community.model.Question">
+        UPDATE question
+        set comment_count = comment_count + #{commentCount}
+        where id = #{id}
+    </update>
 </mapper>

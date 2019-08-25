@@ -9,11 +9,13 @@ import java.util.List;
 
 public interface QuestionMapper extends Mapper<Question> {
 
-    List<QuestionDTO> selectQuestionDTO(@Param("id") Integer id);
+    List<QuestionDTO> selectQuestionDTO(@Param("id") Long id);
 
     void insViewCount(Question question);
 
     List<Question> find();
 
-    List<Question> findQuestionsByCreator(@Param("creator") Integer id);
+    List<Question> findQuestionsByCreator(@Param("creator") Long id);
+
+    void insCommentCount(Question question);
 }

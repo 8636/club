@@ -1,6 +1,7 @@
-package cn.duan.community.exception;
+package cn.duan.community.enums;
 
 import cn.duan.community.common.ResultCode;
+import lombok.Getter;
 
 public enum CustomizeErrorCode implements ResultCode {
 
@@ -16,8 +17,12 @@ public enum CustomizeErrorCode implements ResultCode {
     FILE_UPLOAD_FAIL(2010, "图片上传失败"),
     INVALID_INPUT(2011, "非法输入"),
     INVALID_OPERATION(2012, "兄弟，是不是走错房间了？"),
+    COMMENT_FAIL(2013,"评论失败"),
     ;
+
+     @Getter
      Integer code;
+     @Getter
      String message;
 
     CustomizeErrorCode(Integer code, String message) {
