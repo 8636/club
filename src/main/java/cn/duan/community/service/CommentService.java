@@ -9,6 +9,7 @@ import cn.duan.community.model.Comment;
 import cn.duan.community.model.Question;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class CommentService {
@@ -18,6 +19,8 @@ public class CommentService {
 
     @Autowired
     private QuestionMapper questionMapper;
+
+    @Transactional
     public void save(Comment comment){
         //评论内容为空
         if (comment.getContent() == null){
