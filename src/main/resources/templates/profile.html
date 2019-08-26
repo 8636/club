@@ -41,6 +41,7 @@
                 </div>
             </div>
 
+
             <!--我的通知-->
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" th:if="${section == 'replies'}">
                 <div class="media" th:each="notification : ${pageInfo.getList()}">
@@ -90,7 +91,7 @@
 
         <!---->
         <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
-            <div class="list-group section">
+            <div class="nav nav-pills nav-stacked">
                 <a href="/profile/questions"
                    th:class="${section == 'questions'}? 'active list-group-item' : 'list-group-item'">
                     我的问题

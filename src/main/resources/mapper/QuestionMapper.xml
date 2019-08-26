@@ -46,6 +46,9 @@
             <if test="search != null and search != ''">
                 and title REGEXP #{search}
             </if>
+             <if test="tag != null and tag != ''">
+                and tag REGEXP #{tag}
+            </if>
             order by gmt_create desc
     </select>
 

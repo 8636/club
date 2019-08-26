@@ -88,5 +88,5 @@ logging:
     ## 近三天
     max-history: 3
   level:
-    root: debug
+    root: info
   path: logs/community.log

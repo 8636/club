@@ -31,7 +31,8 @@ public class FileUploadController {
 
     @PostMapping("/file/upload")
     @ResponseBody
-    public UploadDTO uploadImage(@RequestParam("guid") Long guid, MultipartFile file) {
+    public UploadDTO uploadImage(@RequestParam("guid") Long guid,
+                                 @RequestParam("editormd-image-file") MultipartFile file) {
         UploadDTO uploadDTO = new UploadDTO();
         if (file == null){
             uploadDTO.setMessage("图片为空");

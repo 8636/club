@@ -1,5 +1,7 @@
 package cn.duan.community.controller;
 
+import cn.duan.community.common.cache.HotTagCache;
+import cn.duan.community.dto.HotTagDTO;
 import cn.duan.community.dto.QuestionDTO;
 import cn.duan.community.mapper.QuestionMapper;
 import cn.duan.community.mapper.UserMapper;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.persistence.Id;
+import java.util.List;
 
 @Controller
 @Slf4j
@@ -28,18 +31,26 @@ public class indexController {
     @Autowired
     private QuestionDTOServiceImpl questionService;
 
+    @Autowired
+    private HotTagCache hotTagCache;
+
     @GetMapping("/")
     public ModelAndView index(@RequestParam(value = "page", defaultValue = "1") Integer page,
                               @RequestParam(value = "size", defaultValue = "10") Integer size,
-                              @RequestParam(value = "search",required = false) String search) {
-        if (search!= null && search != ""){
-            search = StringUtils.lowerCase(search).trim().replace(" ","|");
+                              @RequestParam(value = "search", required = false) String search,
+                              @RequestParam(name = "tag", required = false) String tag,
+                              @RequestParam(name = "sort", required = false) String sotrStr) {
+        if (search != null && search != "") {
+            search = StringUtils.lowerCase(search).trim().replace(" ", "|");
         }
-        PageInfo<QuestionDTO> pageInfo = questionService.list(page, size,search);
+        PageInfo<QuestionDTO> pageInfo = questionService.list(page, size, search, tag, sotrStr);
         log.info("pageinfo", pageInfo.getList());
         ModelAndView mv = new ModelAndView();
+        List<HotTagDTO> hots = hotTagCache.getHots();
+        mv.addObject("tags", hots);
         mv.addObject("pageInfo", pageInfo);
-        mv.addObject("search",search);
+        mv.addObject("search", search);
+        mv.addObject("sort", sotrStr);
         mv.setViewName("/index");
         return mv;
     }
