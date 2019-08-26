@@ -20,8 +20,7 @@ public class CommunityApplicationTests {
     private QuestionMapper questionMapper;
     @Test
     public void contextLoads() {
-        List<QuestionDTO> questionDTOList = questionMapper.selectQuestionDTO(null);
-        System.out.println(questionDTOList);
+
     }
 
 }

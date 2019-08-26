@@ -34,9 +34,9 @@ public class QuestionDTOServiceImpl implements QuestionDTOService {
      * @param size
      * @return
      */
-    public PageInfo<QuestionDTO> list(Integer page, Integer size) {
+    public PageInfo<QuestionDTO> list(Integer page, Integer size,String search) {
         PageHelper.startPage(page, size);
-        List<QuestionDTO> questionDTOList = questionMapper.selectQuestionDTO(null);
+        List<QuestionDTO> questionDTOList = questionMapper.selectQuestionDTO(null,search);
         PageInfo<QuestionDTO> pageInfo = new PageInfo<>(questionDTOList);
         return pageInfo;
 
@@ -52,7 +52,7 @@ public class QuestionDTOServiceImpl implements QuestionDTOService {
      */
     public PageInfo<QuestionDTO> findQuestionByUserId(Long id, Integer page, Integer size) {
         PageHelper.startPage(page, size);
-        List<QuestionDTO> questionDTOList = questionMapper.selectQuestionDTO(id);
+        List<QuestionDTO> questionDTOList = questionMapper.selectQuestionDTO(id,null);
         PageInfo<QuestionDTO> pageInfo = new PageInfo<>(questionDTOList);
         return pageInfo;
     }

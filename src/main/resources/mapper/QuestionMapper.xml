@@ -25,7 +25,7 @@
         </association>
     </resultMap>
 
-    <select id="selectQuestionDTO" resultMap="questionDto" parameterType="long">
+    <select id="selectQuestionDTO" resultMap="questionDto">
             SELECT
                 question.*,
                 u.id AS u_id,
@@ -43,6 +43,10 @@
             <if test="id != null">
                 and u.id =#{id}
             </if>
+            <if test="search != null and search != ''">
+                and title REGEXP #{search}
+            </if>
+            order by gmt_create desc
     </select>
 
     <update id="insViewCount" parameterType="long">

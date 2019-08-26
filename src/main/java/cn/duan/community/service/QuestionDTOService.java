@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface QuestionDTOService {
 
-     PageInfo<QuestionDTO> list(Integer page, Integer size);
+     PageInfo<QuestionDTO> list(Integer page, Integer size, String search);
 
      PageInfo<QuestionDTO> findQuestionByUserId(Long id, Integer page, Integer size);
 

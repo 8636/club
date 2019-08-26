@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface QuestionMapper extends Mapper<Question> {
 
-    List<QuestionDTO> selectQuestionDTO(@Param("id") Long id);
+    List<QuestionDTO> selectQuestionDTO(@Param("id") Long id,@Param("search") String search);
 
 //    void insViewCount(Question question);
     void insViewCount(@Param("id") Long id);

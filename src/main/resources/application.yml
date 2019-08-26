@@ -40,6 +40,10 @@ spring:
   main:
     allow-bean-definition-overriding: true
 
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 20MB
 ##github参数配置
 github:
   client:
@@ -68,3 +72,21 @@ pagehelper:
   reasonable: true
   supportMethodsArguments: true
   params: count=countSql
+
+aliyun:
+  endpoint: oss-cn-beijing.aliyuncs.com
+  accessKeyId: LTAINlZkqnmLanQz
+  accessKeySecret: R4gFKpnkCspCZEfx28iGwxDBpJvCPH
+  bucketName: communitypicture
+  urlPrefix: https://communitypicture.oss-cn-beijing.aliyuncs.com/
+
+
+# springboot 日志配置
+logging:
+  file:
+    max-size: 1MB
+    ## 近三天
+    max-history: 3
+  level:
+    root: debug
+  path: logs/community.log
