@@ -1,6 +1,7 @@
-package cn.duan.community.interceptor;
+package cn.duan.community.common.interceptor;
 import cn.duan.community.mapper.UserMapper;
 import cn.duan.community.model.User;
+import cn.duan.community.service.NotificationService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -18,6 +19,8 @@ import java.util.List;
 public class LoginHandlerInterceptor implements HandlerInterceptor {
     @Autowired
     private UserMapper userMapper;
+    @Autowired
+    private NotificationService notificationService;
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         log.info("进入拦截器");
@@ -31,6 +34,8 @@ public class LoginHandlerInterceptor implements HandlerInterceptor {
                     List<User> userList = userMapper.selectByExample(example);
                     if (userList.size() != 0) {
                         request.getSession().setAttribute("user", userList.get(0));
+                        Long unreadCount = notificationService.getUnreadCount(userList.get(0).getId());
+                        request.getSession().setAttribute("unreadCount", unreadCount);
                     }
                     break;
                 }

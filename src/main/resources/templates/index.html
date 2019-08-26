@@ -27,6 +27,7 @@
                 <div class="media-body">
                     <h4 class="media-heading">
                         <a th:href="@{'/question/'+ ${question.id}}" th:text="${question.title}"></a>
+                        <span style="font-size: 16px;" class="glyphicon glyphicon-fire" th:if="${question.viewCount}>10 and ${question.commentCount}>=5"></span>
                     </h4>
                     <span class="text-desc"><span th:text="${question.commentCount}"></span> 个回复 • <span
                             th:text="${question.viewCount}"></span> 次浏览 • <span

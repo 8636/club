@@ -1,4 +1,4 @@
-package cn.duan.community.enums;
+package cn.duan.community.common.enums;
 
 /**
  *  评论类型枚举

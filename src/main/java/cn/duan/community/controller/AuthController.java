@@ -3,7 +3,7 @@ package cn.duan.community.controller;
 import cn.duan.community.dto.AccessTokenDTO;
 import cn.duan.community.dto.GithubUser;
 import cn.duan.community.model.User;
-import cn.duan.community.provider.GithubProvider;
+import cn.duan.community.common.provider.GithubProvider;
 import cn.duan.community.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -18,7 +18,7 @@ import java.io.IOException;
 import java.util.UUID;
 
 /**
- *  授权
+ * 授权
  */
 @Controller
 public class AuthController {
@@ -57,7 +57,7 @@ public class AuthController {
         userService.insertOrUpdate(user);
         if (githubUser != null) {
             //获得用户信息，保存到session中
-            response.addCookie(new Cookie("token",token));
+            response.addCookie(new Cookie("token", token));
             return "redirect:/";
         } else {
             return "redirect:/";
@@ -66,13 +66,13 @@ public class AuthController {
 
     /**
      * 退出
+     *
      * @param request
      * @param response
      * @return
      */
     @GetMapping("/logout")
-    public String logout(HttpServletRequest request,
-                         HttpServletResponse response) {
+    public String logout(HttpServletRequest request, HttpServletResponse response) {
         request.getSession().removeAttribute("user");
         Cookie cookie = new Cookie("token", null);
         cookie.setMaxAge(0);

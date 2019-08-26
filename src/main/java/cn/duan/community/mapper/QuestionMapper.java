@@ -11,11 +11,14 @@ public interface QuestionMapper extends Mapper<Question> {
 
     List<QuestionDTO> selectQuestionDTO(@Param("id") Long id);
 
-    void insViewCount(Question question);
+//    void insViewCount(Question question);
+    void insViewCount(@Param("id") Long id);
 
     List<Question> find();
 
     List<Question> findQuestionsByCreator(@Param("creator") Long id);
 
     void insCommentCount(Question question);
+
+    List<Question> findRelateQuestions(@Param("id") Long id,@Param("tag") String str);
 }

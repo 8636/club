@@ -1,4 +1,4 @@
-package cn.duan.community.provider;
+package cn.duan.community.common.provider;
 
 
 import cn.duan.community.dto.AccessTokenDTO;
@@ -13,6 +13,12 @@ import java.io.IOException;
 
 @Component
 public class GithubProvider {
+    /**
+     * 请求 github 获得token
+     * @param accessTokenDTO
+     * @return
+     * @throws IOException
+     */
     public String getAccessToken(AccessTokenDTO accessTokenDTO) throws IOException {
         MediaType mediaType = MediaType.get("application/json; charset=utf-8");
         OkHttpClient client = new OkHttpClient();
@@ -31,7 +37,12 @@ public class GithubProvider {
     }
 
 
-    public GithubUser getUser(String token){
+    /**
+     * 根据获得的 token请求 用户的数据
+     * @param token
+     * @return
+     */
+    public GithubUser getUser(String token) {
         OkHttpClient client = new OkHttpClient();
         Request request = new Request.Builder()
                 .url("https://api.github.com/user?access_token=" + token)
@@ -40,7 +51,7 @@ public class GithubProvider {
             String string = response.body().string();
             GithubUser githubUser = JSON.parseObject(string, GithubUser.class);
             return githubUser;
-        }catch (IOException e){
+        } catch (IOException e) {
 
         }
         return null;

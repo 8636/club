@@ -1,4 +1,4 @@
-package cn.duan.community.exception;
+package cn.duan.community.common.exception;
 
 
 import cn.duan.community.common.ResultCode;

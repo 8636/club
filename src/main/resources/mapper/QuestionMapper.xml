@@ -45,9 +45,9 @@
             </if>
     </select>
 
-    <update id="insViewCount" parameterType="cn.duan.community.model.Question">
+    <update id="insViewCount" parameterType="long">
         update question
-        set view_count = view_count + #{viewCount}
+        set view_count = view_count + 1
         where id = #{id}
     </update>
 
@@ -64,4 +64,9 @@
         set comment_count = comment_count + #{commentCount}
         where id = #{id}
     </update>
+
+    <select id="findRelateQuestions"  resultType="cn.duan.community.model.Question">
+        select * from question where
+        id != #{id} and tag REGEXP #{tag}
+    </select>
 </mapper>

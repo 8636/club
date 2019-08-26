@@ -44,4 +44,30 @@
         order by gmt_create
         desc
     </select>
+
+    <select id="findCommentDTOListByCommentId" parameterType="long" resultMap="commentDTO">
+        SELECT
+        comment.*,
+        u.id AS u_id,
+        u.account_id AS u_account_id,
+        u.NAME AS u_name,
+        u.token AS u_token,
+        u.gmt_create AS u_gmt_create,
+        u.gmt_modified AS u_gmt_modified,
+        u.bio AS u_bio,
+        u.avatar_url AS u_avatar_url
+        FROM
+        comment,
+        USER u
+        WHERE comment.commentator = u.id
+        and comment.parent_id =#{id}
+        order by gmt_create
+        desc
+    </select>
+
+    <update id="insCommentCount" parameterType="long">
+        update comment
+        set comment_count = comment_count + 1
+        where id = #{id}
+    </update>
 </mapper>

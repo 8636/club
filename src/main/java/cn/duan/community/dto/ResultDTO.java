@@ -1,7 +1,7 @@
 package cn.duan.community.dto;
 
-import cn.duan.community.exception.CustomException;
-import cn.duan.community.enums.CustomizeErrorCode;
+import cn.duan.community.common.exception.CustomException;
+import cn.duan.community.common.enums.CustomizeErrorCode;
 import lombok.Data;
 
 /**

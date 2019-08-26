@@ -33,10 +33,7 @@ public class Comment {
 
     private Long gmtModified;
 
-
-    private Long likeCount;
-
-
+    private Integer likeCount;
 
     private Integer commentCount;
 }

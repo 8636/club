@@ -1,4 +1,4 @@
-package cn.duan.community.enums;
+package cn.duan.community.common.enums;
 
 import cn.duan.community.common.ResultCode;
 import lombok.Getter;

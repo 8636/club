@@ -1,7 +1,7 @@
-package cn.duan.community.exception;
+package cn.duan.community.common.exception;
 
 import cn.duan.community.dto.ResultDTO;
-import cn.duan.community.enums.CustomizeErrorCode;
+import cn.duan.community.common.enums.CustomizeErrorCode;
 import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ControllerAdvice;

@@ -16,20 +16,21 @@ public class UserService {
     private UserMapper userMapper;
 
     /**
-     *  根据session中的 user进行查询  数据库没有就插入  有就更新
+     * 根据session中的 user进行查询  数据库没有就插入  有就更新
+     *
      * @param user
      */
-    public void insertOrUpdate(User user){
+    public void insertOrUpdate(User user) {
         Example example = new Example(User.class);
         example.createCriteria()
-                .andEqualTo("accountId",user.getAccountId());
+                .andEqualTo("accountId", user.getAccountId());
         List<User> userList = userMapper.selectByExample(example);
-        if (userList.size()==0){
+        if (userList.size() == 0) {
             //添加
             user.setGmtCreate(System.currentTimeMillis());
             user.setGmtModified(System.currentTimeMillis());
             userMapper.insert(user);
-        }else {
+        } else {
             //更新
             User dbUser = userList.get(0);
             dbUser.setToken(user.getToken());

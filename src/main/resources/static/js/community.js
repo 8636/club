@@ -7,7 +7,6 @@
  */
 function post() {
     var questionId = $("#question_id").val();
-    alert(questionId);
     var content = $("#comment_content").val();
     comment2target(questionId, 1, content);
 }
@@ -76,7 +75,7 @@ function collapseComments(e) {
             e.classList.add("active");
         } else {
             $.getJSON("/comment/" + id, function (data) {
-                $.each(data.data.reverse(), function (index, comment) {
+                $.each(data.data, function (index, comment) {
                     var mediaLeftElement = $("<div/>", {
                         "class": "media-left"
                     }).append($("<img/>", {
@@ -95,7 +94,7 @@ function collapseComments(e) {
                         "class": "menu"
                     }).append($("<span/>", {
                         "class": "pull-right",
-                        "html": moment(comment.gmtCreate).format('YYYY-MM-DD')
+                        "html": comment.gmtCreate
                     })));
 
                     var mediaElement = $("<div/>", {

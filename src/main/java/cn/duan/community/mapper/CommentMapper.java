@@ -10,4 +10,8 @@ import java.util.List;
 public interface CommentMapper extends Mapper<Comment> {
 
     List<CommentDTO> findCommentDTOList(@Param("id") Long id);
+
+    List<CommentDTO> findCommentDTOListByCommentId(@Param("id") Long id);
+
+    void insCommentCount(@Param("id") Long id);
 }
