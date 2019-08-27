@@ -3,7 +3,7 @@ package cn.duan.community.controller;
 import cn.duan.community.dto.CommentDTO;
 import cn.duan.community.dto.QuestionDTO;
 import cn.duan.community.model.Question;
-import cn.duan.community.service.impl.CommentService;
+import cn.duan.community.service.impl.CommentServiceImpl;
 import cn.duan.community.service.impl.QuestionDTOServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,7 +19,7 @@ public class QuestionController {
     @Autowired
     private QuestionDTOServiceImpl questionService;
     @Autowired
-    private CommentService commentService;
+    private CommentServiceImpl commentServiceImpl;
 
     /**
      * 查询问题详情
@@ -32,7 +32,7 @@ public class QuestionController {
         QuestionDTO questionDTO = questionService.getById(id);
         ModelAndView mv = new ModelAndView();
         //问题下面的评论
-        List<CommentDTO> commentDTOList = commentService.findCommentDTOList(id);
+        List<CommentDTO> commentDTOList = commentServiceImpl.findCommentDTOList(id);
 
         //获得该问题的相关问题
         List<Question> relateQuestions = questionService.findRelateQuestions(id);

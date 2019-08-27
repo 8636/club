@@ -7,7 +7,7 @@ import cn.duan.community.common.enums.CustomizeErrorCode;
 import cn.duan.community.common.exception.CustomException;
 import cn.duan.community.model.Comment;
 import cn.duan.community.model.User;
-import cn.duan.community.service.impl.CommentService;
+import cn.duan.community.service.impl.CommentServiceImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +22,7 @@ import java.util.List;
 public class CommentController {
 
     @Autowired
-    private CommentService commentService;
+    private CommentServiceImpl commentServiceImpl;
 
     /**
      * 提交评论  可以是问题的评论  和 评论的回复
@@ -47,7 +47,7 @@ public class CommentController {
         comment.setContent(commentCreateDTO.getContent());
         comment.setType(commentCreateDTO.getType());
         comment.setCommentator(user.getId());
-        commentService.save(comment,user);
+        commentServiceImpl.save(comment,user);
         log.info("comment", comment);
         return ResultDTO.okOf();
     }
@@ -61,7 +61,7 @@ public class CommentController {
     @GetMapping("/comment/{id}")
     @ResponseBody
     public ResultDTO<List<CommentDTO>> findCommentsByCommentId(@PathVariable("id") Long id) {
-        List<CommentDTO> commentDTOList = commentService.findCommentDTOListByCommentId(id);
+        List<CommentDTO> commentDTOList = commentServiceImpl.findCommentDTOListByCommentId(id);
         if (commentDTOList == null || commentDTOList.isEmpty()) {
             return ResultDTO.errorOf(CustomizeErrorCode.COMMENT_NOT_FOUND);
         }

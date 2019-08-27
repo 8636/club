@@ -1,6 +1,5 @@
 package cn.duan.community.service.impl;
 
-import cn.duan.community.common.enums.NotificationStatusEnum;
 import cn.duan.community.common.enums.NotificationTypeEnum;
 import cn.duan.community.dto.CommentDTO;
 import cn.duan.community.common.enums.CommentTypeEnum;
@@ -11,6 +10,7 @@ import cn.duan.community.mapper.QuestionMapper;
 import cn.duan.community.model.Comment;
 import cn.duan.community.model.Question;
 import cn.duan.community.model.User;
+import cn.duan.community.service.CommentService;
 import cn.duan.community.service.NotificationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,7 +20,7 @@ import tk.mybatis.mapper.entity.Example;
 import java.util.List;
 
 @Service
-public class CommentService {
+public class CommentServiceImpl implements CommentService {
 
     @Autowired
     private CommentMapper commentMapper;
@@ -31,6 +31,7 @@ public class CommentService {
     @Autowired
     private NotificationService notificationService;
 
+    @Override
     @Transactional
     public void save(Comment comment, User commentator) {
         comment.setCommentCount(0);
@@ -79,6 +80,7 @@ public class CommentService {
     /**
      * 增加评论数
      */
+    @Override
     public void insCommentCount(Long id) {
         Question question = new Question();
         question.setId(id);
@@ -92,6 +94,7 @@ public class CommentService {
      * @param comment
      * @return
      */
+    @Override
     public void saveComment(Comment comment) {
         comment.setGmtCreate(System.currentTimeMillis());
         comment.setGmtModified(System.currentTimeMillis());
@@ -107,11 +110,18 @@ public class CommentService {
      * @param id
      * @return
      */
+    @Override
     public List<CommentDTO> findCommentDTOList(Long id) {
         List<CommentDTO> commentDTOList = commentMapper.findCommentDTOList(id);
         return commentDTOList;
     }
 
+    /**
+     * 查询 评论下 二级评论列表
+     * @param id
+     * @return
+     */
+    @Override
     public List<CommentDTO> findCommentDTOListByCommentId(Long id) {
         List<CommentDTO> commentDTOList = commentMapper.findCommentDTOListByCommentId(id);
         return commentDTOList;

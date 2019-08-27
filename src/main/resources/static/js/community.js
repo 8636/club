@@ -11,6 +11,22 @@ function post() {
     comment2target(questionId, 1, content);
 }
 
+/**
+ * 提交评论
+ * @param e
+ */
+function comment(e) {
+    var commentId = e.getAttribute("data-id");
+    var content = $("#input-" + commentId).val();
+    comment2target(commentId, 2, content);
+}
+
+/**
+ *
+ * @param targetId
+ * @param type
+ * @param content
+ */
 function comment2target(targetId, type, content) {
     if (!content) {
         alert("不能回复空内容~~~");
@@ -45,82 +61,69 @@ function comment2target(targetId, type, content) {
     });
 }
 
-function comment(e) {
-    var commentId = e.getAttribute("data-id");
-    var content = $("#input-" + commentId).val();
-    comment2target(commentId, 2, content);
-}
+
 
 /**
  * 展开二级评论
  */
+
+//展开二级评论
 function collapseComments(e) {
     var id = e.getAttribute("data-id");
-    var comments = $("#comment-" + id);
-
-    // 获取一下二级评论的展开状态
-    var collapse = e.getAttribute("data-collapse");
-    if (collapse) {
-        // 折叠二级评论
-        comments.removeClass("in");
-        e.removeAttribute("data-collapse");
-        e.classList.remove("active");
+    if ($("#two_comment_" + id).attr("status") == "close") {
+        //后台获取二级数据
+        var url = "/comment/" + id;
+        $.get(url, function (data) {
+            console.log("获得二级评论成功")
+            //构建二级评论列表
+            BuildComments(data.data.reverse(),id);
+        })
+        $("#two_comment_" + id).addClass("in");
+        $("#two_comment_" + id).attr("status", "open");
     } else {
-        var subCommentContainer = $("#comment-" + id);
-        if (subCommentContainer.children().length != 1) {
-            //展开二级评论
-            comments.addClass("in");
-            // 标记二级评论展开状态
-            e.setAttribute("data-collapse", "in");
-            e.classList.add("active");
-        } else {
-            $.getJSON("/comment/" + id, function (data) {
-                $.each(data.data, function (index, comment) {
-                    var mediaLeftElement = $("<div/>", {
-                        "class": "media-left"
-                    }).append($("<img/>", {
-                        "class": "media-object img-rounded",
-                        "src": comment.user.avatarUrl
-                    }));
-
-                    var mediaBodyElement = $("<div/>", {
-                        "class": "media-body"
-                    }).append($("<h5/>", {
-                        "class": "media-heading",
-                        "html": comment.user.name
-                    })).append($("<div/>", {
-                        "html": comment.content
-                    })).append($("<div/>", {
-                        "class": "menu"
-                    }).append($("<span/>", {
-                        "class": "pull-right",
-                        "html": comment.gmtCreate
-                    })));
-
-                    var mediaElement = $("<div/>", {
-                        "class": "media"
-                    }).append(mediaLeftElement).append(mediaBodyElement);
-
-                    var commentElement = $("<div/>", {
-                        "class": "col-lg-12 col-md-12 col-sm-12 col-xs-12 comments"
-                    }).append(mediaElement);
-
-                    subCommentContainer.prepend(commentElement);
-                });
-                //展开二级评论
-                comments.addClass("in");
-                // 标记二级评论展开状态
-                e.setAttribute("data-collapse", "in");
-                e.classList.add("active");
-            });
-        }
+        $("#two_comment_" + id).removeClass("in");
+        $("#two_comment_" + id).attr("status", "close");
     }
+
 }
 
+//构建列表
+function BuildComments(comments, id) {
+    console.log("hahha")
+    var wrapper = $("comment2_wrapper_" + id);
+    wrapper.empty();
+    $.each(comments, function (index, item) {
+        var date = item.gmtCreate.format('YYYY-MM-DD')
+        var comment = $('' +
+            '<div class="media" style="margin-top: 5px;">\n' +
+            '  <div class="media-left">\n' +
+            '    <a href="#">\n' +
+            '      <img width="40"  class="media-object img-rounded" src="' + item.user.avatarUrl + '" alt="...">\n' +
+            '    </a>\n' +
+            '  </div>\n' +
+            '  <div class="media-body">\n' +
+            '    <h4 class="media-heading" style="font-size: 12px;font-weight: 500">' + item.user.name + '</h4>\n' +
+            '    ' + item.content + '\n' +
+            '  </div>\n' +
+            '  <span class="pull-right">' + date + '</span>\n'+
+            '</div><hr style="color: #303030">\n');
+        comment.appendTo(wrapper);
+    })
+
+    console.log("接受构建")
+
+}
+/**
+ * 显示 问题标签
+ */
 function showSelectTag() {
     $("#select-tag").show();
 }
 
+/**
+ * 追加 标签到输入框
+ * @param e
+ */
 function selectTag(e) {
     var value = e.getAttribute("data-tag");
     var previous = $("#tag").val();
