@@ -1,8 +1,10 @@
 package cn.duan.community.service.impl;
 
+import cn.duan.community.common.enums.SortEnum;
 import cn.duan.community.dto.QuestionDTO;
 import cn.duan.community.common.exception.CustomException;
 import cn.duan.community.common.enums.CustomizeErrorCode;
+import cn.duan.community.dto.QuestionQueryDTO;
 import cn.duan.community.mapper.QuestionMapper;
 import cn.duan.community.mapper.UserMapper;
 import cn.duan.community.model.Question;
@@ -34,9 +36,27 @@ public class QuestionDTOServiceImpl implements QuestionDTOService {
      * @param size
      * @return
      */
-    public PageInfo<QuestionDTO> list(Integer page, Integer size,String search,String tag,String str) {
+    public PageInfo<QuestionDTO> list(Integer page, Integer size,String search,String tag,String sort) {
+        QuestionQueryDTO questionQueryDTO = new QuestionQueryDTO();
+        if (search != null && search != "") {
+            search = StringUtils.lowerCase(search).trim().replace(" ", "|");
+        }
+        questionQueryDTO.setSearch(search);
+        for (SortEnum sortEnum : SortEnum.values()) {
+            if (sortEnum.name().toLowerCase().equals(sort)) {
+                questionQueryDTO.setSort(sort);
+                if (sortEnum == SortEnum.HOT7) {
+                    questionQueryDTO.setTime(System.currentTimeMillis() - 1000L * 60 * 60 * 24 * 7);
+                }
+                if (sortEnum == SortEnum.HOT30) {
+                    questionQueryDTO.setTime(System.currentTimeMillis() - 1000L * 60 * 60 * 24 * 30);
+                }
+                break;
+            }
+        }
+        questionQueryDTO.setTag(tag);
         PageHelper.startPage(page, size);
-        List<QuestionDTO> questionDTOList = questionMapper.selectQuestionDTO(null,search,tag);
+        List<QuestionDTO> questionDTOList = questionMapper.selectQuestionDTO(questionQueryDTO);
         PageInfo<QuestionDTO> pageInfo = new PageInfo<>(questionDTOList);
         return pageInfo;
 
@@ -51,8 +71,10 @@ public class QuestionDTOServiceImpl implements QuestionDTOService {
      * @return
      */
     public PageInfo<QuestionDTO> findQuestionByUserId(Long id, Integer page, Integer size) {
+        QuestionQueryDTO questionQueryDTO = new QuestionQueryDTO();
+        questionQueryDTO.setUserId(id);
         PageHelper.startPage(page, size);
-        List<QuestionDTO> questionDTOList = questionMapper.selectQuestionDTO(id,null,null);
+        List<QuestionDTO> questionDTOList = questionMapper.selectQuestionDTO(questionQueryDTO);
         PageInfo<QuestionDTO> pageInfo = new PageInfo<>(questionDTOList);
         return pageInfo;
     }

@@ -2,35 +2,32 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>解忧杂货铺</title>
     <head th:insert="~{import :: head}"></head>
-
 </head>
 <body>
 <div th:insert="~{header :: head}"></div>
 <div class="container-fluid main">
     <div class="row">
-        <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12 side" style="    border-right: 1px;
-    solid-color: #ddd;">
+        <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12 side" style=" border-right: 1px solid #ddd;">
             <h3><span class="glyphicon glyphicon-list" aria-hidden="true"></span> 发现</h3>
-            <ul class="nav nav-tabs">
-                <li role="presentation" th:class="${sort == 'new' || sort == '' ? 'active':''}">
-                    <a th:href="@{/(sort='new')}">最新</a>
-                </li>
-                <li role="presentation" th:class="${sort == 'hot30' ? 'active':''}">
-                    <a th:href="@{/(sort='hot30')}">30天最热</a>
-                </li>
-                <li role="presentation" th:class="${sort == 'hot7' ? 'active':''}">
-                    <a th:href="@{/(sort='hot7')}">7天最热</a>
-                </li>
-                <li role="presentation" th:class="${sort == 'hot' ? 'active':''}">
-                    <a th:href="@{/(sort='hot')}">最热</a>
-                </li>
-                <li role="presentation" th:class="${sort == 'no' ? 'active':''}">
-                    <a th:href="@{/(sort='no')}" class="red">消灭零回复</a>
-                </li>
-            </ul>
-
+                <ul class="nav nav-tabs">
+                    <li role="presentation" th:class="${sort == 'new' || sort == '' ? 'active':''}">
+                        <a th:href="@{/(sort='new')}">最新</a>
+                    </li>
+                    <li role="presentation" th:class="${sort == 'hot30' ? 'active':''}">
+                        <a th:href="@{/(sort='hot30')}">30天最热</a>
+                    </li>
+                    <li role="presentation" th:class="${sort == 'hot7' ? 'active':''}">
+                        <a th:href="@{/(sort='hot7')}">7天最热</a>
+                    </li>
+                    <li role="presentation" th:class="${sort == 'hot' ? 'active':''}">
+                        <a th:href="@{/(sort='hot')}">最热</a>
+                    </li>
+                    <li role="presentation" th:class="${sort == 'no' ? 'active':''}">
+                        <a th:href="@{/(sort='no')}" class="red">消灭零回复</a>
+                    </li>
+                </ul>
             <div class="media" th:each="question : ${pageInfo.getList()}">
                 <div class="media-left">
                     <a href="#">
@@ -52,44 +49,52 @@
             </div>
 
             <!--显示分页信息-->
-            <ul class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
-                当前第 [[${pageInfo.pageNum}]]页,共 [[${pageInfo.pages}]] 页.一共 [[${pageInfo.total}]] 条记录
-                <ul class=" pagination pull-right no-margin">
-                    <li th:if="${pageInfo.hasPreviousPage}">
-                        <a th:href="@{/(page=1,search=${search})}">首页</a>
-                    </li>
-                    <li class="prev" th:if="${pageInfo.hasPreviousPage}">
-                        <a th:href="@{/(page=${pageInfo.prePage},search=${search})}">
-                            <i class="ace-icon fa fa-angle-double-left"></i>
-                        </a>
-                    </li>
-                    <!--遍历条数-->
-                    <li th:each="nav:${pageInfo.navigatepageNums}">
-                        <a th:href="@{/(page=${nav},search=${search})}" th:text="${nav}"
-                           th:if="${nav != pageInfo.pageNum}"></a>
-                        <span style="font-weight: bold;background: #6faed9;" th:if="${nav == pageInfo.pageNum}"
-                              th:text="${nav}"></span>
-                    </li>
-                    <li class="next" th:if="${pageInfo.hasNextPage}">
-                        <a th:href="@{/(page=${pageInfo.nextPage},search=${search})}">
-                            <i class="ace-icon fa fa-angle-double-right"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a th:href="@{/(page=${pageInfo.pages},search=${search})}">尾页</a>
-                    </li>
-                </ul>
-            </ul>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 " style="padding-top: 25px;">
+                    当前第 [[${pageInfo.pageNum}]]页,共 [[${pageInfo.pages}]] 页.一共 [[${pageInfo.total}]] 条记录
+                </div>
+                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 ">
+                    <ul class=" pagination pull-right no-margin">
+                        <li th:if="${pageInfo.hasPreviousPage}">
+                            <a th:href="@{/(page=1,search=${search})}">首页</a>
+                        </li>
+                        <li class="prev" th:if="${pageInfo.hasPreviousPage}">
+                            <a th:href="@{/(page=${pageInfo.prePage},search=${search})}">
+                                <i class="ace-icon fa fa-angle-double-left"></i>
+                            </a>
+                        </li>
+                        <!--遍历条数-->
+                        <li th:each="nav:${pageInfo.navigatepageNums}">
+                            <a th:href="@{/(page=${nav},search=${search})}" th:text="${nav}"
+                               th:if="${nav != pageInfo.pageNum}"></a>
+                            <span style="font-weight: bold;background: #6faed9;" th:if="${nav == pageInfo.pageNum}"
+                                  th:text="${nav}"></span>
+                        </li>
+                        <li class="next" th:if="${pageInfo.hasNextPage}">
+                            <a th:href="@{/(page=${pageInfo.nextPage},search=${search})}">
+                                <i class="ace-icon fa fa-angle-double-right"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a th:href="@{/(page=${pageInfo.pages},search=${search})}">尾页</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
         </div>
+
         <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
                 <!--相关问题-->
                 <hr class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <h4>热门标签</h4>
+                    <h4>热门话题</h4>
                     <ul class="question-related">
                         <li th:each="tag : ${tags}">
-                            <a th:href="@{/(page=1,search=${search},tag=${tag.getName()},sort=${sort})}" th:text="${tag.getName()}"></a>
+                            <a style="font-size: 15px"
+                               th:href="@{/(page=1,search=${search},tag=${tag.getName()},sort=${sort})}"
+                               th:text="${tag.getName()}"></a>
                         </li>
                     </ul>
                 </div>

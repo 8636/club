@@ -1,0 +1,80 @@
+body {
+    background: url('img/login_bg.jpg') no-repeat #e9f0f4;
+}
+
+.login-list{
+    list-style: none; /*去掉小圆点*/
+    width: 100%;
+    height: 100%;
+}
+#wrapper {
+    position: relative;
+    margin-bottom: 20px;
+    padding-top: 100px;
+}
+
+.btn-github {
+    background-color: #3a5799;
+    color: #fff !important;
+}
+
+.btn-github:hover {
+    background-color: #264a9b;
+}
+
+.btn-github:active {
+    background-color: #244081;
+}
+
+.btn-primary {
+    border: none;
+    background-color: #59b0ff;
+}
+
+.btn-primary:hover {
+    background-color: #4daaff;
+}
+
+.btn-primary:active, .btn-primary:focus {
+    background-color: #1a90ff;
+}
+
+.aw-login-box {
+    width: 714px;
+    margin: 0 auto;
+    background-color: #fff;
+    border: 1px solid #b3b3b3;
+    border-radius: 3px;
+}
+
+.aw-login-box .mod-body {
+    padding: 50px 60px;
+}
+
+.aw-login-box .mod-body .content {
+    width: 300px;
+    margin-right: 60px;
+}
+
+.aw-login-box .mod-body .content h2 {
+    margin: 13px 0 40px;
+    color: #666;
+}
+
+.aw-login-box .mod-body .content ul li {
+    margin-top: 20px;
+    line-height: 30px;
+}
+
+.aw-login-box .mod-body .content ul li.last {
+    font-size: 12px;
+    line-height: 40px;
+}
+
+.aw-login-box .mod-body .side-bar {
+    height: 326px;
+    padding: 60px 0 60px 60px;
+    border-left: 1px solid #e6e6e6;
+}
+
+

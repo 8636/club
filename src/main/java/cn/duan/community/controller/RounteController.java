@@ -21,4 +21,10 @@ public class RounteController {
         return "question";
     }
 
+    @GetMapping("/login")
+    public String login() {
+        return "login";
+    }
+
+
 }

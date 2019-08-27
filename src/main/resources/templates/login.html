@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>登录</title>
+    <head th:insert="~{import :: head}"></head>
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+<div id="wrapper">
+    <div class="aw-login-box">
+        <div class="mod-body clearfix">
+            <div class="content pull-left">
+                <h2>登录论坛</h2>
+                <form id="login_form" method="post" action="/user/login">
+                    <input type="hidden" name="return_url" value="https://elasticsearch.cn/"/>
+                    <ul class="login-list">
+                        <li>
+                            <input type="text" id="aw-login-user-name" class="form-control" placeholder="邮箱 / 用户名"
+                                   name="username"/>
+                        </li>
+                        <li>
+                            <input type="password" id="aw-login-user-password" class="form-control" placeholder="密码"
+                                   name="password"/>
+                        </li>
+                        <li class="last">
+                            <button id="submit" class="pull-right btn btn-large btn-primary">登录</button>
+                            <label>
+                                <input type="checkbox" value="1" name="remember"/>
+                                记住我 </label>
+                            <a href="">&nbsp;&nbsp;忘记密码</a>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+            <div class="side-bar pull-left">
+                <h3>第三方账号登录</h3>
+                <a href="https://github.com/login/oauth/authorize?client_id=42e591d46be31af9c854&redirect_uri=http://localhost:8888/callback&scope=user&state=1"
+                   class="btn btn-block btn-github"> <i class="icon icon-github"></i> Github 登录</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

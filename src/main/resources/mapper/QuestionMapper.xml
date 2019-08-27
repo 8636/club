@@ -25,7 +25,7 @@
         </association>
     </resultMap>
 
-    <select id="selectQuestionDTO" resultMap="questionDto">
+    <select id="selectQuestionDTO" resultMap="questionDto" parameterType="cn.duan.community.dto.QuestionQueryDTO">
             SELECT
                 question.*,
                 u.id AS u_id,
@@ -39,17 +39,35 @@
             FROM
                 question,
                 USER u
-            WHERE question.creator = u.id
-            <if test="id != null">
-                and u.id =#{id}
+            WHERE creator = u.id
+            <if test="userId != null">
+                and u.id = #{userId}
             </if>
             <if test="search != null and search != ''">
                 and title REGEXP #{search}
             </if>
-             <if test="tag != null and tag != ''">
+            <if test="tag != null and tag != ''">
                 and tag REGEXP #{tag}
             </if>
-            order by gmt_create desc
+            <if test="sort != null and sort != '' and sort == 'no'">
+                 and comment_count = 0
+             </if>
+            <if test="time != null and time != ''">
+                and question.gmt_create > #{time}
+            </if>
+            <if test="sort == null or sort == ''">
+                order by question.gmt_create desc
+            </if>
+            <if test="sort != null and sort != '' and sort == 'new'">
+                order by question.gmt_create desc
+            </if>
+            <if test="sort != null and sort != '' and sort == 'no'">
+                order by question.gmt_create desc
+            </if>
+            <if test="sort != null and sort != '' and (sort == 'hot' || sort == 'hot7' || sort == 'hot30')">
+                order by question.comment_count desc
+            </if>
+
     </select>
 
     <update id="insViewCount" parameterType="long">

@@ -40,9 +40,7 @@ public class indexController {
                               @RequestParam(value = "search", required = false) String search,
                               @RequestParam(name = "tag", required = false) String tag,
                               @RequestParam(name = "sort", required = false) String sotrStr) {
-        if (search != null && search != "") {
-            search = StringUtils.lowerCase(search).trim().replace(" ", "|");
-        }
+
         PageInfo<QuestionDTO> pageInfo = questionService.list(page, size, search, tag, sotrStr);
         log.info("pageinfo", pageInfo.getList());
         ModelAndView mv = new ModelAndView();
