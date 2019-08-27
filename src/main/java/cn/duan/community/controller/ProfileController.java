@@ -36,7 +36,7 @@ public class ProfileController {
         ModelAndView mv = new ModelAndView();
         User user = (User) request.getSession().getAttribute("user");
         if (user == null) {
-            mv.setViewName("redirect:/");
+            mv.setViewName("redirect:");
         }
 
         if ("questions".equals(action)) {
@@ -51,7 +51,7 @@ public class ProfileController {
             mv.addObject("sectionName", "最新回复");
             mv.addObject("pageInfo", pageInfo);
         }
-        mv.setViewName("/profile");
+        mv.setViewName("profile");
         return mv;
     }
 }

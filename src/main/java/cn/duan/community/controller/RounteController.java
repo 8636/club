@@ -12,7 +12,7 @@ public class RounteController {
     public ModelAndView publish() {
         ModelAndView mv = new ModelAndView();
         mv.addObject("tags", TagCache.get());
-        mv.setViewName("/publish");
+        mv.setViewName("publish");
         return mv;
     }
 
