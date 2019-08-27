@@ -2148,3 +2148,6 @@ org.thymeleaf.exceptions.TemplateInputException: Error resolving template [user/
 2019-08-27 20:47:38.832  INFO 7760 --- [scheduling-1] cn.duan.community.common.task.HotTags    : The time is now 20:47:38
 2019-08-27 20:49:18.831  INFO 7760 --- [scheduling-1] cn.duan.community.common.task.HotTags    : The time is now 20:49:18
 2019-08-27 20:50:58.832  INFO 7760 --- [scheduling-1] cn.duan.community.common.task.HotTags    : The time is now 20:50:58
+2019-08-27 20:52:38.831  INFO 7760 --- [scheduling-1] cn.duan.community.common.task.HotTags    : The time is now 20:52:38
+2019-08-27 20:54:18.831  INFO 7760 --- [scheduling-1] cn.duan.community.common.task.HotTags    : The time is now 20:54:18
+2019-08-27 20:55:58.831  INFO 7760 --- [scheduling-1] cn.duan.community.common.task.HotTags    : The time is now 20:55:58
