@@ -59,9 +59,9 @@ public class AuthController {
         if (githubUser != null) {
             //获得用户信息，保存到session中
             response.addCookie(new Cookie("token", token));
-            return "redirect:/";
+            return "redirect: ";
         } else {
-            return "redirect:/";
+            return "redirect: ";
         }
     }
 
@@ -78,7 +78,7 @@ public class AuthController {
         Cookie cookie = new Cookie("token", null);
         cookie.setMaxAge(0);
         response.addCookie(cookie);
-        return "redirect:/";
+        return "redirect: ";
     }
 
 }

@@ -49,7 +49,7 @@ public class indexController {
         mv.addObject("pageInfo", pageInfo);
         mv.addObject("search", search);
         mv.addObject("sort", sotrStr);
-        mv.setViewName("/index");
+        mv.setViewName("index");
         return mv;
     }
 }

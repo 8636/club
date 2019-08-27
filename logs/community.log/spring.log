@@ -2023,3 +2023,128 @@ org.thymeleaf.exceptions.TemplateInputException: Error resolving template [user/
 2019-08-27 19:33:44.178  INFO 4092 --- [scheduling-1] cn.duan.community.common.task.HotTags    : The time is now 19:33:44
 2019-08-27 19:35:24.178  INFO 4092 --- [scheduling-1] cn.duan.community.common.task.HotTags    : The time is now 19:35:24
 2019-08-27 19:37:04.178  INFO 4092 --- [scheduling-1] cn.duan.community.common.task.HotTags    : The time is now 19:37:04
+2019-08-27 19:38:44.176  INFO 4092 --- [scheduling-1] cn.duan.community.common.task.HotTags    : The time is now 19:38:44
+2019-08-27 19:40:24.182  INFO 4092 --- [scheduling-1] cn.duan.community.common.task.HotTags    : The time is now 19:40:24
+2019-08-27 19:42:04.177  INFO 4092 --- [scheduling-1] cn.duan.community.common.task.HotTags    : The time is now 19:42:04
+2019-08-27 19:43:44.177  INFO 4092 --- [scheduling-1] cn.duan.community.common.task.HotTags    : The time is now 19:43:44
+2019-08-27 19:45:24.178  INFO 4092 --- [scheduling-1] cn.duan.community.common.task.HotTags    : The time is now 19:45:24
+2019-08-27 19:47:04.176  INFO 4092 --- [scheduling-1] cn.duan.community.common.task.HotTags    : The time is now 19:47:04
+2019-08-27 19:47:55.659  INFO 4092 --- [Thread-14] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2019-08-27 19:47:55.688  INFO 4092 --- [Thread-14] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-08-27 19:47:55.724  INFO 4092 --- [Thread-14] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2019-08-27 19:47:55.849  INFO 4092 --- [Thread-14] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2019-08-27 19:48:07.391  INFO 14032 --- [main] cn.duan.community.CommunityApplication   : Starting CommunityApplication on DESKTOP-8P7TO5R with PID 14032 (C:\Users\86368\Desktop\community\target\classes started by Sir in C:\Users\86368\Desktop\community)
+2019-08-27 19:48:07.411  INFO 14032 --- [main] cn.duan.community.CommunityApplication   : No active profile set, falling back to default profiles: default
+2019-08-27 19:48:11.180  INFO 14032 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2019-08-27 19:48:11.238  INFO 14032 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-08-27 19:48:11.238  INFO 14032 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-08-27 19:48:11.554  INFO 14032 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-08-27 19:48:11.554  INFO 14032 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3948 ms
+2019-08-27 19:48:12.040  INFO 14032 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2019-08-27 19:48:12.580  INFO 14032 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2019-08-27 19:48:13.153  INFO 14032 --- [main] c.d.c.common.config.AliyunConfig         : enpoint
+2019-08-27 19:48:14.532  INFO 14032 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-27 19:48:14.660  INFO 14032 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-08-27 19:48:14.735  WARN 14032 --- [main] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][main] Template Mode 'LEGACYHTML5' is deprecated. Using Template Mode 'HTML' instead.
+2019-08-27 19:48:14.954  INFO 14032 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2019-08-27 19:48:15.377  INFO 14032 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2019-08-27 19:48:15.384  INFO 14032 --- [main] cn.duan.community.CommunityApplication   : Started CommunityApplication in 9.429 seconds (JVM running for 12.248)
+2019-08-27 19:48:15.417  INFO 14032 --- [scheduling-1] cn.duan.community.common.task.HotTags    : The time is now 19:48:15
+2019-08-27 19:49:55.333  INFO 14032 --- [scheduling-1] cn.duan.community.common.task.HotTags    : The time is now 19:49:55
+2019-08-27 19:51:35.323  INFO 14032 --- [scheduling-1] cn.duan.community.common.task.HotTags    : The time is now 19:51:35
+2019-08-27 19:53:15.323  INFO 14032 --- [scheduling-1] cn.duan.community.common.task.HotTags    : The time is now 19:53:15
+2019-08-27 19:54:55.324  INFO 14032 --- [scheduling-1] cn.duan.community.common.task.HotTags    : The time is now 19:54:55
+2019-08-27 19:56:35.323  INFO 14032 --- [scheduling-1] cn.duan.community.common.task.HotTags    : The time is now 19:56:35
+2019-08-27 19:58:15.322  INFO 14032 --- [scheduling-1] cn.duan.community.common.task.HotTags    : The time is now 19:58:15
+2019-08-27 19:59:55.324  INFO 14032 --- [scheduling-1] cn.duan.community.common.task.HotTags    : The time is now 19:59:55
+2019-08-27 20:01:35.325  INFO 14032 --- [scheduling-1] cn.duan.community.common.task.HotTags    : The time is now 20:01:35
+2019-08-27 20:03:15.323  INFO 14032 --- [scheduling-1] cn.duan.community.common.task.HotTags    : The time is now 20:03:15
+2019-08-27 20:04:55.323  INFO 14032 --- [scheduling-1] cn.duan.community.common.task.HotTags    : The time is now 20:04:55
+2019-08-27 20:06:35.324  INFO 14032 --- [scheduling-1] cn.duan.community.common.task.HotTags    : The time is now 20:06:35
+2019-08-27 20:08:15.323  INFO 14032 --- [scheduling-1] cn.duan.community.common.task.HotTags    : The time is now 20:08:15
+2019-08-27 20:09:55.326  INFO 14032 --- [scheduling-1] cn.duan.community.common.task.HotTags    : The time is now 20:09:55
+2019-08-27 20:11:17.731  INFO 14032 --- [http-nio-8888-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-08-27 20:11:17.732  INFO 14032 --- [http-nio-8888-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-08-27 20:11:17.748  INFO 14032 --- [http-nio-8888-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 15 ms
+2019-08-27 20:11:17.782  INFO 14032 --- [http-nio-8888-exec-3] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-27 20:11:17.907  INFO 14032 --- [http-nio-8888-exec-3] c.d.c.controller.indexController         : pageinfo
+2019-08-27 20:11:18.821  INFO 14032 --- [http-nio-8888-exec-7] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-27 20:11:18.823  INFO 14032 --- [http-nio-8888-exec-4] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-27 20:11:21.470  INFO 14032 --- [http-nio-8888-exec-10] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-27 20:11:21.497  INFO 14032 --- [http-nio-8888-exec-10] c.d.c.controller.indexController         : pageinfo
+2019-08-27 20:11:22.356  INFO 14032 --- [http-nio-8888-exec-7] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-27 20:11:22.365  INFO 14032 --- [http-nio-8888-exec-7] c.d.c.controller.indexController         : pageinfo
+2019-08-27 20:11:22.927  INFO 14032 --- [http-nio-8888-exec-4] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-27 20:11:22.938  INFO 14032 --- [http-nio-8888-exec-4] c.d.c.controller.indexController         : pageinfo
+2019-08-27 20:11:24.063  INFO 14032 --- [http-nio-8888-exec-5] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-27 20:11:24.073  INFO 14032 --- [http-nio-8888-exec-5] c.d.c.controller.indexController         : pageinfo
+2019-08-27 20:11:24.793  INFO 14032 --- [http-nio-8888-exec-6] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-27 20:11:24.800  INFO 14032 --- [http-nio-8888-exec-6] c.d.c.controller.indexController         : pageinfo
+2019-08-27 20:11:25.182  INFO 14032 --- [http-nio-8888-exec-2] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-27 20:11:25.194  INFO 14032 --- [http-nio-8888-exec-2] c.d.c.controller.indexController         : pageinfo
+2019-08-27 20:11:28.215  INFO 14032 --- [http-nio-8888-exec-9] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-27 20:11:28.359  INFO 14032 --- [http-nio-8888-exec-1] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-27 20:11:28.371  INFO 14032 --- [http-nio-8888-exec-1] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-27 20:11:35.322  INFO 14032 --- [scheduling-1] cn.duan.community.common.task.HotTags    : The time is now 20:11:35
+2019-08-27 20:13:15.325  INFO 14032 --- [scheduling-1] cn.duan.community.common.task.HotTags    : The time is now 20:13:15
+2019-08-27 20:14:55.324  INFO 14032 --- [scheduling-1] cn.duan.community.common.task.HotTags    : The time is now 20:14:55
+2019-08-27 20:16:30.744  INFO 14032 --- [Thread-17] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2019-08-27 20:16:30.747  INFO 14032 --- [Thread-17] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-08-27 20:16:30.763  INFO 14032 --- [Thread-17] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2019-08-27 20:16:30.771  INFO 14032 --- [Thread-17] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2019-08-27 20:35:50.569  INFO 7760 --- [main] cn.duan.community.CommunityApplication   : Starting CommunityApplication on DESKTOP-8P7TO5R with PID 7760 (C:\Users\86368\Desktop\community\target\classes started by Sir in C:\Users\86368\Desktop\community)
+2019-08-27 20:35:50.575  INFO 7760 --- [main] cn.duan.community.CommunityApplication   : No active profile set, falling back to default profiles: default
+2019-08-27 20:35:53.265  INFO 7760 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2019-08-27 20:35:53.308  INFO 7760 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-08-27 20:35:53.309  INFO 7760 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-08-27 20:35:53.576  INFO 7760 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-08-27 20:35:53.577  INFO 7760 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2891 ms
+2019-08-27 20:35:53.935  INFO 7760 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2019-08-27 20:35:54.382  INFO 7760 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2019-08-27 20:35:55.472  INFO 7760 --- [main] c.d.c.common.config.AliyunConfig         : enpoint
+2019-08-27 20:35:57.702  INFO 7760 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-27 20:35:57.883  INFO 7760 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-08-27 20:35:58.009  WARN 7760 --- [main] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][main] Template Mode 'LEGACYHTML5' is deprecated. Using Template Mode 'HTML' instead.
+2019-08-27 20:35:58.298  INFO 7760 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2019-08-27 20:35:58.888  INFO 7760 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2019-08-27 20:35:58.895  INFO 7760 --- [main] cn.duan.community.CommunityApplication   : Started CommunityApplication in 9.346 seconds (JVM running for 21.438)
+2019-08-27 20:35:58.942  INFO 7760 --- [scheduling-1] cn.duan.community.common.task.HotTags    : The time is now 20:35:58
+2019-08-27 20:37:38.839  INFO 7760 --- [scheduling-1] cn.duan.community.common.task.HotTags    : The time is now 20:37:38
+2019-08-27 20:39:18.833  INFO 7760 --- [scheduling-1] cn.duan.community.common.task.HotTags    : The time is now 20:39:18
+2019-08-27 20:40:58.833  INFO 7760 --- [scheduling-1] cn.duan.community.common.task.HotTags    : The time is now 20:40:58
+2019-08-27 20:41:36.795  INFO 7760 --- [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-08-27 20:41:36.795  INFO 7760 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-08-27 20:41:36.816  INFO 7760 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 18 ms
+2019-08-27 20:41:36.853  INFO 7760 --- [http-nio-8888-exec-1] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-27 20:41:37.008  INFO 7760 --- [http-nio-8888-exec-1] c.d.c.controller.indexController         : pageinfo
+2019-08-27 20:41:38.062  INFO 7760 --- [http-nio-8888-exec-2] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-27 20:41:38.068  INFO 7760 --- [http-nio-8888-exec-3] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-27 20:41:41.341  INFO 7760 --- [http-nio-8888-exec-6] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-27 20:41:41.360  INFO 7760 --- [http-nio-8888-exec-6] c.d.c.controller.indexController         : pageinfo
+2019-08-27 20:41:42.065  INFO 7760 --- [http-nio-8888-exec-7] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-27 20:41:42.074  INFO 7760 --- [http-nio-8888-exec-7] c.d.c.controller.indexController         : pageinfo
+2019-08-27 20:41:43.127  INFO 7760 --- [http-nio-8888-exec-10] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-27 20:41:43.139  INFO 7760 --- [http-nio-8888-exec-10] c.d.c.controller.indexController         : pageinfo
+2019-08-27 20:41:43.738  INFO 7760 --- [http-nio-8888-exec-2] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-27 20:41:43.753  INFO 7760 --- [http-nio-8888-exec-2] c.d.c.controller.indexController         : pageinfo
+2019-08-27 20:41:44.339  INFO 7760 --- [http-nio-8888-exec-8] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-27 20:41:44.351  INFO 7760 --- [http-nio-8888-exec-8] c.d.c.controller.indexController         : pageinfo
+2019-08-27 20:41:44.808  INFO 7760 --- [http-nio-8888-exec-9] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-27 20:41:44.818  INFO 7760 --- [http-nio-8888-exec-9] c.d.c.controller.indexController         : pageinfo
+2019-08-27 20:41:45.203  INFO 7760 --- [http-nio-8888-exec-1] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-27 20:41:45.214  INFO 7760 --- [http-nio-8888-exec-1] c.d.c.controller.indexController         : pageinfo
+2019-08-27 20:41:46.449  INFO 7760 --- [http-nio-8888-exec-3] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-27 20:41:46.589  INFO 7760 --- [http-nio-8888-exec-5] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-27 20:41:46.601  INFO 7760 --- [http-nio-8888-exec-5] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-27 20:42:12.250  INFO 7760 --- [http-nio-8888-exec-6] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-27 20:42:12.264  INFO 7760 --- [http-nio-8888-exec-6] c.d.c.controller.indexController         : pageinfo
+2019-08-27 20:42:12.855  INFO 7760 --- [http-nio-8888-exec-10] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-27 20:42:12.862  INFO 7760 --- [http-nio-8888-exec-10] c.d.c.controller.indexController         : pageinfo
+2019-08-27 20:42:38.831  INFO 7760 --- [scheduling-1] cn.duan.community.common.task.HotTags    : The time is now 20:42:38
+2019-08-27 20:43:21.061  INFO 7760 --- [http-nio-8888-exec-6] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-27 20:43:21.083  INFO 7760 --- [http-nio-8888-exec-6] c.d.c.controller.indexController         : pageinfo
+2019-08-27 20:44:18.833  INFO 7760 --- [scheduling-1] cn.duan.community.common.task.HotTags    : The time is now 20:44:18
+2019-08-27 20:45:58.838  INFO 7760 --- [scheduling-1] cn.duan.community.common.task.HotTags    : The time is now 20:45:58
+2019-08-27 20:47:38.832  INFO 7760 --- [scheduling-1] cn.duan.community.common.task.HotTags    : The time is now 20:47:38
+2019-08-27 20:49:18.831  INFO 7760 --- [scheduling-1] cn.duan.community.common.task.HotTags    : The time is now 20:49:18
+2019-08-27 20:50:58.832  INFO 7760 --- [scheduling-1] cn.duan.community.common.task.HotTags    : The time is now 20:50:58
