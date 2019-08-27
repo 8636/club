@@ -22,7 +22,9 @@ import java.util.UUID;
  * 授权
  */
 @Controller
-public class AuthController {
+public class
+
+AuthController {
 
     @Autowired
     private GithubProvider githubProvider;
