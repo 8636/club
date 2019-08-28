@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.view.RedirectView;
 import tk.mybatis.mapper.entity.Example;
 
 import javax.servlet.http.HttpServletRequest;
@@ -40,7 +41,7 @@ public class PublishController {
         QuestionDTO questionDTO = questionService.getById(id);
         User user = (User)request.getSession().getAttribute("user");
         if (user == null || !questionDTO.getCreator().equals(user.getId())){
-            mv.setViewName("");
+            mv.setView(new RedirectView("/question/"+id));
             return mv;
         }
         mv.addObject("title", questionDTO.getTitle());

@@ -115,3 +115,17 @@ logging:
     root: info
   path: logs/community.log
 
+fdfs:
+  so-timeout: 1501 # 超时时间
+  connect-timeout: 601 # 连接超时时间
+  thumb-image: # 缩略图
+    width: 60
+    height: 60
+  tracker-list: # tracker地址
+    - 47.100.76.187:22122
+#    - 172.17.52.204:22122
+
+image:
+  #  adress: http://172.17.52.204:8888/
+  adress: http://47.100.76.187:8888/
+

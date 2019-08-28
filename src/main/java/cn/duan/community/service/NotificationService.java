@@ -13,7 +13,7 @@ import java.util.List;
 public interface NotificationService {
 
     //创建一个通知
-    void createNotify(Comment comment, Long receiver, String notifierName, String outerTitle, NotificationTypeEnum notificationType, Long outerId);
+    void createNotify(Comment comment, Long receiver, String notifierName, String outerTitle, NotificationTypeEnum notificationType, Long outerId,String parentContent);
 
     //查询用户的通知
     PageInfo<Notification> findListByReceverId(Long id, Integer page, Integer size);

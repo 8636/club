@@ -32,7 +32,7 @@ public class NotificationServiceImpl implements NotificationService {
      * @param outerId  所属问题ID
      */
     @Override
-    public void createNotify(Comment comment, Long receiver, String notifierName, String outerTitle, NotificationTypeEnum notificationType, Long outerId) {
+    public void createNotify(Comment comment, Long receiver, String notifierName, String outerTitle, NotificationTypeEnum notificationType, Long outerId,String parentContent) {
         //自己回复自己
         if (receiver == comment.getCommentator()) {
             return;
@@ -46,6 +46,8 @@ public class NotificationServiceImpl implements NotificationService {
         notification.setReceiver(receiver);
         notification.setNotifierName(notifierName);
         notification.setOuterTitle(outerTitle);
+        //如果回复的是评论  插入父评论内容
+        notification.setParentContent(parentContent);
 
         notificationMapper.insert(notification);
     }

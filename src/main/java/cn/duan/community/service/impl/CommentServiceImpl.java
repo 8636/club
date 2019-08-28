@@ -57,10 +57,11 @@ public class CommentServiceImpl implements CommentService {
             if (dbCommentList == null || dbCommentList.isEmpty()) {
                 throw new CustomException(CustomizeErrorCode.COMMENT_NOT_FOUND);
             }
-            Long questionId = dbCommentList.get(0).getParentId();
+            Comment parentComment = dbCommentList.get(0);
+            Long questionId = parentComment.getParentId();
             Question question = questionMapper.selectByPrimaryKey(questionId);
             // 创建通知
-            notificationService.createNotify(comment, dbCommentList.get(0).getCommentator(), commentator.getName(), question.getTitle(), NotificationTypeEnum.REPLY_COMMENT, question.getId());
+            notificationService.createNotify(comment, parentComment.getCommentator(), commentator.getName(), question.getTitle(), NotificationTypeEnum.REPLY_COMMENT, question.getId(),parentComment.getContent());
             commentMapper.insCommentCount(dbCommentList.get(0).getId());
             this.saveComment(comment);
         } else {
@@ -70,7 +71,7 @@ public class CommentServiceImpl implements CommentService {
                 throw new CustomException(CustomizeErrorCode.QUESTION_NOT_FOUND);
             }
             // 创建通知
-            notificationService.createNotify(comment, question.getCreator(), commentator.getName(), question.getTitle(), NotificationTypeEnum.REPLY_QUESTION, question.getId());
+            notificationService.createNotify(comment, question.getCreator(), commentator.getName(), question.getTitle(), NotificationTypeEnum.REPLY_QUESTION, question.getId(),null);
             this.saveComment(comment);
             this.insCommentCount(question.getId());
         }

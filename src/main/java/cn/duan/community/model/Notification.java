@@ -37,4 +37,6 @@ public class Notification {
     private String notifierName;
 
     private String outerTitle;
+
+    private String parentContent;
 }

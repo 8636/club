@@ -5,7 +5,6 @@ import cn.duan.community.dto.GithubUser;
 import cn.duan.community.model.User;
 import cn.duan.community.common.provider.GithubProvider;
 import cn.duan.community.service.UserService;
-import cn.duan.community.service.impl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;

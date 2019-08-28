@@ -45,66 +45,70 @@
             <!--我的通知-->
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" th:if="${section == 'replies'}">
                 <div class="media" th:each="notification : ${pageInfo.getList()}">
-                    <div class="media-body">
+                    <div class="panel panel-info">
+                        <!--                        <div class="media-body">-->
                         <p class="media-heading">
                             <span th:text="${notification.notifierName} + '  ' + ${notification.type == 1?'回复了问题':'回复了评论'} "></span>
                             <a th:href="@{'/notification/'+ ${notification.id}}"
-                               th:text="${notification.outerTitle}">
+                               th:text="${notification.parentContent == null ? notification.outerTitle : notification.parentContent}">
                             </a>
                             <span class="label label-danger" th:if="${notification.status == 0}">未读</span>
                         </p>
+                        <!--                    </div>-->
                     </div>
+
                 </div>
             </div>
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <!--显示分页信息-->
-                <span style="margin-top: 10px">当前第 [[${pageInfo.pageNum}]]页,共 [[${pageInfo.pages}]] 页.一共 [[${pageInfo.total}]] 条记录</span>
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pagination pull-right no-margin">
-                    <li th:if="${pageInfo.hasPreviousPage}">
-                        <a th:href="@{'/profile/'+${section}(page=1)}">首页</a>
-                    </li>
-                    <li class="prev" th:if="${pageInfo.hasPreviousPage}">
-                        <a th:href="@{'/profile/'+${section}(page=${pageInfo.prePage})}">
-                            <i class="ace-icon fa fa-angle-double-left">&lt;</i>
-                        </a>
-                    </li>
-
-                    <!--遍历条数-->
-                    <li th:each="nav:${pageInfo.navigatepageNums}">
-                        <a th:href="@{'/profile/'+${section}(page=${nav})}" th:text="${nav}"
-                           th:if="${nav != pageInfo.pageNum}"></a>
-                        <span style="font-weight: bold;background: #6faed9;" th:if="${nav == pageInfo.pageNum}"
-                              th:text="${nav}"></span>
-                    </li>
-                    <li class="next" th:if="${pageInfo.hasNextPage}">
-                        <a th:href="@{'/profile/'+${section}(page=${pageInfo.nextPage})}">
-                            <i class="ace-icon fa fa-angle-double-right">&gt;</i>
-                        </a>
-                    </li>
-                    <li>
-                        <a th:href="@{'/profile/'+${section}(page=${pageInfo.pages})}">尾页</a>
-                    </li>
+                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 " style="padding-top: 25px;">
+                    当前第 [[${pageInfo.pageNum}]]页,共 [[${pageInfo.pages}]] 页.一共 [[${pageInfo.total}]] 条记录
                 </div>
-            </div>
-        </div>
+                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 pagination pull-right no-margin">
+                <li th:if="${pageInfo.hasPreviousPage}">
+                    <a th:href="@{'/profile/'+${section}(page=1)}">首页</a>
+                </li>
+                <li class="prev" th:if="${pageInfo.hasPreviousPage}">
+                    <a th:href="@{'/profile/'+${section}(page=${pageInfo.prePage})}">
+                        <i class="ace-icon fa fa-angle-double-left">&lt;</i>
+                    </a>
+                </li>
 
-
-        <!---->
-        <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
-            <div class="nav nav-pills nav-stacked">
-                <a href="/profile/questions"
-                   th:class="${section == 'questions'}? 'active list-group-item' : 'list-group-item'">
-                    我的问题
-                    <span class="badge" th:text="${pageInfo.total}"></span>
-                </a>
-                <a href="/profile/replies"
-                   th:class="${section == 'replies'}? 'active list-group-item' : 'list-group-item'">
-                    最新回复
-                    <span class="badge" th:text="${session.unreadCount}"></span>
-                </a>
+                <!--遍历条数-->
+                <li th:each="nav:${pageInfo.navigatepageNums}">
+                    <a th:href="@{'/profile/'+${section}(page=${nav})}" th:text="${nav}"
+                       th:if="${nav != pageInfo.pageNum}"></a>
+                    <span style="font-weight: bold;background: #6faed9;" th:if="${nav == pageInfo.pageNum}"
+                          th:text="${nav}"></span>
+                </li>
+                <li class="next" th:if="${pageInfo.hasNextPage}">
+                    <a th:href="@{'/profile/'+${section}(page=${pageInfo.nextPage})}">
+                        <i class="ace-icon fa fa-angle-double-right">&gt;</i>
+                    </a>
+                </li>
+                <li>
+                    <a th:href="@{'/profile/'+${section}(page=${pageInfo.pages})}">尾页</a>
+                </li>
             </div>
         </div>
     </div>
+
+
+    <!---->
+    <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+        <div class="nav nav-pills nav-stacked">
+            <a href="/profile/questions"
+               th:class="${section == 'questions'}? 'active list-group-item' : 'list-group-item'">
+                我的问题
+                <span class="badge" th:text="${pageInfo.total}"></span>
+            </a>
+            <a href="/profile/replies"
+               th:class="${section == 'replies'}? 'active list-group-item' : 'list-group-item'">
+                最新回复
+                <span class="badge" th:text="${session.unreadCount}"></span>
+            </a>
+        </div>
+    </div>
+</div>
 </div>
 <div th:insert="~{footer :: foot}"></div>
 </body>

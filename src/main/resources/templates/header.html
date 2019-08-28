@@ -32,10 +32,14 @@
                             <span th:text="${session.user.getName()}"></span>
                             <span class="caret"></span>
                         </a>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu3">
                             <li><a href="/profile/questions">我的问题</a></li>
                             <li><a href="/logout">退出登录</a></li>
                         </ul>
+<!--                        <ul class="dropdown-menu">-->
+<!--                            <li><a href="/profile/questions">我的问题</a></li>-->
+<!--                            <li><a href="/logout">退出登录</a></li>-->
+<!--                        </ul>-->
                     </li>
                     <li th:if="${session.user == null}">
                         <a href="/login">登录</a>
