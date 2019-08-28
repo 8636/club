@@ -50,7 +50,9 @@ AuthController {
 
         String accessToken = githubProvider.getAccessToken(accessTokenDTO);
         GithubUser githubUser = githubProvider.getUser(accessToken);
-
+        if (githubUser.getId() == null){
+            return "redirect:";
+        }
         User user = new User();
         user.setName(githubUser.getName());
         user.setAccountId(String.valueOf(githubUser.getId()));

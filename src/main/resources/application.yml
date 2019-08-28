@@ -73,7 +73,7 @@ github:
   client:
     id: 42e591d46be31af9c854
     secret: ee51a20d4185d65a1bfba0825f94daacaa9b1656
-    callback: http://localhost:8888/callback&scope=user&state=1
+    callback: http://localhost:8888/callback
 
 # mybatis
 mybatis:
