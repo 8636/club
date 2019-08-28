@@ -10,16 +10,24 @@ import cn.duan.community.mapper.UserMapper;
 import cn.duan.community.model.Question;
 import cn.duan.community.model.User;
 import cn.duan.community.service.QuestionDTOService;
+import com.alibaba.fastjson.JSON;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
 import java.util.List;
 
 
+/**
+ * @author Sir
+ */
 @Service
 public class QuestionDTOServiceImpl implements QuestionDTOService {
 
@@ -36,7 +44,9 @@ public class QuestionDTOServiceImpl implements QuestionDTOService {
      * @param size
      * @return
      */
-    public PageInfo<QuestionDTO> list(Integer page, Integer size,String search,String tag,String sort) {
+    @Override
+    public PageInfo<QuestionDTO> list(Integer page, Integer size, String search, String tag, String sort) throws IOException {
+
         QuestionQueryDTO questionQueryDTO = new QuestionQueryDTO();
         if (search != null && search != "") {
             search = StringUtils.lowerCase(search).trim().replace(" ", "|");
@@ -57,7 +67,7 @@ public class QuestionDTOServiceImpl implements QuestionDTOService {
         questionQueryDTO.setTag(tag);
         PageHelper.startPage(page, size);
         List<QuestionDTO> questionDTOList = questionMapper.selectQuestionDTO(questionQueryDTO);
-        PageInfo<QuestionDTO> pageInfo = new PageInfo<>(questionDTOList);
+        PageInfo<QuestionDTO> pageInfo = new PageInfo<QuestionDTO>(questionDTOList);
         return pageInfo;
 
     }
@@ -70,6 +80,7 @@ public class QuestionDTOServiceImpl implements QuestionDTOService {
      * @param size
      * @return
      */
+    @Override
     public PageInfo<QuestionDTO> findQuestionByUserId(Long id, Integer page, Integer size) {
         QuestionQueryDTO questionQueryDTO = new QuestionQueryDTO();
         questionQueryDTO.setUserId(id);
@@ -86,6 +97,7 @@ public class QuestionDTOServiceImpl implements QuestionDTOService {
      * @param id
      * @return
      */
+    @Override
     public QuestionDTO getById(Long id) {
         QuestionDTO questionDTO = new QuestionDTO();
         Question question = questionMapper.selectByPrimaryKey(id);
@@ -104,6 +116,7 @@ public class QuestionDTOServiceImpl implements QuestionDTOService {
      *
      * @param question
      */
+    @Override
     public void craeteOrUpdate(Question question) {
         if (question.getId() == null) {
             //创建
@@ -130,14 +143,13 @@ public class QuestionDTOServiceImpl implements QuestionDTOService {
      * @param id
      */
 
+    @Override
     public void insViewCount(Long id) {
-//        Question question = new Question();
-//        question.setId(id);
-//        question.setViewCount(1);
-//        questionMapper.insViewCount(question);
+
         questionMapper.insViewCount(id);
     }
 
+    @Override
     public List<Question> findRelateQuestions(Long id) {
 
         Question question = questionMapper.selectByPrimaryKey(id);

@@ -34,9 +34,15 @@ public class PublishController {
      * @return
      */
     @GetMapping("/publish/{id}")
-    public ModelAndView findById(@PathVariable("id") Long id) {
-        QuestionDTO questionDTO = questionService.getById(id);
+    public ModelAndView findById(@PathVariable("id") Long id,
+                                 HttpServletRequest request) {
         ModelAndView mv = new ModelAndView();
+        QuestionDTO questionDTO = questionService.getById(id);
+        User user = (User)request.getSession().getAttribute("user");
+        if (user == null || !questionDTO.getCreator().equals(user.getId())){
+            mv.setViewName("");
+            return mv;
+        }
         mv.addObject("title", questionDTO.getTitle());
         mv.addObject("description", questionDTO.getDescription());
         mv.addObject("tag", questionDTO.getTag());
@@ -79,6 +85,7 @@ public class PublishController {
             model.addAttribute("error", "用户未登录");
             return "publish";
         }
+
 
         Question question = new Question();
         question.setTitle(title);

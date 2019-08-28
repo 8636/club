@@ -1,11 +1,9 @@
 server:
-  port: 8888
+  port: 80
 
 
 #spring
 spring:
-  profiles:
-    active:
   datasource:
     name: springboot
     type: com.alibaba.druid.pool.DruidDataSource
@@ -16,9 +14,9 @@ spring:
       #mysql驱动
       driver-class-name: com.mysql.jdbc.Driver
       #基本属性
-      url: jdbc:mysql://127.0.0.1:3306/community?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8
+      url: jdbc:mysql://47.100.76.187:3306/community?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8
       username: root
-      password: root
+      password: 20150608
       #配置初始化大小/最小/最大
       initial-size: 1
       min-idle: 1
@@ -42,28 +40,6 @@ spring:
   main:
     allow-bean-definition-overriding: true
 
-  # redis
-  cache:
-    type: redis
-  redis:
-    # Redis数据库索引（默认为0）
-    database: 0
-    # Redis服务器地址
-    host: localhost
-    # Redis服务器连接端口
-    port: 6379
-    pool:
-      # 连接池最大连接数（使用负值表示没有限制）
-      max-active: 8
-      # 连接池最大阻塞等待时间（使用负值表示没有限制）
-      max-wait: -1
-      # 连接池中的最大空闲连接
-      max-idle: 8
-      # 连接池中的最小空闲连接
-      min-idle: 0
-    # 连接超时时间（毫秒）
-    timeout: 10000
-
   servlet:
     multipart:
       max-file-size: 20MB
@@ -73,7 +49,7 @@ github:
   client:
     id: 42e591d46be31af9c854
     secret: ee51a20d4185d65a1bfba0825f94daacaa9b1656
-    callback: http://localhost:8888/callback&scope=user&state=1
+    callback: http://47.100.76.187/callback&scope=user&state=1
 
 # mybatis
 mybatis:
@@ -114,4 +90,3 @@ logging:
   level:
     root: info
   path: logs/community.log
-
