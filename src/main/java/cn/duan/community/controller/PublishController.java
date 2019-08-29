@@ -46,7 +46,8 @@ public class PublishController {
         }
         mv.addObject("title", questionDTO.getTitle());
         mv.addObject("description", questionDTO.getDescription());
-        mv.addObject("tag", questionDTO.getTag());
+        mv.addObject("questionTag", questionDTO.getTag());
+        mv.addObject("tags",TagCache.get());
         mv.addObject("question", questionDTO);
         mv.setViewName("publish");
         return mv;

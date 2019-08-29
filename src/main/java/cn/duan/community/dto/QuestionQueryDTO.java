@@ -10,6 +10,7 @@ public class QuestionQueryDTO {
     private String sort;
     private Long time;
     private String tag;
+    private Long topicId;
 //    private Integer page;
 //    private Integer size;
 }

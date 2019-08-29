@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <head th:insert="~{import :: head}"></head>
+    <head th:insert="~{import :: copy}"></head>
+</head>
+<body>
+<div th:insert="~{header :: head}"></div>
+<div class="aw-container-wrap">
+    <div class="container">
+        <div class="row">
+            <div class="aw-content-wrap clearfix">
+                <div class="col-sm-12 col-md-9 aw-main-content">
+                    <!-- tab切换 -->
+                    <ul class="nav nav-tabs aw-nav-tabs active hidden-xs">
+                        <li><a href="/topic/channel-hot__day-month">30 天</a></li>
+                        <li><a href="/channel-hot__day-week">7 天</a></li>
+                        <li class="active"><a href="/topic/">全部</a></li>
+                        <h2 class="hidden-xs"><i class="glyphicon glyphicon-tag"></i> 热门话题</h2>
+                    </ul>
+                    <!-- end tab切换 -->
+                    <!-- 话题分类 -->
+                    <div class="aw-mod aw-topic-category">
+                        <div class="mod-body clearfix">
+                            <ul>
+                                <li>
+                                    <a class="active" href="https://elasticsearch.cn/topic/">全部话题</a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- end 话题分类 -->
+
+                    <!-- 我关注的话题 -->
+                    <div class="aw-mod aw-topic-list" th:each="topic : ${topics}">
+                        <div class="mod-body clearfix">
+                            <div class="aw-item">
+                                <!-- 话题图片 -->
+                                <a class="img aw-border-radius-5 "href="/topic/elasticsearch"
+                                   th:data-id="${topic.id}">
+                                    <img style="width: 50px" height="50px" th:src="${topic.avatarUrl}"/>
+                                </a>
+                                <!-- end 话题图片 -->
+                                <p class="clearfix">
+                                    <!-- 话题内容 -->
+                                    <span class="topic-tag">
+                                        <a th:href="@{'/topic/'+ ${topic.name}}"
+                                           th:data-id="${topic.id}" th:text="${topic.name}"></a>
+                                    </span>
+                                    <!-- end 话题内容 -->
+                                </p>
+                                <p class="text-color-999">
+                                    <span th:text="${topic.commentCount}"></span> 个讨论
+                                    <span th:text="${topic.loveCount}"></span>个关注
+                                </p>
+                                <p class="text-color-999">
+                                    7 天新增 1 个讨论, 30 天新增 8 个讨论 </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end 我关注的话题 -->
+                </div>
+                <!-- 侧边栏 -->
+                <div class="col-sm-3 col-md-3 aw-side-bar hidden-sm hidden-xs">
+                    <!-- 今日话题 -->
+                    <div class="aw-mod topic-daily hidden-xs">
+                        <div class="mod-head">
+                            <h3>今日话题</h3>
+                        </div>
+                        <div class="mod-body">
+                        </div>
+                    </div>
+                    <!-- end 今日话题 -->
+                    <!-- 新增话题 -->
+                    <div class="aw-mod new-topic">
+                        <div class="mod-head">
+                            <h3>新增话题</h3>
+                        </div>
+                        <div class="mod-body clearfix">
+                            <div class="aw-topic-bar">
+                                <div class="topic-bar clearfix">
+                                    <span class="topic-tag">
+                                        <a class="text"
+                                           href="https://elasticsearch.cn/topic/lstio%E6%97%A5%E5%BF%97%E6%94%B6%E9%9B%86"
+                                           data-id="7168">lstio日志收集</a>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end 新增话题 -->
+
+                </div>
+                <!-- end 侧边栏 -->
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

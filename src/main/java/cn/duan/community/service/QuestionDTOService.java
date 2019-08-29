@@ -21,5 +21,6 @@ public interface QuestionDTOService {
      void insViewCount(Long id);
 
      List<Question> findRelateQuestions(Long id);
+
 }
 

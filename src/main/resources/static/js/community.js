@@ -74,9 +74,8 @@ function collapseComments(e) {
         //后台获取二级数据
         var url = "/comment/" + id;
         $.get(url, function (data) {
-            console.log("获得二级评论成功")
             //构建二级评论列表
-            BuildComments(data.data.reverse(),id);
+            BuildComments(data.data, id);
         })
         $("#two_comment_" + id).addClass("in");
         $("#two_comment_" + id).attr("status", "open");
@@ -84,16 +83,16 @@ function collapseComments(e) {
         $("#two_comment_" + id).removeClass("in");
         $("#two_comment_" + id).attr("status", "close");
     }
-
 }
 
 //构建列表
 function BuildComments(comments, id) {
-    console.log("hahha")
-    var wrapper = $("comment2_wrapper_" + id);
+    var wrapper = $("#comment2_wrapper_" + id);
     wrapper.empty();
     $.each(comments, function (index, item) {
-        var date = item.gmtCreate.format('YYYY-MM-DD')
+        var dateOriginal = comments.gmtCreate;
+        var date = moment(dateOriginal).format('YYYY-MM-DD');
+        console.info(date);
         var comment = $('' +
             '<div class="media" style="margin-top: 5px;">\n' +
             '  <div class="media-left">\n' +
@@ -104,14 +103,11 @@ function BuildComments(comments, id) {
             '  <div class="media-body">\n' +
             '    <h4 class="media-heading" style="font-size: 12px;font-weight: 500">' + item.user.name + '</h4>\n' +
             '    ' + item.content + '\n' +
+            '   <span class ="pull-right">' + date +'</span>\n'+
             '  </div>\n' +
-            '  <span class="pull-right">' + date + '</span>\n'+
             '</div><hr style="color: #303030">\n');
         comment.appendTo(wrapper);
     })
-
-    console.log("接受构建")
-
 }
 /**
  * 显示 问题标签

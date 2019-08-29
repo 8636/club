@@ -41,7 +41,7 @@ public class FileUploadService {
             StorePath storePath = this.storageClient.uploadFile(file.getInputStream(), file.getSize(),getExtension(file.getOriginalFilename()), null);
             // 3、生成图片地址
             String url =  imageAdress + storePath.getFullPath();
-
+            log.info("图片上传成功：文件名：{}", file.getOriginalFilename());
             return url;
         } catch (Exception e){
             log.error("文件上传失败：文件名：{}", file.getOriginalFilename(), e);

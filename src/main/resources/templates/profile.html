@@ -11,7 +11,6 @@
 
 <div class="container-fluid main">
     <div class="row">
-
         <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12 side">
             <h2><span th:text="${sectionName}"></span></h2>
             <hr>
@@ -44,19 +43,16 @@
 
             <!--我的通知-->
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" th:if="${section == 'replies'}">
-                <div class="media" th:each="notification : ${pageInfo.getList()}">
-                    <div class="panel panel-info">
-                        <!--                        <div class="media-body">-->
-                        <p class="media-heading">
-                            <span th:text="${notification.notifierName} + '  ' + ${notification.type == 1?'回复了问题':'回复了评论'} "></span>
-                            <a th:href="@{'/notification/'+ ${notification.id}}"
-                               th:text="${notification.parentContent == null ? notification.outerTitle : notification.parentContent}">
-                            </a>
-                            <span class="label label-danger" th:if="${notification.status == 0}">未读</span>
-                        </p>
-                        <!--                    </div>-->
-                    </div>
-
+                <div class="aw-notifications-list " th:each="notification : ${pageInfo.getList()}">
+                        <ul class="aw-notifications-list ul" >
+                            <li class="aw-notifications-list ul li">
+                                <span th:text="${notification.notifierName} + '  ' + ${notification.type == 1?'回复了问题':'回复了评论'} "></span>
+                                <a th:href="@{'/notification/'+ ${notification.id}}"
+                                   th:text="${notification.parentContent == null ? notification.outerTitle : notification.parentContent}">
+                                </a>
+                                <span class="label label-danger" th:if="${notification.status == 0}">未读</span>
+                            </li>
+                        </ul>
                 </div>
             </div>
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -110,7 +106,8 @@
     </div>
 </div>
 </div>
+
+</div>
 <div th:insert="~{footer :: foot}"></div>
-</body>
 </body>
 </html>

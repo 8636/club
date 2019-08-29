@@ -37,4 +37,9 @@ public class RounteController {
     public String redirectGithub(){
         return "redirect:https://github.com/login/oauth/authorize?client_id="+id+"&redirect_uri="+callback+"&scope=user&state=1";
     }
+
+    @GetMapping("/people")
+    public String people(){
+        return "people";
+    }
 }

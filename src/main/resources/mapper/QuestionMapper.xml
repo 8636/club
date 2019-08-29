@@ -55,6 +55,9 @@
             <if test="time != null and time != ''">
                 and question.gmt_create > #{time}
             </if>
+            <if test="topicId !=null and topicId!=''">
+                and question.topic_id = #{topicId}
+            </if>
             <if test="sort == null or sort == ''">
                 order by question.gmt_create desc
             </if>

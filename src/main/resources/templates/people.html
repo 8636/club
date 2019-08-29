@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <head th:insert="~{import :: head}"></head>
+    <head th:insert="~{import :: copy}"></head>
+</head>
+<body>
+<div th:insert="~{header :: head}"></div>
+<div class="aw-container-wrap">
+    <div class="container">
+        <div class="row">
+            <div class="aw-content-wrap clearfix">
+                <div class="col-sm-12 col-md-9 aw-main-content">
+                    <!-- 用户数据内容 -->
+                    <div class="aw-mod aw-user-detail-box">
+                        <div class="mod-head">
+                            <img th:src="${user.avatarUrl}" height="50px" width="50px"/>
+                            <span class="pull-right operate"> </span>
+                            <h1>sailershen </h1>
+                            <p class="text-color-999"></p>
+                            <p class="aw-user-flag">
+                            </p>
+                        </div>
+                        <div class="mod-footer">
+                            <ul class="nav nav-tabs aw-nav-tabs">
+                                <li class="active"><a href="#overview" id="page_overview" data-toggle="tab">概述</a></li>
+                                <li><a href="#questions" id="page_questions" data-toggle="tab">发问<span
+                                        class="badge">32</span></a></li>
+                                <li><a href="#answers" id="page_answers" data-toggle="tab">回复<span
+                                        class="badge">32</span></a></li>
+                                <li><a href="#articles" id="page_articles" data-toggle="tab">文章<span
+                                        class="badge">0</span></a></li>
+                                <li><a href="#focus" id="page_focus" data-toggle="tab">关注</a></li>
+                                <li><a href="#actions" id="page_actions" data-toggle="tab">动态</a></li>
+                                <li><a href="#detail" id="page_detail" data-toggle="tab">详细资料</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- end 用户数据内容 -->
+
+                    <div class="aw-user-center-tab">
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="overview">
+                                <!-- 回复 -->
+                                <div class="aw-mod">
+                                    <div class="mod-head">
+                                        <h3><a class="pull-right aw-more-content" href="javascript:;"
+                                               onclick="$('#page_answers').click();">更多 »</a>回复</h3>
+                                    </div>
+                                    <div class="mod-body">
+                                        <div class="aw-profile-answer-list">
+                                            <div class="aw-item">
+                                                <div class="mod-head">
+                                                    <h4><a href="https://elasticsearch.cn/question/8000">使用filter +
+                                                        composite aggregation的问题</a></h4>
+                                                </div>
+                                                <div class="mod-body">
+                                                    <span class="aw-border-radius-5 count pull-left"><i
+                                                            class="icon icon-agree"></i>0</span>
+                                                    <p class="aw-hide-txt">
+                                                        bellengao老师，您写的语句里，size值实际只能小于等于10，大于20也只输出10条记录。我看了官网上Bucket
+                                                        Sort
+                                                        Aggreation文档，把size语句放在第2个aggs里，就可以控制每页的实际输出量，比如我写成size:20，输出结果里...</p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end 回复 -->
+
+                                <!-- 发问 -->
+                                <div class="aw-mod">
+                                    <div class="mod-head">
+                                        <h3><a class="pull-right aw-more-content" href="javascript:;"
+                                               onclick="$('#page_questions').click();">更多 »</a>发问</h3>
+                                    </div>
+                                    <div class="mod-body">
+                                        <div class="aw-profile-publish-list" th:each="question: ${pageInfo.getList()}">
+                                            <div class="aw-item">
+                                                <div class="mod-head">
+                                                    <h4><a th:href="@{'/question/'+ ${question.id}}"
+                                                           th:text="${question.title}"></a></h4>
+                                                </div>
+                                                <div class="mod-body">
+                                                    <span class="aw-border-radius-5 count pull-left"><i
+                                                            class="icon icon-reply"></i>1</span>
+                                                    <span class="text-desc"><span
+                                                            th:text="${question.commentCount}"></span> 个回复 •
+                                                    <span th:text="${question.viewCount}"></span> 次浏览 •<span
+                                                                th:text="${#dates.format(question.gmtCreate,'yyyy-MM-dd HH:mm')}"></span>
+
+                                            </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end 发问 -->
+
+                                <!-- 最新动态 -->
+                                <div class="aw-mod">
+                                    <div class="mod-head">
+                                        <h3><a class="pull-right aw-more-content" href="javascript:;"
+                                               onclick="$('#page_actions').click();">更多 »</a>动态</h3>
+                                    </div>
+                                    <div class="mod-body">
+                                        <ul>
+                                            <li>
+                                                <p>
+                                                    <span class="pull-right text-color-999">2019-07-23</span>
+                                                    <em class="pull-left"><a
+                                                            href="https://elasticsearch.cn/people/10296"
+                                                            class="aw-user-name" data-id="10296">sailershen</a>
+                                                        回答了问题,</em>
+                                                    <a class="aw-hide-txt"
+                                                       href="https://elasticsearch.cn/question/8000">使用filter +
+                                                        composite aggregation的问题</a>
+                                                </p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="questions">
+                                <div class="aw-mod">
+                                    <div class="mod-head">
+                                        <h3>发问</h3>
+                                    </div>
+                                    <div class="mod-body">
+                                        <div class="aw-profile-publish-list" id="contents_user_actions_questions"></div>
+                                    </div>
+                                    <div class="mod-footer">
+                                        <!-- 加载更多内容 -->
+                                        <a class="aw-load-more-content" id="bp_user_actions_questions_more">
+                                            <span>更多</span>
+                                        </a>
+                                        <!-- end 加载更多内容 -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="answers">
+                                <div class="aw-mod">
+                                    <div class="mod-head">
+                                        <h3>回复</h3>
+                                    </div>
+                                    <div class="mod-body">
+                                        <div class="aw-profile-answer-list" id="contents_user_actions_answers"></div>
+                                    </div>
+                                    <div class="mod-footer">
+                                        <!-- 加载更多内容 -->
+                                        <a class="aw-load-more-content" id="bp_user_actions_answers_more">
+                                            <span>更多</span>
+                                        </a>
+                                        <!-- end 加载更多内容 -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="articles">
+                                <div class="aw-mod">
+                                    <div class="mod-head">
+                                        <h3>文章</h3>
+                                    </div>
+                                    <div class="mod-body">
+                                        <div class="aw-profile-publish-list" id="contents_user_actions_articles"></div>
+                                    </div>
+                                    <div class="mod-footer">
+                                        <!-- 加载更多内容 -->
+                                        <a class="aw-load-more-content" id="bp_user_actions_articles_more">
+                                            <span>更多</span>
+                                        </a>
+                                        <!-- end 加载更多内容 -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="focus">
+                                <!-- 自定义切换 -->
+                                <div class="aw-mod">
+                                    <div class="aw-tabs text-center">
+                                        <ul>
+                                            <li class="active"><a>关注的人</a></li>
+                                            <li><a>关注者</a></li>
+                                            <li><a>关注的话题</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="mod-body">
+                                        <div class="aw-tab-content">
+                                            <div class="aw-mod aw-user-center-follow-mod">
+                                                <div class="mod-body">
+                                                    <ul id="contents_user_follows" class="clearfix"></ul>
+                                                </div>
+                                                <div class="mod-footer">
+                                                    <!-- 加载更多内容 -->
+                                                    <a class="aw-load-more-content" id="bp_user_follows_more">
+                                                        <span>更多</span>
+                                                    </a>
+                                                    <!-- end 加载更多内容 -->
+                                                </div>
+                                            </div>
+                                            <div class="aw-mod aw-user-center-follow-mod hide">
+                                                <div class="mod-body">
+                                                    <ul class="clearfix" id="contents_user_fans"></ul>
+                                                </div>
+                                                <div class="mod-footer">
+                                                    <!-- 加载更多内容 -->
+                                                    <a class="aw-load-more-content" id="bp_user_fans_more">
+                                                        <span>更多</span>
+                                                    </a>
+                                                    <!-- end 加载更多内容 -->
+                                                </div>
+                                            </div>
+                                            <div class="aw-mod aw-user-center-follow-mod hide">
+                                                <div class="mod-body">
+                                                    <ul id="contents_user_topics" class="clearfix"></ul>
+                                                </div>
+                                                <div class="mod-footer">
+                                                    <!-- 加载更多内容 -->
+                                                    <a class="aw-load-more-content" id="bp_user_topics_more">
+                                                        <span>更多</span>
+                                                    </a>
+                                                    <!-- end 加载更多内容 -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end 自定义切换 -->
+                            </div>
+                            <div class="tab-pane" id="actions">
+                                <div class="aw-mod">
+                                    <div class="mod-head">
+                                        <h3>最新动态</h3>
+                                    </div>
+                                    <div class="mod-body">
+                                        <div id="contents_user_actions"></div>
+                                    </div>
+                                    <div class="mod-footer">
+                                        <!-- 加载更多内容 -->
+                                        <a class="aw-load-more-content" id="bp_user_actions_more">
+                                            <span>更多</span>
+                                        </a>
+                                        <!-- end 加载更多内容 -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="detail">
+                                <div class="aw-mod">
+                                    <div class="mod-head">
+                                        <h3>详细资料</h3>
+                                    </div>
+                                    <div class="mod-body aw-user-center-details">
+                                        <dl>
+                                            <dt><span>个人成就:</span></dt>
+                                            <dd>
+                                                <p class="meta">
+                                                    <span><i class="icon icon-prestige"></i>威望: <em
+                                                            class="aw-text-color-green">0</em></span>
+                                                    <span><i class="icon icon-score"></i>积分: <em
+                                                            class="aw-text-color-orange">1120</em></span>
+                                                    <span><i class="icon icon-agree"></i>赞同: <em
+                                                            class="aw-text-color-orange">1</em></span>
+                                                    <span><i class="icon icon-thank"></i>感谢: <em
+                                                            class="aw-text-color-orange">0</em></span>
+                                                </p>
+                                            </dd>
+                                        </dl>
+
+
+                                        <dl>
+                                            <dt><span>最后活跃:</span></dt>
+                                            <dd>2019-08-01 17:29</dd>
+                                        </dl>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 侧边栏 -->
+                <div class="col-sm-12 col-md-3 aw-side-bar">
+                    <div class="aw-mod people-following">
+                        <div class="mod-body">
+                            <a onclick="$('#page_focus').click();$('#focus .aw-tabs ul li').eq(0).click();$.scrollTo($('#focus').offset()['top'], 600, {queue:true})"
+                               class="pull-right font-size-12">更多 »</a>
+                            <span>
+                                关注 <em class="aw-text-color-blue">16</em> 人                            </span>
+                            <p>
+                                <a class="aw-user-name" data-id="10785"
+                                   href="https://elasticsearch.cn/people/xxz0904"><img
+                                        src="https://elasticsearch.cn/uploads/avatar/000/01/07/85_avatar_mid.jpg"
+                                        alt="xxz0904"/></a>
+                                <a class="aw-user-name" data-id="8330"
+                                   href="https://elasticsearch.cn/people/God_lockin"><img
+                                        src="https://elasticsearch.cn/uploads/avatar/000/00/83/30_avatar_mid.jpg"
+                                        alt="God_lockin"/></a>
+                                <a class="aw-user-name" data-id="11114"
+                                   href="https://elasticsearch.cn/people/fantuan"><img
+                                        src="https://elasticsearch.cn/uploads/avatar/000/01/11/14_avatar_mid.jpg"
+                                        alt="fantuan"/></a>
+                                <a class="aw-user-name" data-id="9883"
+                                   href="https://elasticsearch.cn/people/ridethewind"><img
+                                        src="https://www.gravatar.com/avatar/7ff19649111f53572a0d8d8b011e7e66?d=identicon&s=50"
+                                        alt="ridethewind"/></a>
+                                <a class="aw-user-name" data-id="8905" href="https://elasticsearch.cn/people/bellengao"><img
+                                        src="https://elasticsearch.cn/uploads/avatar/000/00/89/05_avatar_mid.jpg"
+                                        alt="bellengao"/></a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="aw-mod people-following">
+                        <div class="mod-body">
+                            <a onclick="$('#page_focus').click();$('#focus .aw-tabs ul li').eq(1).click();$.scrollTo($('#focus').offset()['top'], 600, {queue:true})"
+                               class="pull-right font-size-12">更多 »</a>
+                            <span>
+                                被 <em class="aw-text-color-blue">0</em> 人关注                            </span>
+
+                        </div>
+
+                    </div>
+                    <div class="aw-mod people-following">
+                        <div class="mod-body">
+                            关注 <em class="aw-text-color-blue">3</em> 话题
+                            <div class="aw-topic-bar">
+                                <div class="tag-bar clearfix">
+                                                                            <span class="topic-tag">
+                                            <a href="https://elasticsearch.cn/topic/grok" class="text" data-id="1104">grok</a>
+                                        </span>
+                                    <span class="topic-tag">
+                                            <a href="https://elasticsearch.cn/topic/aggregation" class="text"
+                                               data-id="508">aggregation</a>
+                                        </span>
+                                    <span class="topic-tag">
+                                            <a href="https://elasticsearch.cn/topic/kibana+%5Berror%5D%5Bstatus%5D"
+                                               class="text" data-id="1463">kibana [error][status]</a>
+                                        </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="aw-mod">
+                        <div class="mod-body">
+                            <span class="aw-text-color-666">
+                                主页访问量 : 438 次访问                            </span>
+                        </div>
+                    </div>
+                </div>
+                <!-- end 侧边栏 -->
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
