@@ -20,4 +20,22 @@
             #{id}
         </foreach>
     </select>
+
+    <select id="findnewTopics" resultType="cn.duan.community.model.Topic" parameterType="long">
+        select * from tb_topic
+        where community.tb_topic.gmt_create > #{time}
+    </select>
+    <select id="findTopicByUserId" parameterType="long" resultType="cn.duan.community.model.Topic">
+       SELECT
+            tb_topic.*
+        FROM
+            tb_topic
+        WHERE
+            id IN ( SELECT topic_id FROM tb_user_topic WHERE user_id = #{id} )
+
+    </select>
+
+    <insert id="focusTopic">
+        insert  into tb_user_topic value (#{id},#{topicId})
+    </insert>
 </mapper>

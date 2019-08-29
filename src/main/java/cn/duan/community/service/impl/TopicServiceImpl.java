@@ -8,17 +8,13 @@ import cn.duan.community.mapper.UserMapper;
 import cn.duan.community.model.Topic;
 import cn.duan.community.model.User;
 import cn.duan.community.service.TopicService;
+import cn.duan.community.service.UserService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import io.lettuce.core.cluster.api.sync.Executions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import tk.mybatis.mapper.entity.Condition;
 import tk.mybatis.mapper.entity.Example;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
 import java.util.List;
 
 @Service
@@ -30,6 +26,8 @@ public class TopicServiceImpl implements TopicService {
     private QuestionMapper questionMapper;
     @Autowired
     private UserMapper userMapper;
+    @Autowired
+    private UserService userService;
     @Override
     public List<Topic> list() {
         List<Topic> topicList = topicMapper.selectAll();
@@ -95,5 +93,40 @@ public class TopicServiceImpl implements TopicService {
         List<User> userList = topicMapper.findUserByIds(userIds);
         return userList;
 
+    }
+
+    /**
+     *  查询 新创建的话题
+     * @return
+     */
+    @Override
+    public List<Topic> newTopics() {
+
+        //当前时间减去三天
+        Long time = System.currentTimeMillis() - 1000L * 60 * 60 * 24 * 3;
+        topicMapper.findnewTopics(time);
+        return null;
+    }
+
+    /**
+     * 查询用户关注的话题
+     * @param username
+     * @return
+     */
+    @Override
+    public List<Topic> findTopicByUserName(String username) {
+        User user = userService.findUserByName(username);
+        List<Topic> topicList = topicMapper.findTopicByUserId(user.getId());
+        return topicList;
+    }
+
+    /**
+     * 关注问题
+     * @param id
+     * @param topicId
+     */
+    @Override
+    public int focusTopic(Long id, String topicId) {
+        return topicMapper.focusTopic(id,topicId);
     }
 }

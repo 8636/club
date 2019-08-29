@@ -24,7 +24,7 @@
                         <div class="mod-body clearfix">
                             <ul>
                                 <li>
-                                    <a class="active" href="https://elasticsearch.cn/topic/">全部话题</a>
+                                    <a class="active" href="/topic">全部话题</a>
                                 </li>
 
                             </ul>
@@ -37,7 +37,7 @@
                         <div class="mod-body clearfix">
                             <div class="aw-item">
                                 <!-- 话题图片 -->
-                                <a class="img aw-border-radius-5 "href="/topic/elasticsearch"
+                                <a class="img aw-border-radius-5 " th:href="@{'/topic/' + ${topic.name}}"
                                    th:data-id="${topic.id}">
                                     <img style="width: 50px" height="50px" th:src="${topic.avatarUrl}"/>
                                 </a>
@@ -79,10 +79,10 @@
                         </div>
                         <div class="mod-body clearfix">
                             <div class="aw-topic-bar">
-                                <div class="topic-bar clearfix">
+                                <div class="topic-bar clearfix" th:each="topic : ${topics}">
                                     <span class="topic-tag">
-                                        <a class="text"
-                                           href="https://elasticsearch.cn/topic/lstio%E6%97%A5%E5%BF%97%E6%94%B6%E9%9B%86"
+                                        <a class="text" th:text="${topic.name}"
+                                           th:href="@{'/topic/'+${topic.name}}"
                                            data-id="7168">lstio日志收集</a>
                                     </span>
                                 </div>

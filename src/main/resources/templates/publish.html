@@ -64,10 +64,13 @@
                                  th:class="${selectCategoryStat.first ? 'active tab-pane':'tab-pane'}">
                                 <span>
                                     <span class="label label-info" th:each="selectTag: ${selectCategory.tags}">
-                                    <span class="glyphicon glyphicon-tags" onclick="selectTag(this)"
-                                          th:data-tag="${selectTag}"
-                                          th:text="${' '+selectTag}">
+                                    <h5>
+                                        <span class="glyphicon glyphicon-tags" onclick="selectTag(this)"
+                                              style="font-size: 15px"
+                                              th:data-tag="${selectTag}"
+                                              th:text="${' '+selectTag}">
                                     </span>
+                                    </h5>
                                 </span>
                                 </span>
                             </div>

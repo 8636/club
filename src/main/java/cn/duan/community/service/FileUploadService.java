@@ -22,7 +22,8 @@ public class FileUploadService {
     private String imageAdress;
     @Autowired
     private FastFileStorageClient storageClient;
-    private final List<String> allowTypes = Arrays.asList("jpg","png","jpeg","gif","image/jpeg");
+    private final List<String> allowTypes = Arrays.asList("jpg","png","jpeg","gif","image/jpeg",
+            "image/png");
     public String uploadImg(MultipartFile file){
         try{
             // 1、文件的校验

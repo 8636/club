@@ -26,4 +26,10 @@ public interface TopicService {
     Long findIdByName(String name);
 
     List<User> findUserListByTopicId(Long id);
+
+    List<Topic> newTopics();
+
+    List<Topic> findTopicByUserName(String username);
+
+    int focusTopic(Long id, String topicId);
 }

@@ -90,7 +90,7 @@
                                                     <span th:text="${question.viewCount}"></span> 次浏览 •<span
                                                                 th:text="${#dates.format(question.gmtCreate,'yyyy-MM-dd HH:mm')}"></span>
 
-                                            </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -242,37 +242,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane" id="detail">
-                                <div class="aw-mod">
-                                    <div class="mod-head">
-                                        <h3>详细资料</h3>
-                                    </div>
-                                    <div class="mod-body aw-user-center-details">
-                                        <dl>
-                                            <dt><span>个人成就:</span></dt>
-                                            <dd>
-                                                <p class="meta">
-                                                    <span><i class="icon icon-prestige"></i>威望: <em
-                                                            class="aw-text-color-green">0</em></span>
-                                                    <span><i class="icon icon-score"></i>积分: <em
-                                                            class="aw-text-color-orange">1120</em></span>
-                                                    <span><i class="icon icon-agree"></i>赞同: <em
-                                                            class="aw-text-color-orange">1</em></span>
-                                                    <span><i class="icon icon-thank"></i>感谢: <em
-                                                            class="aw-text-color-orange">0</em></span>
-                                                </p>
-                                            </dd>
-                                        </dl>
-
-
-                                        <dl>
-                                            <dt><span>最后活跃:</span></dt>
-                                            <dd>2019-08-01 17:29</dd>
-                                        </dl>
-
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -290,21 +259,6 @@
                                    href="https://elasticsearch.cn/people/xxz0904"><img
                                         src="https://elasticsearch.cn/uploads/avatar/000/01/07/85_avatar_mid.jpg"
                                         alt="xxz0904"/></a>
-                                <a class="aw-user-name" data-id="8330"
-                                   href="https://elasticsearch.cn/people/God_lockin"><img
-                                        src="https://elasticsearch.cn/uploads/avatar/000/00/83/30_avatar_mid.jpg"
-                                        alt="God_lockin"/></a>
-                                <a class="aw-user-name" data-id="11114"
-                                   href="https://elasticsearch.cn/people/fantuan"><img
-                                        src="https://elasticsearch.cn/uploads/avatar/000/01/11/14_avatar_mid.jpg"
-                                        alt="fantuan"/></a>
-                                <a class="aw-user-name" data-id="9883"
-                                   href="https://elasticsearch.cn/people/ridethewind"><img
-                                        src="https://www.gravatar.com/avatar/7ff19649111f53572a0d8d8b011e7e66?d=identicon&s=50"
-                                        alt="ridethewind"/></a>
-                                <a class="aw-user-name" data-id="8905" href="https://elasticsearch.cn/people/bellengao"><img
-                                        src="https://elasticsearch.cn/uploads/avatar/000/00/89/05_avatar_mid.jpg"
-                                        alt="bellengao"/></a>
                             </p>
                         </div>
                     </div>
@@ -316,24 +270,16 @@
                                 被 <em class="aw-text-color-blue">0</em> 人关注                            </span>
 
                         </div>
-
                     </div>
                     <div class="aw-mod people-following">
                         <div class="mod-body">
-                            关注 <em class="aw-text-color-blue">3</em> 话题
+                            关注 <em class="aw-text-color-blue" th:text="${topicList.size()} == null ? 0:${topicList.size()}"></em> 话题
                             <div class="aw-topic-bar">
-                                <div class="tag-bar clearfix">
-                                                                            <span class="topic-tag">
-                                            <a href="https://elasticsearch.cn/topic/grok" class="text" data-id="1104">grok</a>
-                                        </span>
-                                    <span class="topic-tag">
-                                            <a href="https://elasticsearch.cn/topic/aggregation" class="text"
-                                               data-id="508">aggregation</a>
-                                        </span>
-                                    <span class="topic-tag">
-                                            <a href="https://elasticsearch.cn/topic/kibana+%5Berror%5D%5Bstatus%5D"
-                                               class="text" data-id="1463">kibana [error][status]</a>
-                                        </span>
+                                <div class="tag-bar clearfix" th:each="topic : ${topicList}">
+                                     <span class="topic-tag">
+                                         <a th:href="@{'/topic/' + ${topic.name}}" class="text" th:data-id="${topic.id}"
+                                            th:text="${topic.name}"></a>
+                                     </span>
                                 </div>
                             </div>
                         </div>
@@ -341,7 +287,8 @@
                     <div class="aw-mod">
                         <div class="mod-body">
                             <span class="aw-text-color-666">
-                                主页访问量 : 438 次访问                            </span>
+                                主页访问量 : 438 次访问
+                            </span>
                         </div>
                     </div>
                 </div>

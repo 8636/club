@@ -19,6 +19,7 @@ public enum CustomizeErrorCode implements ResultCode {
     INVALID_OPERATION(2012, "兄弟，是不是走错房间了？"),
     COMMENT_FAIL(2013,"评论失败"),
     USER_NOT_FOUND(2014,"用户不存在"),
+    FOCUS_TOPIC_FAIL(2015,"关注话题失败"),
     ;
 
      @Getter
