@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.UUID;
+import java.util.concurrent.ThreadPoolExecutor;
 
 /**
  * 授权
@@ -62,15 +63,9 @@ AuthController {
         if (githubUser != null) {
             //获得用户信息，保存到session中
             response.addCookie(new Cookie("token", token));
-<<<<<<< HEAD
             return "redirect:";
         } else {
             return "redirect:";
-=======
-            return "redirect: ";
-        } else {
-            return "redirect: ";
->>>>>>> b7e2c1752da785be88890552e3093201ddd5b21e
         }
     }
 
@@ -87,11 +82,7 @@ AuthController {
         Cookie cookie = new Cookie("token", null);
         cookie.setMaxAge(0);
         response.addCookie(cookie);
-<<<<<<< HEAD
         return "redirect:";
-=======
-        return "redirect: ";
->>>>>>> b7e2c1752da785be88890552e3093201ddd5b21e
     }
 
 }

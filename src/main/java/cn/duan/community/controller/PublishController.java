@@ -49,12 +49,12 @@ public class PublishController {
             mv.setView(new RedirectView("/question/"+id));
             return mv;
         }
-
         mv.addObject("title", questionDTO.getTitle());
         mv.addObject("description", questionDTO.getDescription());
         mv.addObject("questionTag", questionDTO.getTag());
         mv.addObject("tags",TagCache.get());
         mv.addObject("question", questionDTO);
+        List<Topic> topicList = topicService.list();
         mv.setViewName("publish");
         return mv;
     }
@@ -90,13 +90,11 @@ public class PublishController {
             return "publish";
         }
 
-        User user = (User) request.getSession().getAttribute("user");
-        if (user == null) {
-            model.addAttribute("error", "用户未登录");
-            return "publish";
-        }
-
-
+//        User user = (User) request.getSession().getAttribute("user");
+//        if (user == null) {
+//            model.addAttribute("error", "用户未登录");
+//            return "publish";
+//        }
         Question question = new Question();
         question.setTitle(title);
         question.setDescription(description);
