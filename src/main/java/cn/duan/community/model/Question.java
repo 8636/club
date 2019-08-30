@@ -31,4 +31,6 @@ public class Question {
 
     private String description;
 
+    private Long topicId;
+
 }

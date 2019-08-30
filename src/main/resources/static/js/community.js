@@ -91,7 +91,7 @@ function BuildComments(comments, id) {
     wrapper.empty();
     $.each(comments, function (index, item) {
         var dateOriginal = comments.gmtCreate;
-        var date = moment(dateOriginal).format('YYYY-MM-DD');
+        var date = moment(dateOriginal).format('yyyy-MM-dd HH:mm');
         console.info(date);
         var comment = $('' +
             '<div class="media" style="margin-top: 5px;">\n' +

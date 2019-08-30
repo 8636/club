@@ -73,14 +73,6 @@ pagehelper:
   supportMethodsArguments: true
   params: count=countSql
 
-aliyun:
-  endpoint: oss-cn-beijing.aliyuncs.com
-  accessKeyId: LTAINlZkqnmLanQz
-  accessKeySecret: R4gFKpnkCspCZEfx28iGwxDBpJvCPH
-  bucketName: communitypicture
-  urlPrefix: https://communitypicture.oss-cn-beijing.aliyuncs.com/
-
-
 # springboot 日志配置
 logging:
   file:

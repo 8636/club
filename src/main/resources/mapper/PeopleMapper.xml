@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.duan.community.mapper.PeopleMapper">
+    <select id="findLastComment" parameterType="long" resultType="cn.duan.community.model.Comment">
+        SELECT
+            *
+        FROM
+            `comment`
+        WHERE
+            commentator = #{id}
+        ORDER BY
+            gmt_modified DESC
+            LIMIT 1
+    </select>
+
+
+</mapper>
+
+
+

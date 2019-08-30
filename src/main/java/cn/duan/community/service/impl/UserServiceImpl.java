@@ -3,7 +3,9 @@ package cn.duan.community.service.impl;
 
 import cn.duan.community.common.enums.CustomizeErrorCode;
 import cn.duan.community.common.exception.CustomException;
+import cn.duan.community.mapper.PeopleMapper;
 import cn.duan.community.mapper.UserMapper;
+import cn.duan.community.model.Comment;
 import cn.duan.community.model.User;
 import cn.duan.community.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +19,9 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserMapper userMapper;
+
+    @Autowired
+    private PeopleMapper peopleMapper;
 
     /**
      * 根据session中的 user进行查询  数据库没有就插入  有就更新
@@ -50,7 +55,7 @@ public class UserServiceImpl implements UserService {
         example.createCriteria()
                 .andEqualTo("id", id);
         List<User> users = userMapper.selectByExample(example);
-        if (users == null || users.size() == 0){
+        if (users == null || users.size() == 0) {
             throw new CustomException(CustomizeErrorCode.USER_NOT_FOUND);
         }
         return users.get(0);
@@ -60,11 +65,23 @@ public class UserServiceImpl implements UserService {
     public User findUserByName(String username) {
         Example example = new Example(User.class);
         example.createCriteria()
-                .andEqualTo("name",username);
+                .andEqualTo("name", username);
         List<User> userList = userMapper.selectByExample(example);
-        if (userList == null || userList.size() == 0){
-            return null;
+        if (userList == null || userList.size() == 0) {
+            throw new CustomException(CustomizeErrorCode.USER_NOT_FOUND);
         }
         return userList.get(0);
+    }
+
+    /**
+     * 查询用户最新的一条回复
+     *
+     * @param id
+     * @return
+     */
+    @Override
+    public Comment findLastComment(Long id) {
+        Comment lastComment = peopleMapper.findLastComment(id);
+        return lastComment;
     }
 }

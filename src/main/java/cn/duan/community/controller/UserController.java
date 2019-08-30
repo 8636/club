@@ -1,6 +1,7 @@
 package cn.duan.community.controller;
 
 import cn.duan.community.dto.QuestionDTO;
+import cn.duan.community.model.Comment;
 import cn.duan.community.model.Topic;
 import cn.duan.community.model.User;
 import cn.duan.community.service.QuestionDTOService;
@@ -39,6 +40,9 @@ public class UserController {
         modelAndView.addObject("pageInfo",pageInfo);
         modelAndView.addObject("topicList",topicList);
         modelAndView.addObject("user",user);
+        //查询最新的一条回复
+        Comment comment = userService.findLastComment(user.getId());
+        modelAndView.addObject("comment",comment);
         modelAndView.setViewName("people");
         return modelAndView;
 

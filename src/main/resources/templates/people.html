@@ -49,18 +49,13 @@
                                     </div>
                                     <div class="mod-body">
                                         <div class="aw-profile-answer-list">
-                                            <div class="aw-item">
+                                            <div class="aw-item" th:each="comment : ${comment}">
                                                 <div class="mod-head">
-                                                    <h4><a href="https://elasticsearch.cn/question/8000">使用filter +
-                                                        composite aggregation的问题</a></h4>
+                                                    <h4 th:text="${comment.content}"><a th:href="@{'/question/' + ${comment.parentId}}"></a></h4>
                                                 </div>
                                                 <div class="mod-body">
-                                                    <span class="aw-border-radius-5 count pull-left"><i
-                                                            class="icon icon-agree"></i>0</span>
-                                                    <p class="aw-hide-txt">
-                                                        bellengao老师，您写的语句里，size值实际只能小于等于10，大于20也只输出10条记录。我看了官网上Bucket
-                                                        Sort
-                                                        Aggreation文档，把size语句放在第2个aggs里，就可以控制每页的实际输出量，比如我写成size:20，输出结果里...</p>
+                                                    <p class="aw-hide-txt" th:text="${comment.content}">
+                                                    </p>
                                                 </div>
                                             </div>
 
@@ -83,8 +78,7 @@
                                                            th:text="${question.title}"></a></h4>
                                                 </div>
                                                 <div class="mod-body">
-                                                    <span class="aw-border-radius-5 count pull-left"><i
-                                                            class="icon icon-reply"></i>1</span>
+                                                    <span class="aw-border-radius-5 count pull-left"></span>
                                                     <span class="text-desc"><span
                                                             th:text="${question.commentCount}"></span> 个回复 •
                                                     <span th:text="${question.viewCount}"></span> 次浏览 •<span

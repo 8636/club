@@ -6,6 +6,7 @@ import cn.duan.community.common.exception.CustomException;
 import cn.duan.community.common.enums.CustomizeErrorCode;
 import cn.duan.community.dto.QuestionQueryDTO;
 import cn.duan.community.mapper.QuestionMapper;
+import cn.duan.community.mapper.TopicMapper;
 import cn.duan.community.mapper.UserMapper;
 import cn.duan.community.model.Question;
 import cn.duan.community.model.User;
@@ -32,6 +33,9 @@ public class QuestionDTOServiceImpl implements QuestionDTOService {
 
     @Autowired
     private UserMapper userMapper;
+    
+    @Autowired
+    private TopicMapper topicMapper;
 
     /**
      * 获得全部问题 列表
