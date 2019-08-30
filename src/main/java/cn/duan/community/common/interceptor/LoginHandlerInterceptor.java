@@ -40,8 +40,6 @@ public class LoginHandlerInterceptor implements HandlerInterceptor {
                         request.getSession().setAttribute("unreadCount", unreadCount);
                     }
                     break;
-                }else {
-                    throw new CustomException(CustomizeErrorCode.NO_LOGIN);
                 }
             }
         }

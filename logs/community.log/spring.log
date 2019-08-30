@@ -6268,3 +6268,418 @@ org.springframework.expression.spel.SpelEvaluationException: EL1007E: Property o
 2019-08-30 23:22:13.123  INFO 10512 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 14 ms
 2019-08-30 23:22:15.197  INFO 10512 --- [http-nio-8888-exec-1] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
 2019-08-30 23:22:30.360  INFO 10512 --- [http-nio-8888-exec-5] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:24:19.624  INFO 10512 --- [http-nio-8888-exec-10] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:24:20.687  INFO 10512 --- [http-nio-8888-exec-2] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:24:46.555  INFO 10512 --- [http-nio-8888-exec-3] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:24:47.375  INFO 10512 --- [http-nio-8888-exec-6] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:24:47.948  INFO 10512 --- [http-nio-8888-exec-7] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:24:48.434  INFO 10512 --- [http-nio-8888-exec-9] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:24:59.186  INFO 10512 --- [http-nio-8888-exec-4] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:24:59.839  INFO 10512 --- [http-nio-8888-exec-5] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:25:00.242  INFO 10512 --- [http-nio-8888-exec-8] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:25:10.420  INFO 10512 --- [http-nio-8888-exec-9] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:25:11.077  INFO 10512 --- [http-nio-8888-exec-1] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:25:37.788  INFO 10512 --- [http-nio-8888-exec-5] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:25:38.400  INFO 10512 --- [http-nio-8888-exec-8] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:25:38.792  INFO 10512 --- [http-nio-8888-exec-10] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:25:39.250  INFO 10512 --- [http-nio-8888-exec-2] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:26:40.380  INFO 10512 --- [http-nio-8888-exec-5] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:26:41.093  INFO 10512 --- [http-nio-8888-exec-8] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:26:59.064  INFO 10512 --- [http-nio-8888-exec-9] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:26:59.704  INFO 10512 --- [http-nio-8888-exec-1] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:27:00.174  INFO 10512 --- [http-nio-8888-exec-3] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:27:00.555  INFO 10512 --- [http-nio-8888-exec-6] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:27:10.369  INFO 10512 --- [http-nio-8888-exec-10] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:27:10.973  INFO 10512 --- [http-nio-8888-exec-2] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:30:04.277  INFO 10512 --- [http-nio-8888-exec-5] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:30:05.043  INFO 10512 --- [http-nio-8888-exec-8] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:30:05.541  INFO 10512 --- [http-nio-8888-exec-10] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:30:05.939  INFO 10512 --- [http-nio-8888-exec-2] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:30:07.971  INFO 10512 --- [http-nio-8888-exec-4] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:30:08.413  INFO 10512 --- [http-nio-8888-exec-5] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:30:11.221  INFO 10512 --- [http-nio-8888-exec-8] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:30:12.045  INFO 10512 --- [http-nio-8888-exec-7] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:30:12.519  INFO 10512 --- [http-nio-8888-exec-10] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:30:13.121  INFO 10512 --- [http-nio-8888-exec-9] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:30:14.050  INFO 10512 --- [http-nio-8888-exec-2] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:30:15.301  INFO 10512 --- [http-nio-8888-exec-3] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:30:15.755  INFO 10512 --- [http-nio-8888-exec-5] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:30:16.939  INFO 10512 --- [http-nio-8888-exec-6] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:30:17.681  INFO 10512 --- [http-nio-8888-exec-8] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:30:18.157  INFO 10512 --- [http-nio-8888-exec-7] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:30:22.198  INFO 10512 --- [Thread-15] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2019-08-30 23:30:22.239  INFO 10512 --- [Thread-15] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-08-30 23:30:22.251  INFO 10512 --- [Thread-15] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2019-08-30 23:30:22.258  INFO 10512 --- [Thread-15] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2019-08-30 23:30:29.093  INFO 7392 --- [main] cn.duan.community.CommunityApplication   : Starting CommunityApplication on DESKTOP-8P7TO5R with PID 7392 (C:\Users\86368\Desktop\community\target\classes started by Sir in C:\Users\86368\Desktop\community)
+2019-08-30 23:30:29.098  INFO 7392 --- [main] cn.duan.community.CommunityApplication   : No active profile set, falling back to default profiles: default
+2019-08-30 23:30:30.354  INFO 7392 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-08-30 23:30:30.357  INFO 7392 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-08-30 23:30:30.427  INFO 7392 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49ms. Found 0 repository interfaces.
+2019-08-30 23:30:30.952  INFO 7392 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$b0abb9d8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-30 23:30:31.352  INFO 7392 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2019-08-30 23:30:31.387  INFO 7392 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-08-30 23:30:31.387  INFO 7392 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-08-30 23:30:31.551  INFO 7392 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-08-30 23:30:31.552  INFO 7392 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2344 ms
+2019-08-30 23:30:31.789  INFO 7392 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2019-08-30 23:30:32.263  INFO 7392 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2019-08-30 23:30:33.003  INFO 7392 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-30 23:30:33.116  INFO 7392 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-08-30 23:30:33.185  WARN 7392 --- [main] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][main] Template Mode 'LEGACYHTML5' is deprecated. Using Template Mode 'HTML' instead.
+2019-08-30 23:30:33.843  INFO 7392 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2019-08-30 23:30:34.236  INFO 7392 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2019-08-30 23:30:34.242  INFO 7392 --- [main] cn.duan.community.CommunityApplication   : Started CommunityApplication in 6.323 seconds (JVM running for 8.294)
+2019-08-30 23:30:40.882  INFO 7392 --- [http-nio-8888-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-08-30 23:30:40.883  INFO 7392 --- [http-nio-8888-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-08-30 23:30:40.896  INFO 7392 --- [http-nio-8888-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 13 ms
+2019-08-30 23:30:40.920  INFO 7392 --- [http-nio-8888-exec-2] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:30:42.654  INFO 7392 --- [http-nio-8888-exec-1] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:31:34.138  INFO 7392 --- [http-nio-8888-exec-4] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:31:39.581  INFO 7392 --- [Thread-14] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2019-08-30 23:31:39.628  INFO 7392 --- [Thread-14] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-08-30 23:31:39.633  INFO 7392 --- [Thread-14] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2019-08-30 23:31:39.639  INFO 7392 --- [Thread-14] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2019-08-30 23:31:46.174  INFO 4960 --- [main] cn.duan.community.CommunityApplication   : Starting CommunityApplication on DESKTOP-8P7TO5R with PID 4960 (C:\Users\86368\Desktop\community\target\classes started by Sir in C:\Users\86368\Desktop\community)
+2019-08-30 23:31:46.181  INFO 4960 --- [main] cn.duan.community.CommunityApplication   : No active profile set, falling back to default profiles: default
+2019-08-30 23:31:47.419  INFO 4960 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-08-30 23:31:47.424  INFO 4960 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-08-30 23:31:47.508  INFO 4960 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 58ms. Found 0 repository interfaces.
+2019-08-30 23:31:48.060  INFO 4960 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$3fc26863] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-30 23:31:48.457  INFO 4960 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2019-08-30 23:31:48.491  INFO 4960 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-08-30 23:31:48.492  INFO 4960 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-08-30 23:31:48.661  INFO 4960 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-08-30 23:31:48.662  INFO 4960 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2372 ms
+2019-08-30 23:31:48.883  INFO 4960 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2019-08-30 23:31:49.363  INFO 4960 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2019-08-30 23:31:50.108  INFO 4960 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-30 23:31:50.225  INFO 4960 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-08-30 23:31:50.293  WARN 4960 --- [main] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][main] Template Mode 'LEGACYHTML5' is deprecated. Using Template Mode 'HTML' instead.
+2019-08-30 23:31:50.963  INFO 4960 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2019-08-30 23:31:51.368  INFO 4960 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2019-08-30 23:31:51.373  INFO 4960 --- [main] cn.duan.community.CommunityApplication   : Started CommunityApplication in 6.324 seconds (JVM running for 8.325)
+2019-08-30 23:32:32.123  INFO 4960 --- [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-08-30 23:32:32.124  INFO 4960 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-08-30 23:32:32.138  INFO 4960 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 13 ms
+2019-08-30 23:32:32.369  INFO 4960 --- [http-nio-8888-exec-1] c.d.c.controller.indexController         : pageinfo
+2019-08-30 23:32:33.070  INFO 4960 --- [http-nio-8888-exec-2] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:32:40.488  INFO 4960 --- [http-nio-8888-exec-4] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:32:41.346  INFO 4960 --- [http-nio-8888-exec-3] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:32:41.878  INFO 4960 --- [http-nio-8888-exec-6] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:32:42.967  INFO 4960 --- [http-nio-8888-exec-7] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:32:43.990  INFO 4960 --- [http-nio-8888-exec-8] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:32:44.567  INFO 4960 --- [http-nio-8888-exec-9] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:34:08.198  INFO 4960 --- [http-nio-8888-exec-6] c.d.c.controller.indexController         : pageinfo
+2019-08-30 23:34:08.360  INFO 4960 --- [http-nio-8888-exec-5] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:34:10.679  INFO 4960 --- [http-nio-8888-exec-7] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:34:19.275  INFO 4960 --- [Thread-14] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2019-08-30 23:34:19.314  INFO 4960 --- [Thread-14] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-08-30 23:34:19.318  INFO 4960 --- [Thread-14] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2019-08-30 23:34:19.326  INFO 4960 --- [Thread-14] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2019-08-30 23:34:25.822  INFO 876 --- [main] cn.duan.community.CommunityApplication   : Starting CommunityApplication on DESKTOP-8P7TO5R with PID 876 (C:\Users\86368\Desktop\community\target\classes started by Sir in C:\Users\86368\Desktop\community)
+2019-08-30 23:34:25.828  INFO 876 --- [main] cn.duan.community.CommunityApplication   : No active profile set, falling back to default profiles: default
+2019-08-30 23:34:27.218  INFO 876 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-08-30 23:34:27.222  INFO 876 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-08-30 23:34:27.297  INFO 876 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 52ms. Found 0 repository interfaces.
+2019-08-30 23:34:27.860  INFO 876 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$c2311cd7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-30 23:34:28.262  INFO 876 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2019-08-30 23:34:28.295  INFO 876 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-08-30 23:34:28.296  INFO 876 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-08-30 23:34:28.474  INFO 876 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-08-30 23:34:28.475  INFO 876 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2524 ms
+2019-08-30 23:34:28.691  INFO 876 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2019-08-30 23:34:29.153  INFO 876 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2019-08-30 23:34:29.904  INFO 876 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-30 23:34:30.016  INFO 876 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-08-30 23:34:30.082  WARN 876 --- [main] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2019-08-30 23:34:30.744  INFO 876 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2019-08-30 23:34:31.142  INFO 876 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2019-08-30 23:34:31.148  INFO 876 --- [main] cn.duan.community.CommunityApplication   : Started CommunityApplication in 6.436 seconds (JVM running for 8.458)
+2019-08-30 23:34:38.671  INFO 876 --- [http-nio-8888-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-08-30 23:34:38.671  INFO 876 --- [http-nio-8888-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-08-30 23:34:38.686  INFO 876 --- [http-nio-8888-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 14 ms
+2019-08-30 23:34:39.364  INFO 876 --- [http-nio-8888-exec-3] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:34:39.394 ERROR 876 --- [http-nio-8888-exec-3] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is CustomException(message=当前操作需要登录，请登陆后重试, code=2003)] with root cause
+
+cn.duan.community.common.exception.CustomException: 当前操作需要登录，请登陆后重试
+	at cn.duan.community.common.interceptor.LoginHandlerInterceptor.preHandle(LoginHandlerInterceptor.java:44) ~[classes/:na]
+	at org.springframework.web.servlet.HandlerExecutionChain.applyPreHandle(HandlerExecutionChain.java:136) ~[spring-webmvc-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1034) ~[spring-webmvc-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942) ~[spring-webmvc-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005) ~[spring-webmvc-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897) ~[spring-webmvc-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882) ~[spring-webmvc-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.22.jar:9.0.22]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118) ~[spring-web-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92) ~[spring-web-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118) ~[spring-web-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93) ~[spring-web-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118) ~[spring-web-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200) ~[spring-web-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118) ~[spring-web-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) [tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:853) [tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1587) [tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.22.jar:9.0.22]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_131]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_131]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.22.jar:9.0.22]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_131]
+
+2019-08-30 23:34:39.422  INFO 876 --- [http-nio-8888-exec-3] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:34:46.871  INFO 876 --- [http-nio-8888-exec-4] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:34:46.873 ERROR 876 --- [http-nio-8888-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is CustomException(message=当前操作需要登录，请登陆后重试, code=2003)] with root cause
+
+cn.duan.community.common.exception.CustomException: 当前操作需要登录，请登陆后重试
+	at cn.duan.community.common.interceptor.LoginHandlerInterceptor.preHandle(LoginHandlerInterceptor.java:44) ~[classes/:na]
+	at org.springframework.web.servlet.HandlerExecutionChain.applyPreHandle(HandlerExecutionChain.java:136) ~[spring-webmvc-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1034) ~[spring-webmvc-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942) ~[spring-webmvc-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005) ~[spring-webmvc-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897) ~[spring-webmvc-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882) ~[spring-webmvc-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.22.jar:9.0.22]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118) ~[spring-web-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92) ~[spring-web-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118) ~[spring-web-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93) ~[spring-web-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118) ~[spring-web-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200) ~[spring-web-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118) ~[spring-web-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) [tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:853) [tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1587) [tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.22.jar:9.0.22]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_131]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_131]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.22.jar:9.0.22]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_131]
+
+2019-08-30 23:34:46.880  INFO 876 --- [http-nio-8888-exec-4] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:34:54.235  INFO 876 --- [http-nio-8888-exec-7] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:34:54.237 ERROR 876 --- [http-nio-8888-exec-7] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is CustomException(message=当前操作需要登录，请登陆后重试, code=2003)] with root cause
+
+cn.duan.community.common.exception.CustomException: 当前操作需要登录，请登陆后重试
+	at cn.duan.community.common.interceptor.LoginHandlerInterceptor.preHandle(LoginHandlerInterceptor.java:44) ~[classes/:na]
+	at org.springframework.web.servlet.HandlerExecutionChain.applyPreHandle(HandlerExecutionChain.java:136) ~[spring-webmvc-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1034) ~[spring-webmvc-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942) ~[spring-webmvc-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005) ~[spring-webmvc-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897) ~[spring-webmvc-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882) ~[spring-webmvc-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.22.jar:9.0.22]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118) ~[spring-web-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92) ~[spring-web-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118) ~[spring-web-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93) ~[spring-web-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118) ~[spring-web-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200) ~[spring-web-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118) ~[spring-web-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) [tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:853) [tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1587) [tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.22.jar:9.0.22]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_131]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_131]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.22.jar:9.0.22]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_131]
+
+2019-08-30 23:34:54.241  INFO 876 --- [http-nio-8888-exec-7] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:34:56.401  INFO 876 --- [http-nio-8888-exec-8] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:35:42.658  INFO 876 --- [Thread-15] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2019-08-30 23:35:42.766  INFO 876 --- [Thread-15] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-08-30 23:35:42.769  INFO 876 --- [Thread-15] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2019-08-30 23:35:42.775  INFO 876 --- [Thread-15] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2019-08-30 23:35:59.494  INFO 1180 --- [main] cn.duan.community.CommunityApplication   : Starting CommunityApplication on DESKTOP-8P7TO5R with PID 1180 (C:\Users\86368\Desktop\community\target\classes started by Sir in C:\Users\86368\Desktop\community)
+2019-08-30 23:35:59.499  INFO 1180 --- [main] cn.duan.community.CommunityApplication   : No active profile set, falling back to default profiles: default
+2019-08-30 23:36:00.730  INFO 1180 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-08-30 23:36:00.734  INFO 1180 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-08-30 23:36:00.811  INFO 1180 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 48ms. Found 0 repository interfaces.
+2019-08-30 23:36:01.332  INFO 1180 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$4dd4bea2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-30 23:36:01.748  INFO 1180 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2019-08-30 23:36:01.784  INFO 1180 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-08-30 23:36:01.785  INFO 1180 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-08-30 23:36:01.947  INFO 1180 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-08-30 23:36:01.947  INFO 1180 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2345 ms
+2019-08-30 23:36:02.167  INFO 1180 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2019-08-30 23:36:02.636  INFO 1180 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2019-08-30 23:36:03.381  INFO 1180 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-30 23:36:03.491  INFO 1180 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-08-30 23:36:03.558  WARN 1180 --- [main] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2019-08-30 23:36:04.212  INFO 1180 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2019-08-30 23:36:04.612  INFO 1180 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2019-08-30 23:36:04.618  INFO 1180 --- [main] cn.duan.community.CommunityApplication   : Started CommunityApplication in 6.293 seconds (JVM running for 8.326)
+2019-08-30 23:36:30.552  INFO 1180 --- [http-nio-8888-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-08-30 23:36:30.553  INFO 1180 --- [http-nio-8888-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-08-30 23:36:30.569  INFO 1180 --- [http-nio-8888-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 14 ms
+2019-08-30 23:36:30.607  INFO 1180 --- [http-nio-8888-exec-2] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:36:39.177 ERROR 1180 --- [http-nio-8888-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+
+java.lang.NullPointerException: null
+	at cn.duan.community.controller.TopicController.topicInfo(TopicController.java:44) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_131]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_131]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_131]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_131]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190) ~[spring-web-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138) ~[spring-web-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104) ~[spring-webmvc-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892) ~[spring-webmvc-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797) ~[spring-webmvc-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1039) ~[spring-webmvc-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942) ~[spring-webmvc-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005) ~[spring-webmvc-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897) ~[spring-webmvc-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882) ~[spring-webmvc-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.22.jar:9.0.22]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118) ~[spring-web-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92) ~[spring-web-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118) ~[spring-web-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93) ~[spring-web-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118) ~[spring-web-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200) ~[spring-web-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118) ~[spring-web-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) [tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:853) [tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1587) [tomcat-embed-core-9.0.22.jar:9.0.22]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.22.jar:9.0.22]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_131]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_131]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.22.jar:9.0.22]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_131]
+
+2019-08-30 23:36:39.189  INFO 1180 --- [http-nio-8888-exec-2] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:37:04.844  INFO 1180 --- [http-nio-8888-exec-4] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:37:13.473  INFO 1180 --- [http-nio-8888-exec-3] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:37:16.523  INFO 1180 --- [http-nio-8888-exec-7] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:37:17.144  INFO 1180 --- [http-nio-8888-exec-9] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:37:17.764  INFO 1180 --- [http-nio-8888-exec-2] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:37:18.301  INFO 1180 --- [http-nio-8888-exec-4] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:37:18.838  INFO 1180 --- [http-nio-8888-exec-5] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:37:19.338  INFO 1180 --- [http-nio-8888-exec-7] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:37:19.847  INFO 1180 --- [http-nio-8888-exec-9] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:37:20.345  INFO 1180 --- [http-nio-8888-exec-2] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:37:20.762  INFO 1180 --- [http-nio-8888-exec-4] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:37:38.233  INFO 1180 --- [http-nio-8888-exec-6] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:37:38.263  WARN 1180 --- [http-nio-8888-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingRequestCookieException: Missing cookie 'token' for method parameter of type String]
+2019-08-30 23:37:38.266  INFO 1180 --- [http-nio-8888-exec-6] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:37:44.802  INFO 1180 --- [http-nio-8888-exec-7] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:37:44.806  WARN 1180 --- [http-nio-8888-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingRequestCookieException: Missing cookie 'token' for method parameter of type String]
+2019-08-30 23:37:44.807  INFO 1180 --- [http-nio-8888-exec-7] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:39:02.295  INFO 1180 --- [http-nio-8888-exec-2] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:39:08.697  INFO 1180 --- [http-nio-8888-exec-4] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:39:08.699  WARN 1180 --- [http-nio-8888-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingRequestCookieException: Missing cookie 'token' for method parameter of type String]
+2019-08-30 23:39:08.701  INFO 1180 --- [http-nio-8888-exec-4] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:39:12.146  INFO 1180 --- [http-nio-8888-exec-3] c.d.c.controller.indexController         : pageinfo
+2019-08-30 23:39:12.365  INFO 1180 --- [http-nio-8888-exec-5] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:41:00.274  INFO 1180 --- [http-nio-8888-exec-8] c.d.c.controller.indexController         : pageinfo
+2019-08-30 23:41:00.504  INFO 1180 --- [http-nio-8888-exec-9] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:41:02.481  INFO 1180 --- [http-nio-8888-exec-2] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:41:04.121  INFO 1180 --- [http-nio-8888-exec-4] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:41:05.539  INFO 1180 --- [http-nio-8888-exec-3] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:41:23.495  INFO 1180 --- [http-nio-8888-exec-7] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:41:32.917  INFO 1180 --- [http-nio-8888-exec-8] c.d.c.controller.indexController         : pageinfo
+2019-08-30 23:41:33.037  INFO 1180 --- [http-nio-8888-exec-9] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:41:34.642  INFO 1180 --- [http-nio-8888-exec-2] c.d.c.controller.indexController         : pageinfo
+2019-08-30 23:41:34.759  INFO 1180 --- [http-nio-8888-exec-1] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:41:36.689  INFO 1180 --- [http-nio-8888-exec-4] c.d.c.controller.indexController         : pageinfo
+2019-08-30 23:41:36.805  INFO 1180 --- [http-nio-8888-exec-3] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:41:37.892  INFO 1180 --- [http-nio-8888-exec-5] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:41:40.593  INFO 1180 --- [http-nio-8888-exec-6] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:41:41.392  INFO 1180 --- [http-nio-8888-exec-7] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:41:48.009  INFO 1180 --- [http-nio-8888-exec-10] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-30 23:41:48.867  INFO 1180 --- [http-nio-8888-exec-2] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器

@@ -33,7 +33,7 @@ spring:
     check-template-location: true
     suffix: .html
     encoding: UTF-8
-    mode: LEGACYHTML5
+    mode: HTML5
     cache: false
 
   # redis
