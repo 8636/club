@@ -107,11 +107,6 @@
             <version>0.2.0</version>
         </dependency>
 
-        <!-- Spring Websocket -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-websocket</artifactId>
-        </dependency>
     </dependencies>
 
     <build>
