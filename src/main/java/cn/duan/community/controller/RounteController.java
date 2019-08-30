@@ -29,7 +29,10 @@ public class RounteController {
         ModelAndView mv = new ModelAndView();
         List<Topic> topicList = topicService.list();
         mv.addObject("tags", TagCache.get());
+<<<<<<< HEAD
         mv.addObject("topicList", topicList);
+=======
+>>>>>>> b7e2c1752da785be88890552e3093201ddd5b21e
         mv.setViewName("publish");
         return mv;
     }

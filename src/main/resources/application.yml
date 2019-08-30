@@ -35,12 +35,6 @@ spring:
     encoding: UTF-8
     mode: LEGACYHTML5
     cache: false
-  jpa:
-    show-sql: true
-    hibernate:
-      dialect: org.hibernate.dialect.MySQL5Dialect
-  main:
-    allow-bean-definition-overriding: true
 
   # redis
   cache:
