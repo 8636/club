@@ -5002,3 +5002,13 @@ org.springframework.expression.spel.SpelEvaluationException: EL1007E: Property o
 2019-08-30 16:42:39.604  INFO 14548 --- [scheduling-1] cn.duan.community.common.task.HotTags    : The time is now 16:42:39
 2019-08-30 16:42:49.605  INFO 14548 --- [scheduling-1] cn.duan.community.common.task.HotTags    : The time is now 16:42:49
 2019-08-30 16:42:59.606  INFO 14548 --- [scheduling-1] cn.duan.community.common.task.HotTags    : The time is now 16:42:59
+2019-08-30 16:43:09.603  INFO 14548 --- [scheduling-1] cn.duan.community.common.task.HotTags    : The time is now 16:43:09
+2019-08-30 16:43:19.606  INFO 14548 --- [scheduling-1] cn.duan.community.common.task.HotTags    : The time is now 16:43:19
+2019-08-30 16:43:29.606  INFO 14548 --- [scheduling-1] cn.duan.community.common.task.HotTags    : The time is now 16:43:29
+2019-08-30 16:43:39.603  INFO 14548 --- [scheduling-1] cn.duan.community.common.task.HotTags    : The time is now 16:43:39
+2019-08-30 16:43:49.603  INFO 14548 --- [scheduling-1] cn.duan.community.common.task.HotTags    : The time is now 16:43:49
+2019-08-30 16:43:59.605  INFO 14548 --- [scheduling-1] cn.duan.community.common.task.HotTags    : The time is now 16:43:59
+2019-08-30 16:44:09.350  INFO 14548 --- [Thread-2] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2019-08-30 16:44:09.382  INFO 14548 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-08-30 16:44:09.384  INFO 14548 --- [Thread-2] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2019-08-30 16:44:09.388  INFO 14548 --- [Thread-2] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
