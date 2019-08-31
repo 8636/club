@@ -9,13 +9,13 @@
     <link rel="stylesheet" href="/css/toc-helper.min.css">
     <script src="/js/toc-helper.min.js"></script>
     <style>
-        .toc{
-            left: 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            z-index: auto;
-        }
+        /*.toc{*/
+        /*    right: 0;*/
+        /*    position: fixed;*/
+        /*    bottom: 0;*/
+        /*    width: 100%;*/
+        /*    z-index: auto;*/
+        /*}*/
     </style>
 
 </head>
@@ -96,7 +96,7 @@
                                     <span th:text="${comment.commentCount}"></span>
                                 </span>
                                 <span class="pull-right"
-                                      th:text="${#dates.format(comment.gmtCreate,'yyyy-MM-dd')}"></span>
+                                      th:text="${#dates.format(comment.gmtCreate,'yyyy-MM-dd HH:mm')}"></span>
                             </div>
                             <!--二级评论-->
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 collapse sub-comments"
@@ -152,7 +152,7 @@
                 <h4>发起人</h4>
                 <div class="media">
                     <div class="media-left">
-                        <a href="#">
+                        <a th:href="@{'/people/'+ ${question.user.name}}">
                             <img class="media-object img-rounded"
                                  th:src="${question.user.avatarUrl}">
                         </a>
@@ -174,7 +174,6 @@
                         var options = {
                             root : $(".doc")
                         };
-
                         $(".toc").generateCatalog(options);
                     });
                 </script>
@@ -189,84 +188,5 @@
     </div>
 </div>
 <div th:insert="~{footer :: foot}"></div>
-
-<script type="text/javascript">
-    //展开二级评论
-    function toggleComments(e) {
-        var id = e.getAttribute("data-commentid");
-        if ($("#two_comment_" + id).attr("status") == "close") {
-            //后台获取二级数据
-            var url = "/comment/" + id;
-            $.get(url, function (data) {
-                //构建二级评论列表
-                BuildComments(data.extend.comment2s, id);
-            })
-            $("#two_comment_" + id).addClass("in");
-            $("#two_comment_" + id).attr("status", "open");
-        } else {
-            $("#two_comment_" + id).removeClass("in");
-            $("#two_comment_" + id).attr("status", "close");
-        }
-    }
-
-    //构建列表
-    function BuildComments(comments, id) {
-        var wrapper = $("#comment2_wrapper_" + id);
-        wrapper.empty();
-        $.each(comments, function (index, item) {
-            var comment = $('' +
-                '<div class="media" style="margin-top: 5px;">\n' +
-                '  <div class="media-left">\n' +
-                '    <a href="#">\n' +
-                '      <img width="40"  class="media-object img-rounded" src="' + item.user.avatarUrl + '" alt="...">\n' +
-                '    </a>\n' +
-                '  </div>\n' +
-                '  <div class="media-body">\n' +
-                '    <h4 class="media-heading" style="font-size: 12px;font-weight: 500">' + item.user.name + '</h4>\n' +
-                '    ' + item.content + '\n' +
-                '  </div>\n' +
-                '</div><hr style="color: #303030">\n');
-            comment.appendTo(wrapper);
-        })
-
-    }
-    //二级评论发表
-    function addcomment2(e) {
-        var parentId = e.getAttribute("data-commentid");
-        var content = $("#two_content_" + parentId).val();
-        ;
-        commentAdd(parentId, content, 2);
-        $("#two_content_" + parentId).val("");
-    }
-
-    //公共方法
-    function commentAdd(parentId, content, type) {
-        var url = "/comment";
-        var args = {
-            "parentId": parentId.trim(),
-            "content": content,
-            "time": new Date(),
-            "type": type,
-            contentType: "application/json;charset=UTF-8"
-        }
-        if (!content||content.trim()=="") {
-            layer.msg("评论内容不能为空", {time:2000, icon:5, shift:6}, function(){
-            });
-            return false;
-        }
-        $.post(url, args, function (data) {
-            if (data.code != "1000") {
-                layer.msg(data.message, {time:2000, icon:5, shift:6}, function(){
-                });
-            } else {
-                //alert("评论成功");
-                //$("#comment_area").hide();
-                $("#commentContent").val("");
-                window.location.reload();
-            }
-        });
-        return false;
-    }
-</script>
 </body>
 </html>

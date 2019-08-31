@@ -4,7 +4,9 @@ import cn.duan.community.common.cache.TagCache;
 import cn.duan.community.dto.QuestionDTO;
 import cn.duan.community.mapper.UserMapper;
 import cn.duan.community.model.Question;
+import cn.duan.community.model.Topic;
 import cn.duan.community.model.User;
+import cn.duan.community.service.TopicService;
 import cn.duan.community.service.impl.QuestionDTOServiceImpl;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +31,9 @@ public class PublishController {
     @Autowired
     private HttpServletRequest request;
 
+    @Autowired
+    private TopicService topicService;
+
 
     /**
      * @param id
@@ -46,8 +51,12 @@ public class PublishController {
         }
         mv.addObject("title", questionDTO.getTitle());
         mv.addObject("description", questionDTO.getDescription());
-        mv.addObject("tag", questionDTO.getTag());
+        mv.addObject("questionTag", questionDTO.getTag());
+        mv.addObject("tags",TagCache.get());
         mv.addObject("question", questionDTO);
+        List<Topic> topicList = topicService.list();
+        mv.addObject("topicList", topicList);
+
         mv.setViewName("publish");
         return mv;
     }
@@ -56,12 +65,14 @@ public class PublishController {
     public String addQuestion(@RequestParam(value = "title", required = false) String title,
                               @RequestParam(value = "description", required = false) String description,
                               @RequestParam(value = "tag", required = false) String tag,
+                              @RequestParam(value = "topic", required = false) Long topic,
                               @RequestParam(value = "id", required = false) Long id,
                               @CookieValue("token") String token, Model model) {
         //将输入的信息回显
         model.addAttribute("title", title);
         model.addAttribute("description", description);
         model.addAttribute("tag", tag);
+        model.addAttribute("topic", topic);
 
         if (title == null || title == "") {
             model.addAttribute("error", "标题不能为空");
@@ -86,12 +97,11 @@ public class PublishController {
             model.addAttribute("error", "用户未登录");
             return "publish";
         }
-
-
         Question question = new Question();
         question.setTitle(title);
         question.setDescription(description);
         question.setTag(tag);
+        question.setTopicId(topic);
         question.setGmtCreate(System.currentTimeMillis());
         question.setGmtModified(System.currentTimeMillis());
         Example example = new Example(User.class);

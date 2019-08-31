@@ -28,6 +28,7 @@ public class HotTags {
     private static final SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
 
     @Scheduled(cron = "0 0 1 * * ? ")
+//    @Scheduled(fixedRate = 10000)
     public void reportCurrentTime() {
         //标签名  权重
         Map<String, Integer> map = new HashMap<>();

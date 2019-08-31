@@ -6,19 +6,16 @@ import cn.duan.community.common.exception.CustomException;
 import cn.duan.community.common.enums.CustomizeErrorCode;
 import cn.duan.community.dto.QuestionQueryDTO;
 import cn.duan.community.mapper.QuestionMapper;
+import cn.duan.community.mapper.TopicMapper;
 import cn.duan.community.mapper.UserMapper;
 import cn.duan.community.model.Question;
 import cn.duan.community.model.User;
 import cn.duan.community.service.QuestionDTOService;
-import com.alibaba.fastjson.JSON;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -36,6 +33,9 @@ public class QuestionDTOServiceImpl implements QuestionDTOService {
 
     @Autowired
     private UserMapper userMapper;
+    
+    @Autowired
+    private TopicMapper topicMapper;
 
     /**
      * 获得全部问题 列表

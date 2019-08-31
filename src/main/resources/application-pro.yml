@@ -31,7 +31,7 @@ spring:
     check-template-location: true
     suffix: .html
     encoding: UTF-8
-    mode: LEGACYHTML5
+    mode: HTML5
     cache: false
   jpa:
     show-sql: true
@@ -47,9 +47,9 @@ spring:
 ##github参数配置
 github:
   client:
-    id: 42e591d46be31af9c854
-    secret: ee51a20d4185d65a1bfba0825f94daacaa9b1656
-    callback: http://47.100.76.187/callback&scope=user&state=1
+    id: b040e051a14314016cf8
+    secret: a27e70c29fea4067c32e1953c281d1b6e9fcd2b6
+    callback: http://47.100.76.187/callback
 
 # mybatis
 mybatis:
@@ -72,14 +72,6 @@ pagehelper:
   reasonable: true
   supportMethodsArguments: true
   params: count=countSql
-
-aliyun:
-  endpoint: oss-cn-beijing.aliyuncs.com
-  accessKeyId: LTAINlZkqnmLanQz
-  accessKeySecret: R4gFKpnkCspCZEfx28iGwxDBpJvCPH
-  bucketName: communitypicture
-  urlPrefix: https://communitypicture.oss-cn-beijing.aliyuncs.com/
-
 
 # springboot 日志配置
 logging:

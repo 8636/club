@@ -33,14 +33,8 @@ spring:
     check-template-location: true
     suffix: .html
     encoding: UTF-8
-    mode: LEGACYHTML5
+    mode: HTML5
     cache: false
-  jpa:
-    show-sql: true
-    hibernate:
-      dialect: org.hibernate.dialect.MySQL5Dialect
-  main:
-    allow-bean-definition-overriding: true
 
   # redis
   cache:
@@ -96,14 +90,6 @@ pagehelper:
   reasonable: true
   supportMethodsArguments: true
   params: count=countSql
-
-aliyun:
-  endpoint: oss-cn-beijing.aliyuncs.com
-  accessKeyId: LTAINlZkqnmLanQz
-  accessKeySecret: R4gFKpnkCspCZEfx28iGwxDBpJvCPH
-  bucketName: communitypicture
-  urlPrefix: https://communitypicture.oss-cn-beijing.aliyuncs.com/
-
 
 # springboot 日志配置
 logging:

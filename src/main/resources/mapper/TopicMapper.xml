@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+        <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.duan.community.mapper.TopicMapper">
+
+<select id="findIdByName" parameterType="string" resultType="long">
+        select id from tb_topic
+        where name =#{name}
+</select>
+
+    <select id="findUserListByTopicId" parameterType="long" resultType="java.lang.Long">
+        select user_id from tb_user_topic
+        where topic_id = #{topicId}
+    </select>
+
+    <select id="findUserByIds" parameterType="list" resultType="cn.duan.community.model.User">
+        select id , name ,avatar_url from user
+        where id in
+        <foreach item="id" index="index" collection="list"
+                 open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </select>
+
+    <select id="findnewTopics" resultType="cn.duan.community.model.Topic" parameterType="long">
+        select * from tb_topic
+        where community.tb_topic.gmt_create > #{time}
+    </select>
+    <select id="findTopicByUserId" parameterType="long" resultType="cn.duan.community.model.Topic">
+       SELECT
+            tb_topic.*
+        FROM
+            tb_topic
+        WHERE
+            id IN ( SELECT topic_id FROM tb_user_topic WHERE user_id = #{id} )
+
+    </select>
+
+    <insert id="focusTopic">
+        insert  into tb_user_topic value (#{id},#{topicId})
+    </insert>
+</mapper>

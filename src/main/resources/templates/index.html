@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>解忧杂货铺</title>
+    <title>论坛</title>
     <head th:insert="~{import :: head}"></head>
 </head>
 <body>
@@ -28,10 +28,11 @@
                         <a th:href="@{/(sort='no')}" class="red">消灭零回复</a>
                     </li>
                 </ul>
-            <div class="media" th:each="question : ${pageInfo.getList()}">
+            <!--问题列表开始-->
+            <div class="media"   id= " questionList" th:each="question : ${pageInfo.getList()}">
                 <div class="media-left">
                     <a href="#">
-                        <img class="media-object img-rounded" th:src="${question.user.avatarUrl}">
+                        <img class="media-object img-rounded" id ="img" th:src="${question.user.avatarUrl}">
                     </a>
                 </div>
                 <div class="media-body">
@@ -47,6 +48,7 @@
                     </span>
                 </div>
             </div>
+            <!--问题列表结束-->
 
             <!--显示分页信息-->
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
@@ -104,4 +106,15 @@
 </div>
 <div th:insert="~{footer :: foot}"></div>
 </body>
+<script>
+    $(document).ready(function(){
+            $.ajax({
+                url:"/ajax",
+                async:true,
+                success:function(result){
+                    console.info(result.data)
+                }});
+    });
+
+</script>
 </html>

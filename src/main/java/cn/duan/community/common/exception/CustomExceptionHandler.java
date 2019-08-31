@@ -16,6 +16,8 @@ import java.io.PrintWriter;
 @ControllerAdvice
 @Slf4j
 public class CustomExceptionHandler {
+
+
     @ExceptionHandler(CustomException.class)
     ModelAndView handle(Throwable e,HttpServletRequest request, HttpServletResponse response){
         ModelAndView mv = new ModelAndView();
@@ -47,7 +49,8 @@ public class CustomExceptionHandler {
                 log.error("handle error", e);
                 mv.addObject("message", CustomizeErrorCode.SYS_ERROR.getMessage());
             }
-            return new ModelAndView("error");
+            mv.setViewName("error");
+            return mv;
         }
     }
 }

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <head th:insert="~{import :: head}"></head>
+    <head th:insert="~{import :: copy}"></head>
+</head>
+<body>
+<div th:insert="~{header :: head}"></div>
+<div class="aw-container-wrap">
+    <div class="container">
+        <div class="row">
+            <div class="aw-content-wrap clearfix">
+                <div class="col-sm-12 col-md-9 aw-main-content">
+                    <div class="aw-mod aw-topic-detail-title">
+                        <div class="mod-body">
+                            <img th:src="${topic.avatarUrl}" height="50" width="50"/>
+                            <h2 class="pull-left" th:text="${topic.name}"><i class="aw-icon i-lock" title="已锁定"></i>
+                            </h2>
+                            <div class="aw-topic-operate text-color-999">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="aw-mod aw-topic-list-mod">
+                        <div class="mod-head">
+                            <div class="tabbable">
+                                <!-- tab 切换 -->
+                                <ul class="nav nav-tabs aw-nav-tabs hidden-xs">
+                                    <li class="active"><a href="#all" data-toggle="tab">全部内容</a></li>
+                                    <li><a href="#best_answers" data-toggle="tab">精华</a></li>
+                                    <li><a href="#recommend" data-toggle="tab">推荐</a></li>
+                                    <li><a href="#articles" data-toggle="tab">文章</a></li>
+                                    <li><a href="#favorite" id="i_favorite" data-toggle="tab"
+                                           style="display:none">我的收藏</a></li>
+                                    <li><a href="#about" id="i_about" data-toggle="tab">关于话题</a></li>
+                                    <div class="aw-search-bar pull-right hidden-xs">
+                                        <i class="icon icon-search"></i>
+                                        <input type="text" id="question-input" class="search-query form-control"
+                                               placeholder="搜索...">
+                                        <div class="aw-dropdown">
+                                            <p class="title">没有找到相关结果</p>
+                                            <ul class="aw-dropdown-list"></ul>
+                                        </div>
+                                    </div>
+                                </ul>
+                                <!-- end tab 切换 -->
+                            </div>
+                        </div>
+                        <div class="mod-body">
+                            <!-- tab 切换内容 -->
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="all">
+                                    <div class="aw-mod">
+                                        <div class="mod-body">
+                                            <div class="aw-common-list" id="c_all_list"
+                                                 th:each=" question : ${pagreInfo.getList()}">
+                                                <div class="aw-item " data-topic-id="38,">
+                                                    <a class="aw-user-name hidden-xs" th:data-id="${question.user.id}"
+                                                       th:href="@{'/people/'+ ${question.user.name}}" rel="nofollow">
+                                                        <img th:src="${question.user.avatarUrl}"/></a>
+                                                    <div class="aw-question-content">
+                                                        <h4>
+                                                            <a th:href="@{'/question/'+ ${question.id}}"
+                                                               th:text="${question.title}"></a>
+                                                        </h4>
+                                                        <p>
+                                                            <a href="https://elasticsearch.cn/people/chamcyl"
+                                                               class="aw-user-name" data-id="2874">chamcyl</a>
+                                                            <span class="text-color-999">回复了问题 • 13 人关注 • 8 个回复 • 6879 次浏览 • 5 天前				</span>
+                                                            <span class="text-color-999 related-topic hide"> • 来自相关话题</span>
+                                                        </p>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 侧边栏 -->
+                <div class="col-sm-12 col-md-3 aw-side-bar hidden-xs">
+                    <!-- 话题描述 -->
+                    <div class="aw-mod aw-text-align-justify">
+                        <div class="mod-head">
+                            <h3>话题描述</h3>
+                        </div>
+                        <div class="mod-body">
+                            <p th:text="${topic.decription}"></p>
+                        </div>
+                    </div>
+                    <!-- end 话题描述 -->
+
+                    <div class="aw-mod topic-about">
+                        <div class="mod-head">
+                            <h3>相关话题</h3>
+                        </div>
+                        <div class="mod-body" data-type="topic">
+                            <div class="aw-topic-bar" data-type="topic" data-id="38">
+                                <div class="tag-bar clearfix">
+                                    <span class="topic-tag" data-id="6">
+						                <a class="text" href="/topic/spring">spring</a>
+					                </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 最佳回复者 -->
+                    <div class="aw-mod">
+                        <div class="mod-head">
+                            <h3>最佳回复者</h3>
+                        </div>
+
+                        <div class="mod-body">
+                            <dl>
+                                <dt class="pull-left aw-border-radius-5">
+                                    <a href="/people/维他"><img
+                                            src="https://elasticsearch.cn/uploads/avatar/000/00/00/81_avatar_mid.jpg"
+                                            alt=""/></a>
+                                </dt>
+
+                                <dd class="pull-left">
+                                    <a class="aw-user-name" href="https://elasticsearch.cn/people/wood" data-id="81">kennywu76<i
+                                            class="icon-v" title="个人认证"></i> </a>
+                                    <p>获得 <b>157</b> 次赞同, <b>28</b> 次感谢</p>
+                                </dd>
+                            </dl>
+                            </dl>
+                        </div>
+                    </div>
+                    <!-- end 最佳回复者 -->
+
+                    <!-- xx人关注该话题 -->
+                    <div class="aw-mod topic-status">
+                        <div class="mod-head">
+                            <span th:text="${topic.loveCount}"></span>人关注该话题
+                        </div>
+                        <div class="mod-body">
+                            <div id="focus_users" class="aw-border-radius-5"></div>
+                            <div class="aw-mod topic-status">
+                                <div class="mod-body">
+                                    <div id="focus_users" class="aw-border-radius-5" th:each=" user : ${userList}">
+                                        <a th:href="@{'/people/'+ ${user.name}}">
+                                            <img th:src="${user.avatarUrl}"/>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end xx人关注该话题 -->
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

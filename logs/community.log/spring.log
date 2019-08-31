@@ -794,7 +794,10 @@ java.lang.NullPointerException: null
 2019-08-31 19:06:04.333  INFO 14520 --- [http-nio-8888-exec-6] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
 2019-08-31 19:06:04.395  INFO 14520 --- [http-nio-8888-exec-7] c.d.c.controller.indexController         : pageinfo
 2019-08-31 19:06:04.577  INFO 14520 --- [http-nio-8888-exec-8] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+<<<<<<< HEAD
 2019-08-31 20:00:33.161  INFO 14520 --- [Thread-20] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
 2019-08-31 20:00:33.498  INFO 14520 --- [Thread-20] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
 2019-08-31 20:00:33.510  INFO 14520 --- [Thread-20] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
 2019-08-31 20:00:33.549  INFO 14520 --- [Thread-20] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+=======
+>>>>>>> dev

@@ -1,25 +1,33 @@
-<!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>发布问题</title>
+    <title>发布 - 社区</title>
     <head th:insert="~{import :: head}"></head>
     <head th:insert="~{import :: markdown}"></head>
-
 </head>
 <body>
 <div th:insert="~{header :: head}"></div>
 <div class="container-fluid main">
     <div class="row">
-        <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12 side">
-            <h2><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>发现</h2>
-            <form action="/publish" method="post">
-                <!--隐藏域  修改时提交-->
+        <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+            <h2><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> 发起</h2>
+            <hr>
+            <form action="/publish" method="post" class="form">
                 <input type="hidden" name="id" th:value="${id}">
-                <div class="form-group">
+                <div class="form-group col-lg-9 col-md-11 col-sm-3" style="margin-left: -15px">
                     <label for="title">问题标题（简单扼要）:</label>
-                    <input type="text" class="form-control" id="title" th:value="${title}" name="title"
-                           placeholder="问题标题……">
+                    <input type="text" class="form-control" th:value="${title}" id="title" name="title"
+                           placeholder="问题标题……"
+                           autocomplete="off">
+                </div>
+                <div class="col-lg-3 col-md-1 col-sm-2" style="margin-top:19px">
+                    <input type="hidden" name="select_val" id="select_val" value="">
+                    <select  type="text" class="form-control" id="topic" name="topic">
+                        <option>选择话题</option>
+                        <div th:each="topic : ${topicList}">
+                            <option th:value="${topic.id}" th:text="${topic.name}"></option>
+                        </div>
+                    </select>
                 </div>
                 <div class="form-group" id="question-editor">
                     <label for="description">问题补充 (必填，请参照右侧提示):</label>
@@ -28,26 +36,9 @@
                               cols="30"
                               rows="10"></textarea>
                 </div>
-                <script type="text/javascript">
-                    $(function () {
-                        var editor = editormd("question-editor", {
-                            width: "100%",
-                            height: 350,
-                            path: "/js/lib/",
-                            delay: 0,
-                            watch: false,
-                            emoji: true,
-                            placeholder: "请输入问题描述",
-                            imageUpload: true,
-                            imageFormats: ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
-                            imageUploadURL: "/file/upload",
-                        });
-                    });
-                </script>
-                <!--问题标签-->
                 <div class="form-group">
                     <label for="tag">添加标签:</label>
-                    <input type="text" class="form-control" th:value="${tag}" id="tag" name="tag"
+                    <input type="text" class="form-control" th:value="${questionTag}" id="tag" name="tag"
                            autocomplete="off"
                            placeholder="输入标签，以，号分隔"
                            onclick="showSelectTag()">
@@ -65,10 +56,13 @@
                                  th:class="${selectCategoryStat.first ? 'active tab-pane':'tab-pane'}">
                                 <span>
                                     <span class="label label-info" th:each="selectTag: ${selectCategory.tags}">
-                                    <span class="glyphicon glyphicon-tags" onclick="selectTag(this)"
-                                          th:data-tag="${selectTag}"
-                                          th:text="${' '+selectTag}">
+                                    <h5>
+                                        <span class="glyphicon glyphicon-tags" onclick="selectTag(this)"
+                                              style="font-size: 15px"
+                                              th:data-tag="${selectTag}"
+                                              th:text="${' '+selectTag}">
                                     </span>
+                                    </h5>
                                 </span>
                                 </span>
                             </div>
@@ -85,12 +79,12 @@
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
-                            <button type="submit" class="btn btn-success btn-publish ">
-                                发布
+                            <button type="submit" class="btn btn-success btn-publish "> 发布
                             </button>
                         </div>
                     </div>
                 </div>
+
             </form>
         </div>
         <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
@@ -103,4 +97,82 @@
 </div>
 <div th:insert="~{footer :: foot}"></div>
 </body>
+<!-- jquery-validate -->
+<script src="https://cdn.bootcss.com/jquery-validate/1.17.0/jquery.validate.js"></script>
+<script src="https://cdn.bootcss.com/jquery-validate/1.17.0/additional-methods.js"></script>
+<script src="https://cdn.bootcss.com/jquery-validate/1.17.0/localization/messages_zh.js"></script>
+<script type="text/javascript">
+    $(function () {
+        var editor = editormd("question-editor", {
+            width: "100%",
+            height: 350,
+            path: "/js/lib/",
+            delay: 0,
+            watch: false,
+            placeholder: "请输入问题描述",
+            imageUpload: true,
+            imageFormats: ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
+            imageUploadURL: "/file/upload",
+        });
+    });
+
+    $(function() {
+        validateRule();
+        $("#submit").on('click', function() {
+            var validator = $(".form").validate();
+            var flag = validator.form();
+            if (flag) {
+                alert("true");
+            } else {
+                alert("false");
+            }
+        });
+        $("#reset").on('click', function() {
+            var validator = $(".form").validate();
+            validator.resetForm();
+        });
+    });
+
+    function validateRule() {
+        $(".form").validate({
+            rules: {
+                title:{
+                    required: true
+                },
+                topic: {
+                    required: true,
+                },
+                desciption: {
+                    required: true,
+                },
+                tag: {
+                    required: true,
+                }
+
+            },
+            messages: {
+                title: {
+                    required: "请输入用户名",
+                },
+                opic: {
+                    required: "请选择话题",
+                },
+                desciption: {
+                    required: "请输入标签",
+                },
+                tag: {
+                    required: "请输入标签",
+                }
+            },
+            errorPlacement: function(error, element) {
+                if (element.is(':radio') || element.is(':checkbox')) {
+                    var eid = element.attr('name');
+                    error.appendTo(element.parent().parent());
+                } else {
+                    error.insertAfter(element);
+                }
+            }
+        });
+    }
+</script>
 </html>

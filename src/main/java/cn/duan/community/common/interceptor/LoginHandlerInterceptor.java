@@ -1,4 +1,6 @@
 package cn.duan.community.common.interceptor;
+import cn.duan.community.common.enums.CustomizeErrorCode;
+import cn.duan.community.common.exception.CustomException;
 import cn.duan.community.mapper.UserMapper;
 import cn.duan.community.model.User;
 import cn.duan.community.service.NotificationService;
