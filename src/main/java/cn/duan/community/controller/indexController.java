@@ -11,6 +11,7 @@ import com.github.pagehelper.PageInfo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -36,21 +37,20 @@ public class indexController {
     private HotTagCache hotTagCache;
 
     @GetMapping("/")
-    public ModelAndView index(@RequestParam(value = "page", defaultValue = "1") Integer page,
-                              @RequestParam(value = "size", defaultValue = "5") Integer size,
-                              @RequestParam(value = "search", required = false) String search,
-                              @RequestParam(name = "tag", required = false) String tag,
-                              @RequestParam(name = "sort", required = false) String sotrStr) throws IOException {
+    public String index(@RequestParam(value = "page", defaultValue = "1") Integer page,
+                        @RequestParam(value = "size", defaultValue = "5") Integer size,
+                        @RequestParam(value = "search", required = false) String search,
+                        @RequestParam(name = "tag", required = false) String tag,
+                        @RequestParam(name = "sort", required = false) String sotrStr,
+                        Model model) throws IOException {
         PageInfo<QuestionDTO> pageInfo = questionService.list(page, size, search, tag, sotrStr);
         log.info("pageinfo", pageInfo.getList());
-        ModelAndView mv = new ModelAndView();
         List<HotTagDTO> hots = hotTagCache.getHots();
-        mv.addObject("tags", hots);
-        mv.addObject("pageInfo", pageInfo);
-        mv.addObject("search", search);
-        mv.addObject("sort", sotrStr);
-        mv.setViewName("index");
-        return mv;
+        model.addAttribute("tags", hots);
+        model.addAttribute("pageInfo", pageInfo);
+        model.addAttribute("search", search);
+        model.addAttribute("sort", sotrStr);
+        return "index";
     }
 
     @GetMapping("/ajax")
@@ -61,7 +61,6 @@ public class indexController {
                           @RequestParam(name = "tag", required = false) String tag,
                           @RequestParam(name = "sort", required = false) String sotrStr) throws IOException {
         PageInfo<QuestionDTO> pageInfo = questionService.list(page, size, search, tag, sotrStr);
-
         return ResultDTO.okOf(pageInfo);
     }
 

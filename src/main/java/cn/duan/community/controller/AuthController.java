@@ -9,9 +9,7 @@ import cn.duan.community.model.User;
 import cn.duan.community.common.provider.GithubProvider;
 import cn.duan.community.service.LoginLogService;
 import cn.duan.community.service.UserService;
-import eu.bitwalker.useragentutils.UserAgent;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.http.protocol.RequestUserAgent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -24,7 +22,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Date;
 import java.util.UUID;
-import java.util.concurrent.ThreadPoolExecutor;
 
 /**
  * 授权
@@ -48,9 +45,8 @@ public class AuthController extends BaseController {
     private LoginLogService loginLogService;
 
     @GetMapping("/callback")
-    public String collback(@RequestParam("code") String code,
-                           @RequestParam("state") String state
-                           ) throws IOException {
+    public String callback(@RequestParam("code") String code,
+                           @RequestParam("state") String state) throws IOException {
         AccessTokenDTO accessTokenDTO = new AccessTokenDTO();
         accessTokenDTO.setClient_id(cclient_id);
         accessTokenDTO.setClient_secret(client_secret);
@@ -65,6 +61,7 @@ public class AuthController extends BaseController {
             user.setAccountId(String.valueOf(githubUser.getId()));
             String token = UUID.randomUUID().toString();
             user.setAvatarUrl(githubUser.getAvatarUrl());
+            user.setBio(githubUser.getBio());
             user.setToken(token);
             this.addLoginLog(user);
             userService.insertOrUpdate(user);

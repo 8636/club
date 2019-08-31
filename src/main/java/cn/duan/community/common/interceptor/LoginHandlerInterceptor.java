@@ -38,6 +38,7 @@ public class LoginHandlerInterceptor implements HandlerInterceptor {
                         request.getSession().setAttribute("user", userList.get(0));
                         Long unreadCount = notificationService.getUnreadCount(userList.get(0).getId());
                         request.getSession().setAttribute("unreadCount", unreadCount);
+                        log.info("sessionID {}",request.getSession().getId());
                     }
                     break;
                 }

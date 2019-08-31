@@ -43,6 +43,7 @@ public class UserServiceImpl implements UserService {
             User dbUser = userList.get(0);
             dbUser.setToken(user.getToken());
             dbUser.setName(user.getName());
+            dbUser.setBio(user.getBio());
             dbUser.setAvatarUrl(user.getAvatarUrl());
             dbUser.setGmtModified(System.currentTimeMillis());
             userMapper.updateByPrimaryKeySelective(dbUser);
