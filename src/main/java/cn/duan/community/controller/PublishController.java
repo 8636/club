@@ -55,6 +55,8 @@ public class PublishController {
         mv.addObject("tags",TagCache.get());
         mv.addObject("question", questionDTO);
         List<Topic> topicList = topicService.list();
+        mv.addObject("topicList", topicList);
+
         mv.setViewName("publish");
         return mv;
     }

@@ -246,3 +246,4 @@
 2019-08-31 15:38:23.231  INFO 15488 --- [http-nio-8888-exec-1] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
 2019-08-31 15:38:23.373  INFO 15488 --- [http-nio-8888-exec-3] c.d.c.controller.indexController         : pageinfo
 2019-08-31 15:38:23.468  INFO 15488 --- [http-nio-8888-exec-2] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-31 15:41:02.440  INFO 15488 --- [http-nio-8888-exec-7] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
