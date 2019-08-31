@@ -21,3 +21,170 @@
 2019-08-31 00:01:35.686  INFO 7200 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
 2019-08-31 00:01:36.176  INFO 7200 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
 2019-08-31 00:01:36.182  INFO 7200 --- [main] cn.duan.community.CommunityApplication   : Started CommunityApplication in 7.23 seconds (JVM running for 9.491)
+2019-08-31 00:23:06.415  INFO 7200 --- [Thread-16] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2019-08-31 00:23:06.469  INFO 7200 --- [Thread-16] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-08-31 00:23:06.471  INFO 7200 --- [Thread-16] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2019-08-31 00:23:06.478  INFO 7200 --- [Thread-16] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2019-08-31 00:23:24.303  INFO 14920 --- [main] cn.duan.community.CommunityApplication   : Starting CommunityApplication on DESKTOP-8P7TO5R with PID 14920 (C:\Users\86368\Desktop\community\target\classes started by Sir in C:\Users\86368\Desktop\community)
+2019-08-31 00:23:24.307  INFO 14920 --- [main] cn.duan.community.CommunityApplication   : The following profiles are active: pro
+2019-08-31 00:23:25.583  INFO 14920 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-08-31 00:23:25.588  INFO 14920 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-08-31 00:23:25.660  INFO 14920 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51ms. Found 0 repository interfaces.
+2019-08-31 00:23:26.206  INFO 14920 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$1db90c8a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-31 00:23:26.690  INFO 14920 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2019-08-31 00:23:26.745  INFO 14920 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-08-31 00:23:26.745  INFO 14920 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-08-31 00:23:26.933  INFO 14920 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-08-31 00:23:26.933  INFO 14920 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2524 ms
+2019-08-31 00:23:27.168  INFO 14920 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2019-08-31 00:23:32.259  INFO 14920 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2019-08-31 00:23:33.114  INFO 14920 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-31 00:23:33.243  INFO 14920 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-08-31 00:23:33.314  WARN 14920 --- [main] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2019-08-31 00:23:34.075  INFO 14920 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2019-08-31 00:23:34.512  INFO 14920 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2019-08-31 00:23:34.517  INFO 14920 --- [main] cn.duan.community.CommunityApplication   : Started CommunityApplication in 11.485 seconds (JVM running for 13.603)
+2019-08-31 00:24:17.567  INFO 14920 --- [http-nio-80-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-08-31 00:24:17.568  INFO 14920 --- [http-nio-80-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-08-31 00:24:17.586  INFO 14920 --- [http-nio-80-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 18 ms
+2019-08-31 00:24:18.666  INFO 14920 --- [http-nio-80-exec-2] c.d.c.controller.indexController         : pageinfo
+2019-08-31 00:24:19.610  INFO 14920 --- [http-nio-80-exec-3] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-31 00:24:19.613  INFO 14920 --- [http-nio-80-exec-4] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-31 00:24:19.641  INFO 14920 --- [http-nio-80-exec-8] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-31 00:24:19.641  INFO 14920 --- [http-nio-80-exec-7] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-31 00:24:20.288  INFO 14920 --- [http-nio-80-exec-3] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-31 00:24:22.930  INFO 14920 --- [http-nio-80-exec-4] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-31 00:24:22.943  INFO 14920 --- [http-nio-80-exec-4] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-31 12:25:32.550  INFO 5340 --- [main] cn.duan.community.CommunityApplication   : Starting CommunityApplication on DESKTOP-8P7TO5R with PID 5340 (C:\Users\86368\Desktop\community\target\classes started by Sir in C:\Users\86368\Desktop\community)
+2019-08-31 12:25:32.558  INFO 5340 --- [main] cn.duan.community.CommunityApplication   : The following profiles are active: pro
+2019-08-31 12:25:34.603  INFO 5340 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-08-31 12:25:34.612  INFO 5340 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-08-31 12:25:34.745  INFO 5340 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 94ms. Found 0 repository interfaces.
+2019-08-31 12:25:35.658  INFO 5340 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$3e497581] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-31 12:25:36.454  INFO 5340 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2019-08-31 12:25:36.516  INFO 5340 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-08-31 12:25:36.517  INFO 5340 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-08-31 12:25:36.827  INFO 5340 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-08-31 12:25:36.829  INFO 5340 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4143 ms
+2019-08-31 12:25:37.340  INFO 5340 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2019-08-31 12:25:40.572  INFO 5340 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2019-08-31 12:25:42.076  INFO 5340 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-31 12:25:42.225  INFO 5340 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-08-31 12:25:42.310  WARN 5340 --- [main] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2019-08-31 12:25:43.202  INFO 5340 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2019-08-31 12:25:43.644  INFO 5340 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2019-08-31 12:25:43.650  INFO 5340 --- [main] cn.duan.community.CommunityApplication   : Started CommunityApplication in 12.677 seconds (JVM running for 17.131)
+2019-08-31 12:26:16.893  INFO 5340 --- [Thread-18] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2019-08-31 12:26:16.974  INFO 5340 --- [Thread-18] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-08-31 12:26:16.977  INFO 5340 --- [Thread-18] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2019-08-31 12:26:16.984  INFO 5340 --- [Thread-18] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2019-08-31 12:26:27.038  INFO 14064 --- [main] cn.duan.community.CommunityApplication   : Starting CommunityApplication on DESKTOP-8P7TO5R with PID 14064 (C:\Users\86368\Desktop\community\target\classes started by Sir in C:\Users\86368\Desktop\community)
+2019-08-31 12:26:27.045  INFO 14064 --- [main] cn.duan.community.CommunityApplication   : The following profiles are active: pro
+2019-08-31 12:26:28.433  INFO 14064 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-08-31 12:26:28.437  INFO 14064 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-08-31 12:26:28.508  INFO 14064 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 47ms. Found 0 repository interfaces.
+2019-08-31 12:26:29.156  INFO 14064 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$8209f202] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-31 12:26:29.631  INFO 14064 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2019-08-31 12:26:29.667  INFO 14064 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-08-31 12:26:29.668  INFO 14064 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-08-31 12:26:29.862  INFO 14064 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-08-31 12:26:29.862  INFO 14064 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2686 ms
+2019-08-31 12:26:30.108  INFO 14064 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2019-08-31 12:26:32.033  INFO 14064 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2019-08-31 12:26:32.910  INFO 14064 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-31 12:26:33.056  INFO 14064 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-08-31 12:26:33.152  WARN 14064 --- [main] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2019-08-31 12:26:33.895  INFO 14064 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2019-08-31 12:26:34.314  INFO 14064 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2019-08-31 12:26:34.321  INFO 14064 --- [main] cn.duan.community.CommunityApplication   : Started CommunityApplication in 8.528 seconds (JVM running for 10.974)
+2019-08-31 12:28:35.281  INFO 14064 --- [Thread-18] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2019-08-31 12:28:35.357  INFO 14064 --- [Thread-18] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-08-31 12:28:35.362  INFO 14064 --- [Thread-18] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2019-08-31 12:28:35.369  INFO 14064 --- [Thread-18] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2019-08-31 12:28:48.665  INFO 584 --- [main] cn.duan.community.CommunityApplication   : Starting CommunityApplication on DESKTOP-8P7TO5R with PID 584 (C:\Users\86368\Desktop\community\target\classes started by Sir in C:\Users\86368\Desktop\community)
+2019-08-31 12:28:48.679  INFO 584 --- [main] cn.duan.community.CommunityApplication   : No active profile set, falling back to default profiles: default
+2019-08-31 12:28:50.537  INFO 584 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-08-31 12:28:50.542  INFO 584 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-08-31 12:28:50.659  INFO 584 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 80ms. Found 0 repository interfaces.
+2019-08-31 12:28:51.321  INFO 584 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$5de182b3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-31 12:28:51.828  INFO 584 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2019-08-31 12:28:51.864  INFO 584 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-08-31 12:28:51.865  INFO 584 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-08-31 12:28:52.111  INFO 584 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-08-31 12:28:52.112  INFO 584 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3282 ms
+2019-08-31 12:28:52.365  INFO 584 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2019-08-31 12:28:52.928  INFO 584 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2019-08-31 12:28:53.818  INFO 584 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-31 12:28:53.994  INFO 584 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-08-31 12:28:54.096  WARN 584 --- [main] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2019-08-31 12:28:54.925  INFO 584 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2019-08-31 12:28:55.419  INFO 584 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2019-08-31 12:28:55.424  INFO 584 --- [main] cn.duan.community.CommunityApplication   : Started CommunityApplication in 8.158 seconds (JVM running for 10.802)
+2019-08-31 12:31:52.813  INFO 584 --- [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-08-31 12:31:52.814  INFO 584 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-08-31 12:31:52.829  INFO 584 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 15 ms
+2019-08-31 12:31:53.124  INFO 584 --- [http-nio-8888-exec-1] c.d.c.controller.indexController         : pageinfo
+2019-08-31 12:31:53.822  INFO 584 --- [http-nio-8888-exec-2] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-31 12:31:53.827  INFO 584 --- [http-nio-8888-exec-3] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-31 12:31:53.927  INFO 584 --- [http-nio-8888-exec-6] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-31 12:31:53.927  INFO 584 --- [http-nio-8888-exec-7] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-31 12:31:54.309  INFO 584 --- [http-nio-8888-exec-8] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-31 12:31:56.228  INFO 584 --- [http-nio-8888-exec-4] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-31 12:31:56.241  INFO 584 --- [http-nio-8888-exec-4] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-31 12:31:58.688  INFO 584 --- [http-nio-8888-exec-6] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-31 12:32:04.238  INFO 584 --- [http-nio-8888-exec-7] c.d.c.controller.indexController         : pageinfo
+2019-08-31 12:32:04.532  INFO 584 --- [http-nio-8888-exec-2] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-31 14:56:33.005  INFO 584 --- [Thread-16] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2019-08-31 14:56:33.579  INFO 584 --- [Thread-16] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-08-31 14:56:33.581  INFO 584 --- [Thread-16] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2019-08-31 14:56:33.588  INFO 584 --- [Thread-16] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2019-08-31 14:56:44.017  INFO 7660 --- [main] cn.duan.community.CommunityApplication   : Starting CommunityApplication on DESKTOP-8P7TO5R with PID 7660 (C:\Users\86368\Desktop\community\target\classes started by Sir in C:\Users\86368\Desktop\community)
+2019-08-31 14:56:44.024  INFO 7660 --- [main] cn.duan.community.CommunityApplication   : No active profile set, falling back to default profiles: default
+2019-08-31 14:56:45.482  INFO 7660 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-08-31 14:56:45.489  INFO 7660 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-08-31 14:56:45.574  INFO 7660 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 60ms. Found 0 repository interfaces.
+2019-08-31 14:56:46.181  INFO 7660 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$794490ff] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-31 14:56:46.698  INFO 7660 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2019-08-31 14:56:46.735  INFO 7660 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-08-31 14:56:46.736  INFO 7660 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-08-31 14:56:46.929  INFO 7660 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-08-31 14:56:46.929  INFO 7660 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2788 ms
+2019-08-31 14:56:47.178  INFO 7660 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2019-08-31 14:56:47.965  INFO 7660 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2019-08-31 14:56:49.233  INFO 7660 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-31 14:56:49.408  INFO 7660 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-08-31 14:56:49.492  WARN 7660 --- [main] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2019-08-31 14:56:50.272  INFO 7660 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2019-08-31 14:56:50.760  INFO 7660 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2019-08-31 14:56:50.765  INFO 7660 --- [main] cn.duan.community.CommunityApplication   : Started CommunityApplication in 7.965 seconds (JVM running for 12.272)
+2019-08-31 14:56:52.680  INFO 7660 --- [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-08-31 14:56:52.681  INFO 7660 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-08-31 14:56:52.700  INFO 7660 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 19 ms
+2019-08-31 14:56:53.149  INFO 7660 --- [http-nio-8888-exec-1] c.d.c.controller.indexController         : pageinfo
+2019-08-31 14:56:54.570  INFO 7660 --- [http-nio-8888-exec-4] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-31 14:56:57.628  INFO 7660 --- [http-nio-8888-exec-7] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-31 14:56:57.650  INFO 7660 --- [http-nio-8888-exec-7] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-31 14:56:59.748  INFO 7660 --- [http-nio-8888-exec-9] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-31 14:57:38.008  INFO 7660 --- [http-nio-8888-exec-10] c.d.c.controller.indexController         : pageinfo
+2019-08-31 14:57:38.410  INFO 7660 --- [http-nio-8888-exec-1] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-31 14:58:19.180  INFO 7660 --- [http-nio-8888-exec-2] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-31 14:58:20.706  INFO 7660 --- [http-nio-8888-exec-5] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-31 14:58:23.806  INFO 7660 --- [http-nio-8888-exec-7] c.d.c.controller.indexController         : pageinfo
+2019-08-31 14:58:24.080  INFO 7660 --- [http-nio-8888-exec-8] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-31 14:58:25.402  INFO 7660 --- [http-nio-8888-exec-9] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-31 14:58:25.920  INFO 7660 --- [http-nio-8888-exec-10] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-31 14:58:25.920  INFO 7660 --- [http-nio-8888-exec-1] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-31 14:58:25.923  INFO 7660 --- [http-nio-8888-exec-3] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-31 14:58:25.930  INFO 7660 --- [http-nio-8888-exec-10] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-31 14:58:26.050  INFO 7660 --- [http-nio-8888-exec-4] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-31 14:58:26.090  INFO 7660 --- [http-nio-8888-exec-6] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-31 14:58:27.199  INFO 7660 --- [http-nio-8888-exec-7] c.d.c.controller.indexController         : pageinfo
+2019-08-31 14:58:27.443  INFO 7660 --- [http-nio-8888-exec-8] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-31 14:58:28.160  INFO 7660 --- [http-nio-8888-exec-2] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-31 14:58:31.751  INFO 7660 --- [http-nio-8888-exec-3] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-31 15:04:21.145  INFO 7660 --- [Thread-16] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2019-08-31 15:04:21.179  INFO 7660 --- [Thread-16] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-08-31 15:04:21.182  INFO 7660 --- [Thread-16] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2019-08-31 15:04:21.188  INFO 7660 --- [Thread-16] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2019-08-31 15:04:29.427  INFO 11848 --- [main] cn.duan.community.CommunityApplication   : Starting CommunityApplication on DESKTOP-8P7TO5R with PID 11848 (C:\Users\86368\Desktop\community\target\classes started by Sir in C:\Users\86368\Desktop\community)
+2019-08-31 15:04:29.435  INFO 11848 --- [main] cn.duan.community.CommunityApplication   : No active profile set, falling back to default profiles: default

@@ -47,8 +47,8 @@ spring:
 ##github参数配置
 github:
   client:
-    id: 42e591d46be31af9c854
-    secret: ee51a20d4185d65a1bfba0825f94daacaa9b1656
+    id: b040e051a14314016cf8
+    secret: a27e70c29fea4067c32e1953c281d1b6e9fcd2b6
     callback: http://47.100.76.187/callback&scope=user&state=1
 
 # mybatis

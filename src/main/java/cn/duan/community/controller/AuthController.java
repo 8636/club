@@ -63,10 +63,8 @@ AuthController {
         if (githubUser != null) {
             //获得用户信息，保存到session中
             response.addCookie(new Cookie("token", token));
-            return "redirect:";
-        } else {
-            return "redirect:";
         }
+        return "redirect:";
     }
 
     /**
