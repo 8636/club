@@ -47,6 +47,8 @@ public class UserServiceImpl implements UserService {
             dbUser.setGmtModified(System.currentTimeMillis());
             userMapper.updateByPrimaryKeySelective(dbUser);
         }
+
+
     }
 
     @Override
