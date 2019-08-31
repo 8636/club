@@ -188,3 +188,61 @@
 2019-08-31 15:04:21.188  INFO 7660 --- [Thread-16] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
 2019-08-31 15:04:29.427  INFO 11848 --- [main] cn.duan.community.CommunityApplication   : Starting CommunityApplication on DESKTOP-8P7TO5R with PID 11848 (C:\Users\86368\Desktop\community\target\classes started by Sir in C:\Users\86368\Desktop\community)
 2019-08-31 15:04:29.435  INFO 11848 --- [main] cn.duan.community.CommunityApplication   : No active profile set, falling back to default profiles: default
+2019-08-31 15:32:29.634  INFO 15488 --- [main] cn.duan.community.CommunityApplication   : Starting CommunityApplication on DESKTOP-8P7TO5R with PID 15488 (C:\Users\86368\Desktop\community\target\classes started by Sir in C:\Users\86368\Desktop\community)
+2019-08-31 15:32:29.641  INFO 15488 --- [main] cn.duan.community.CommunityApplication   : No active profile set, falling back to default profiles: default
+2019-08-31 15:32:32.177  INFO 15488 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-08-31 15:32:32.188  INFO 15488 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-08-31 15:32:32.336  INFO 15488 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 97ms. Found 0 repository interfaces.
+2019-08-31 15:32:33.275  INFO 15488 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$3be850f5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-31 15:32:33.987  INFO 15488 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2019-08-31 15:32:34.071  INFO 15488 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-08-31 15:32:34.072  INFO 15488 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-08-31 15:32:34.515  INFO 15488 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-08-31 15:32:34.516  INFO 15488 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4744 ms
+2019-08-31 15:32:34.904  INFO 15488 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2019-08-31 15:32:35.699  INFO 15488 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2019-08-31 15:32:36.683  INFO 15488 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-31 15:32:36.808  INFO 15488 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-08-31 15:32:36.896  WARN 15488 --- [main] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2019-08-31 15:32:37.617  INFO 15488 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2019-08-31 15:32:38.184  INFO 15488 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2019-08-31 15:32:38.191  INFO 15488 --- [main] cn.duan.community.CommunityApplication   : Started CommunityApplication in 10.554 seconds (JVM running for 13.313)
+2019-08-31 15:34:26.421  INFO 15488 --- [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-08-31 15:34:26.421  INFO 15488 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-08-31 15:34:26.437  INFO 15488 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 15 ms
+2019-08-31 15:34:35.190  INFO 15488 --- [http-nio-8888-exec-1] c.d.c.controller.indexController         : pageinfo
+2019-08-31 15:35:44.702  INFO 15488 --- [http-nio-8888-exec-3] c.d.c.controller.indexController         : pageinfo
+2019-08-31 15:35:44.858  INFO 15488 --- [http-nio-8888-exec-3] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-31 15:35:44.869  INFO 15488 --- [http-nio-8888-exec-8] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-31 15:35:44.870  INFO 15488 --- [http-nio-8888-exec-6] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-31 15:35:44.873  INFO 15488 --- [http-nio-8888-exec-7] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-31 15:35:45.145  INFO 15488 --- [http-nio-8888-exec-9] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-31 15:36:04.196  INFO 15488 --- [http-nio-8888-exec-10] c.d.c.controller.indexController         : pageinfo
+2019-08-31 15:36:04.317  INFO 15488 --- [http-nio-8888-exec-1] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-31 15:37:15.175  INFO 15488 --- [http-nio-8888-exec-1] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-31 15:37:18.536  INFO 15488 --- [http-nio-8888-exec-1] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-31 15:37:31.390  INFO 15488 --- [http-nio-8888-exec-8] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-31 15:37:39.249  INFO 15488 --- [http-nio-8888-exec-7] c.d.c.controller.indexController         : pageinfo
+2019-08-31 15:37:39.355  INFO 15488 --- [http-nio-8888-exec-4] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-31 15:37:52.861  INFO 15488 --- [http-nio-8888-exec-6] c.d.c.controller.indexController         : pageinfo
+2019-08-31 15:37:52.975  INFO 15488 --- [http-nio-8888-exec-9] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-31 15:37:54.965  INFO 15488 --- [http-nio-8888-exec-1] c.d.c.controller.indexController         : pageinfo
+2019-08-31 15:37:55.077  INFO 15488 --- [http-nio-8888-exec-2] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-31 15:37:55.574  INFO 15488 --- [http-nio-8888-exec-8] c.d.c.controller.indexController         : pageinfo
+2019-08-31 15:37:55.660  INFO 15488 --- [http-nio-8888-exec-7] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-31 15:37:58.839  INFO 15488 --- [http-nio-8888-exec-5] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-31 15:38:17.733  INFO 15488 --- [http-nio-8888-exec-6] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-31 15:38:20.332  INFO 15488 --- [http-nio-8888-exec-9] c.d.c.controller.indexController         : pageinfo
+2019-08-31 15:38:20.434  INFO 15488 --- [http-nio-8888-exec-1] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-31 15:38:20.953  INFO 15488 --- [http-nio-8888-exec-3] c.d.c.controller.indexController         : pageinfo
+2019-08-31 15:38:21.053  INFO 15488 --- [http-nio-8888-exec-2] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-31 15:38:22.113  INFO 15488 --- [http-nio-8888-exec-8] c.d.c.controller.indexController         : pageinfo
+2019-08-31 15:38:22.227  INFO 15488 --- [http-nio-8888-exec-4] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-31 15:38:22.517  INFO 15488 --- [http-nio-8888-exec-7] c.d.c.controller.indexController         : pageinfo
+2019-08-31 15:38:22.619  INFO 15488 --- [http-nio-8888-exec-5] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-31 15:38:22.812  INFO 15488 --- [http-nio-8888-exec-6] c.d.c.controller.indexController         : pageinfo
+2019-08-31 15:38:22.912  INFO 15488 --- [http-nio-8888-exec-10] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-31 15:38:23.113  INFO 15488 --- [http-nio-8888-exec-9] c.d.c.controller.indexController         : pageinfo
+2019-08-31 15:38:23.231  INFO 15488 --- [http-nio-8888-exec-1] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
+2019-08-31 15:38:23.373  INFO 15488 --- [http-nio-8888-exec-3] c.d.c.controller.indexController         : pageinfo
+2019-08-31 15:38:23.468  INFO 15488 --- [http-nio-8888-exec-2] c.d.c.c.i.LoginHandlerInterceptor        : 进入拦截器
