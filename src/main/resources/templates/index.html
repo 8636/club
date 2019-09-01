@@ -95,8 +95,8 @@
                     <ul class="question-related">
                         <li th:each="tag : ${tags}">
                             <a style="font-size: 15px"
-                               th:href="@{/(page=1,search=${search},tag=${tag.getName()},sort=${sort})}"
-                               th:text="${tag.getName()}"></a>
+                               th:href="@{/(page=1,search=${search},tag=${tag},sort=${sort})}"
+                               th:text="${tag}"></a>
                         </li>
                     </ul>
                 </div>

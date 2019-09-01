@@ -8,6 +8,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
@@ -22,6 +23,9 @@ public class HotTags {
     private QuestionMapper questionMapper;
     @Autowired
     private HotTagCache hotTagCache;
+
+    @Autowired
+    private RedisTemplate redisTemplate;
 
     private static final Logger log = LoggerFactory.getLogger(HotTags.class);
 
@@ -44,7 +48,14 @@ public class HotTags {
                 }
             }
         });
-        hotTagCache.updateTags(map);
+//        hotTagCache.updateTags(map);
+
+        //采用redis中zset进行存储
+        Set<Map.Entry<String, Integer>> entries = map.entrySet();
+        for (Map.Entry<String, Integer> entry : entries) {
+            redisTemplate.boundZSetOps("HotTags").add(entry.getKey(),entry.getValue());
+        }
+
         log.info("The time is now {}", dateFormat.format(new Date()));
     }
 }
