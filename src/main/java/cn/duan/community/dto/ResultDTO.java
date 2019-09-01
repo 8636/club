@@ -1,7 +1,7 @@
 package cn.duan.community.dto;
 
 import cn.duan.community.common.exception.CustomException;
-import cn.duan.community.common.enums.CustomizeErrorCode;
+import cn.duan.community.common.enums.ExceptionEnum;
 import lombok.Data;
 
 /**
@@ -22,7 +22,7 @@ public class ResultDTO<T> {
         return resultDTO;
     }
 
-    public static ResultDTO errorOf(CustomizeErrorCode errorCode) {
+    public static ResultDTO errorOf(ExceptionEnum errorCode) {
         return errorOf(errorCode.getCode(), errorCode.getMessage());
     }
 

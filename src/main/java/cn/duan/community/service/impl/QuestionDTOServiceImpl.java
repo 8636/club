@@ -3,7 +3,7 @@ package cn.duan.community.service.impl;
 import cn.duan.community.common.enums.SortEnum;
 import cn.duan.community.dto.QuestionDTO;
 import cn.duan.community.common.exception.CustomException;
-import cn.duan.community.common.enums.CustomizeErrorCode;
+import cn.duan.community.common.enums.ExceptionEnum;
 import cn.duan.community.dto.QuestionQueryDTO;
 import cn.duan.community.mapper.QuestionMapper;
 import cn.duan.community.mapper.TopicMapper;
@@ -103,7 +103,7 @@ public class QuestionDTOServiceImpl implements QuestionDTOService {
         Question question = questionMapper.selectByPrimaryKey(id);
         if (question == null) {
             //不存在该问题
-            throw new CustomException(CustomizeErrorCode.QUESTION_NOT_FOUND);
+            throw new CustomException(ExceptionEnum.QUESTION_NOT_FOUND);
         }
         BeanUtils.copyProperties(question, questionDTO);
         User user = userMapper.selectByPrimaryKey(question.getCreator());
@@ -132,7 +132,7 @@ public class QuestionDTOServiceImpl implements QuestionDTOService {
             int i = questionMapper.updateByPrimaryKeySelective(question);
             if (i == 0) {
                 //更新失败
-                throw new CustomException(CustomizeErrorCode.SYS_ERROR);
+                throw new CustomException(ExceptionEnum.SYS_ERROR);
             }
         }
     }

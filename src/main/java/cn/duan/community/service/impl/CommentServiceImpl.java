@@ -4,7 +4,7 @@ import cn.duan.community.common.enums.NotificationTypeEnum;
 import cn.duan.community.dto.CommentDTO;
 import cn.duan.community.common.enums.CommentTypeEnum;
 import cn.duan.community.common.exception.CustomException;
-import cn.duan.community.common.enums.CustomizeErrorCode;
+import cn.duan.community.common.enums.ExceptionEnum;
 import cn.duan.community.mapper.CommentMapper;
 import cn.duan.community.mapper.QuestionMapper;
 import cn.duan.community.model.Comment;
@@ -38,14 +38,14 @@ public class CommentServiceImpl implements CommentService {
         comment.setLikeCount(0);
         //评论内容为空
         if (comment.getContent() == null) {
-            throw new CustomException(CustomizeErrorCode.CONTENT_IS_EMPTY);
+            throw new CustomException(ExceptionEnum.CONTENT_IS_EMPTY);
         }
         // 未选中评论
         if (comment.getParentId() == null || comment.getParentId() == 0) {
-            throw new CustomException(CustomizeErrorCode.TARGET_PARAM_NOT_FOUND);
+            throw new CustomException(ExceptionEnum.TARGET_PARAM_NOT_FOUND);
         }//评论 类型错误
         if (comment.getType() == null || !CommentTypeEnum.isExist(comment.getType())) {
-            throw new CustomException(CustomizeErrorCode.TYPE_PARAM_WRONG);
+            throw new CustomException(ExceptionEnum.TYPE_PARAM_WRONG);
         }
 
         if (comment.getType() == CommentTypeEnum.COMMENT.getType()) {
@@ -55,7 +55,7 @@ public class CommentServiceImpl implements CommentService {
                     .andEqualTo("id", comment.getParentId());
             List<Comment> dbCommentList = commentMapper.selectByExample(example);
             if (dbCommentList == null || dbCommentList.isEmpty()) {
-                throw new CustomException(CustomizeErrorCode.COMMENT_NOT_FOUND);
+                throw new CustomException(ExceptionEnum.COMMENT_NOT_FOUND);
             }
             Comment parentComment = dbCommentList.get(0);
             Long questionId = parentComment.getParentId();
@@ -68,7 +68,7 @@ public class CommentServiceImpl implements CommentService {
             //回复问题
             Question question = questionMapper.selectByPrimaryKey(comment.getParentId());
             if (question == null) {
-                throw new CustomException(CustomizeErrorCode.QUESTION_NOT_FOUND);
+                throw new CustomException(ExceptionEnum.QUESTION_NOT_FOUND);
             }
             // 创建通知
             notificationService.createNotify(comment, question.getCreator(), commentator.getName(), question.getTitle(), NotificationTypeEnum.REPLY_QUESTION, question.getId(),null);
@@ -101,7 +101,7 @@ public class CommentServiceImpl implements CommentService {
         comment.setGmtModified(System.currentTimeMillis());
         int i = commentMapper.insert(comment);
         if (i == 0) {
-            throw new CustomException(CustomizeErrorCode.COMMENT_FAIL);
+            throw new CustomException(ExceptionEnum.COMMENT_FAIL);
         }
     }
 

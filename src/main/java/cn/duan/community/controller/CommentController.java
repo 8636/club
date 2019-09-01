@@ -3,7 +3,7 @@ package cn.duan.community.controller;
 import cn.duan.community.dto.CommentCreateDTO;
 import cn.duan.community.dto.CommentDTO;
 import cn.duan.community.dto.ResultDTO;
-import cn.duan.community.common.enums.CustomizeErrorCode;
+import cn.duan.community.common.enums.ExceptionEnum;
 import cn.duan.community.common.exception.CustomException;
 import cn.duan.community.model.Comment;
 import cn.duan.community.model.User;
@@ -37,10 +37,10 @@ public class CommentController {
                              HttpServletRequest request) {
         User user = (User) request.getSession().getAttribute("user");
         if (user == null) {
-            throw new CustomException(CustomizeErrorCode.NO_LOGIN);
+            throw new CustomException(ExceptionEnum.NO_LOGIN);
         }
         if (commentCreateDTO == null || StringUtils.isBlank(commentCreateDTO.getContent())) {
-            throw new CustomException(CustomizeErrorCode.CONTENT_IS_EMPTY);
+            throw new CustomException(ExceptionEnum.CONTENT_IS_EMPTY);
         }
         Comment comment = new Comment();
         comment.setParentId(commentCreateDTO.getParentId());
@@ -63,7 +63,7 @@ public class CommentController {
     public ResultDTO<List<CommentDTO>> findCommentsByCommentId(@PathVariable("id") Long id) {
         List<CommentDTO> commentDTOList = commentServiceImpl.findCommentDTOListByCommentId(id);
         if (commentDTOList == null || commentDTOList.isEmpty()) {
-            return ResultDTO.errorOf(CustomizeErrorCode.COMMENT_NOT_FOUND);
+            return ResultDTO.errorOf(ExceptionEnum.COMMENT_NOT_FOUND);
         }
         return ResultDTO.okOf(commentDTOList);
     }

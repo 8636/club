@@ -1,7 +1,7 @@
 package cn.duan.community.service.impl;
 
 
-import cn.duan.community.common.enums.CustomizeErrorCode;
+import cn.duan.community.common.enums.ExceptionEnum;
 import cn.duan.community.common.exception.CustomException;
 import cn.duan.community.mapper.PeopleMapper;
 import cn.duan.community.mapper.UserMapper;
@@ -59,7 +59,7 @@ public class UserServiceImpl implements UserService {
                 .andEqualTo("id", id);
         List<User> users = userMapper.selectByExample(example);
         if (users == null || users.size() == 0) {
-            throw new CustomException(CustomizeErrorCode.USER_NOT_FOUND);
+            throw new CustomException(ExceptionEnum.USER_NOT_FOUND);
         }
         return users.get(0);
     }
@@ -71,7 +71,7 @@ public class UserServiceImpl implements UserService {
                 .andEqualTo("name", username);
         List<User> userList = userMapper.selectByExample(example);
         if (userList == null || userList.size() == 0) {
-            throw new CustomException(CustomizeErrorCode.USER_NOT_FOUND);
+            throw new CustomException(ExceptionEnum.USER_NOT_FOUND);
         }
         return userList.get(0);
     }

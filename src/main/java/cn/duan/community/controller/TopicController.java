@@ -1,6 +1,6 @@
 package cn.duan.community.controller;
 
-import cn.duan.community.common.enums.CustomizeErrorCode;
+import cn.duan.community.common.enums.ExceptionEnum;
 import cn.duan.community.common.exception.CustomException;
 import cn.duan.community.dto.QuestionDTO;
 import cn.duan.community.model.Topic;
@@ -59,7 +59,7 @@ public class TopicController {
         User user = (User)request.getSession().getAttribute("user");
         int i = topicService.focusTopic(user.getId(), topicId);
         if (i==0){
-            throw new CustomException(CustomizeErrorCode.FOCUS_TOPIC_FAIL);
+            throw new CustomException(ExceptionEnum.FOCUS_TOPIC_FAIL);
         }
         ModelAndView mv = new ModelAndView();
         mv.setViewName("people");

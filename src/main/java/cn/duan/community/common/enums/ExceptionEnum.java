@@ -1,9 +1,12 @@
 package cn.duan.community.common.enums;
 
-import cn.duan.community.common.ResultCode;
 import lombok.Getter;
 
-public enum CustomizeErrorCode implements ResultCode {
+/**
+ *  自定义异常枚举
+ */
+@Getter
+public enum ExceptionEnum{
 
     QUESTION_NOT_FOUND(2001, "问题不存在或者已删除"),
     TARGET_PARAM_NOT_FOUND(2002, "未选中任何问题或评论进行回复"),
@@ -22,22 +25,12 @@ public enum CustomizeErrorCode implements ResultCode {
     FOCUS_TOPIC_FAIL(2015,"关注话题失败"),
     ;
 
-     @Getter
      Integer code;
-     @Getter
+
      String message;
 
-    CustomizeErrorCode(Integer code, String message) {
+    ExceptionEnum(Integer code, String message) {
         this.message = message;
         this.code = code;
-    }
-    @Override
-    public int code() {
-        return code;
-    }
-
-    @Override
-    public String message() {
-        return message;
     }
 }

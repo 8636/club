@@ -1,7 +1,17 @@
 /**
  * Created by codedrinker on 2019/6/1.
  */
-
+function goTop(t) {
+    $(t).animate({
+        opacity: 0
+    }), $("body,html").animate({
+        scrollTop: 0
+    }, 1e3, function () {
+        $(t).animate({
+            opacity: 1
+        })
+    })
+}
 /**
  * 提交回复
  */

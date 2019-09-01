@@ -6,8 +6,8 @@
 
     <head th:insert="~{import :: head}"></head>
     <head th:insert="~{import :: markdown}"></head>
-    <link rel="stylesheet" href="/css/toc-helper.min.css">
-    <script src="/js/toc-helper.min.js"></script>
+
+
     <style>
         /*.toc{*/
         /*    right: 0;*/
@@ -17,6 +17,9 @@
         /*    z-index: auto;*/
         /*}*/
     </style>
+    <script src="/js/tocbot/tocbot.min.js"></script>
+    <link rel="stylesheet" href="/js/tocbot/tocbot.css">
+    <link rel="stylesheet" href="js/tocbot/styles.css">
 
 </head>
 <body>
@@ -38,17 +41,10 @@
 
                 <hr class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <!--内容-->
-                <div id="test-markdown-view" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 doc">
+                <div id="test-markdown-view" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 js-toc-content">
                     <textarea style="display:none;" th:text="${question.description}"></textarea>
                 </div>
 
-                <script type="text/javascript">
-                    var testEditor;
-                    $(function () {
-                        var testView = editormd.markdownToHTML("test-markdown-view", {});
-
-                    });
-                </script>
                 <!--标签-->
                 <hr class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -147,7 +143,7 @@
 
 
         <!--右边信息块-->
-        <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+        <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12" >
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <h4>发起人</h4>
                 <div class="media">
@@ -164,19 +160,9 @@
                     </div>
                 </div>
             </div>
-
             <!--相关问题-->
             <hr class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class=" col-lg-12 col-md-12 col-sm-12 col-xs-12 toc"></div>
-                <script>
-                    $(function(){
-                        var options = {
-                            root : $(".doc")
-                        };
-                        $(".toc").generateCatalog(options);
-                    });
-                </script>
                 <h4>相关问题</h4>
                 <ul class="question-related">
                     <li th:each="related : ${relateQuestions}">
@@ -184,9 +170,40 @@
                     </li>
                 </ul>
             </div>
+            <hr class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" >
+                <nav class=" toc toc-right js-toc">
+                </nav>
+            </div>
+
         </div>
+        <!--<div id="go-top" onclick="goTop(this);">
+            <img no-lazyload src="/images/goTop.png">
+        </div>-->
     </div>
 </div>
 <div th:insert="~{footer :: foot}"></div>
+
+<script type="text/javascript">
+    var testEditor;
+    $(function () {
+        var testView = editormd.markdownToHTML("test-markdown-view", {
+            htmlDecode: "style,script,iframe",  // you can filter tags decode
+            // tocm: true,    // Using [TOCM]
+            // emoji: true,
+        });
+        tocbot.init({
+            // 构建目录的容器
+            tocSelector: '.js-toc',
+            // 文章容器
+            contentSelector: '.js-toc-content',
+            // 需要解析的标题
+            headingSelector: 'h1, h2, h3,h4',
+            positionFixedSelector: '.toc',
+            positionFixedClass: 'is-position-fixed',
+            // fixedSidebarOffset: 'auto',
+        });
+    });
+</script>
 </body>
 </html>

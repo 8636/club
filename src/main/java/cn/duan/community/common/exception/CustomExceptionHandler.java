@@ -1,7 +1,7 @@
 package cn.duan.community.common.exception;
 
 import cn.duan.community.dto.ResultDTO;
-import cn.duan.community.common.enums.CustomizeErrorCode;
+import cn.duan.community.common.enums.ExceptionEnum;
 import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -29,7 +29,7 @@ public class CustomExceptionHandler {
                 resultDTO = ResultDTO.errorOf((CustomException) e);
             } else {
                 log.error("handle error", e);
-                resultDTO = ResultDTO.errorOf(CustomizeErrorCode.SYS_ERROR);
+                resultDTO = ResultDTO.errorOf(ExceptionEnum.SYS_ERROR);
             }
             try {
                 response.setContentType("application/json");
@@ -47,7 +47,7 @@ public class CustomExceptionHandler {
                 mv.addObject("message", e.getMessage());
             } else {
                 log.error("handle error", e);
-                mv.addObject("message", CustomizeErrorCode.SYS_ERROR.getMessage());
+                mv.addObject("message", ExceptionEnum.SYS_ERROR.getMessage());
             }
             mv.setViewName("error");
             return mv;
