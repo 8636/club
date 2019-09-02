@@ -1,8 +1,11 @@
 package cn.duan.community.model;
 
 import lombok.Data;
+import org.apache.lucene.document.FieldType;
+import org.jboss.logging.Field;
 
 import javax.persistence.Entity;
+//import javax.persistence.Id;
 import javax.persistence.Id;
 import javax.persistence.Table;
 

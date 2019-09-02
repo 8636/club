@@ -4,6 +4,10 @@ server:
 
 #spring
 spring:
+  data:
+    elasticsearch:
+      cluster-name: elasticsearch
+      cluster-nodes: 127.0.0.1:9200
   profiles:
     active:
   datasource:
@@ -114,4 +118,5 @@ fdfs:
 image:
   #  adress: http://172.17.52.204:8888/
   adress: http://47.100.76.187:8888/
+
 

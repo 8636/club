@@ -1,7 +1,6 @@
 package cn.duan.community.controller;
 
 import cn.duan.community.common.cache.HotTagCache;
-import cn.duan.community.dto.HotTagDTO;
 import cn.duan.community.dto.QuestionDTO;
 import cn.duan.community.dto.ResultDTO;
 import cn.duan.community.mapper.QuestionMapper;
