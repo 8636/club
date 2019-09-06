@@ -11,7 +11,6 @@ public class LoginController {
 
     @PostMapping("/user/login")
     public ResultDTO login(String username, String password, String code, Boolean remember){
-
         System.out.println(username);
         System.out.println(password);
         return null;
