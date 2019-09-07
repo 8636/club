@@ -20,15 +20,15 @@
                            placeholder="问题标题……"
                            autocomplete="off">
                 </div>
+                <!--问题分类开始-->
                 <div class="col-lg-3 col-md-1 col-sm-2" style="margin-top:19px">
                     <input type="hidden" name="select_val" id="select_val" value="">
                     <select  type="text" class="form-control" id="topic" name="topic">
-                        <option>选择话题</option>
-                        <div th:each="topic : ${topicList}">
-                            <option th:value="${topic.id}" th:text="${topic.name}"></option>
-                        </div>
+                        <option value=""> -- 请选择话题 -- </option>
+                        <option th:each="topic : ${topicList}" th:value="${topic.id}" th:text="${topic.name}" >选择话题</option>
                     </select>
                 </div>
+                <!--问题分类结束-->
                 <div class="form-group" id="question-editor">
                     <label for="description">问题补充 (必填，请参照右侧提示):</label>
                     <textarea name="description" id="description" th:text="${description}" style="display:none;"
@@ -140,25 +140,24 @@
                     required: true
                 },
                 topic: {
-                    required: true,
+                    required: true
                 },
                 desciption: {
-                    required: true,
+                    required: true
                 },
                 tag: {
-                    required: true,
+                    required: true
                 }
-
             },
             messages: {
                 title: {
                     required: "请输入用户名",
                 },
-                opic: {
+                topic: {
                     required: "请选择话题",
                 },
                 desciption: {
-                    required: "请输入标签",
+                    required: "请输入问题内容",
                 },
                 tag: {
                     required: "请输入标签",
