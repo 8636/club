@@ -1,6 +1,4 @@
-/**
- * Created by codedrinker on 2019/6/1.
- */
+
 function goTop(t) {
     $(t).animate({
         opacity: 0
@@ -100,8 +98,9 @@ function BuildComments(comments, id) {
     var wrapper = $("#comment2_wrapper_" + id);
     wrapper.empty();
     $.each(comments, function (index, item) {
-        var dateOriginal = comments.gmtCreate;
-        var date = moment(dateOriginal).format('yyyy-MM-dd HH:mm');
+        var dateOriginal = item.gmtCreate;
+        console.info('1111'+dateOriginal);
+        var date = moment(dateOriginal).format('YYYY-MM-DD HH:mm:ss')
         console.info(date);
         var comment = $('' +
             '<div class="media" style="margin-top: 5px;">\n' +

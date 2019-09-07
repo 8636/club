@@ -10,9 +10,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-/**
- * Created by codedrinker on 2019/6/5.
- */
 public class TagCache {
     public static List<TagDTO> get() {
         List<TagDTO> tagDTOS = new ArrayList<>();

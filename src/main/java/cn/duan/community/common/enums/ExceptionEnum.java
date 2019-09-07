@@ -23,6 +23,7 @@ public enum ExceptionEnum{
     COMMENT_FAIL(2013,"评论失败"),
     USER_NOT_FOUND(2014,"用户不存在"),
     FOCUS_TOPIC_FAIL(2015,"关注话题失败"),
+    LOGIN_NOT_ALLOW(2016,"暂支持github登陆"),
     ;
 
      Integer code;

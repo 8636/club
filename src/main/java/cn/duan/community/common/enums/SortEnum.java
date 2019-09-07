@@ -1,7 +1,7 @@
 package cn.duan.community.common.enums;
 
 /**
- * Created by codedrinker on 2019/8/18.
+ * 排序枚举
  */
 public enum SortEnum {
     HOT,

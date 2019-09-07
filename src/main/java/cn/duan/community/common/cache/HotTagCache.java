@@ -7,10 +7,6 @@ import org.springframework.stereotype.Component;
 
 import java.util.*;
 
-/**
- * Created by codedrinker on 2019/8/2.
- */
-
 @Component
 @Data
 public class HotTagCache {

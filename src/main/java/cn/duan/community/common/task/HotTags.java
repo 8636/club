@@ -49,13 +49,11 @@ public class HotTags {
             }
         });
 //        hotTagCache.updateTags(map);
-
         //采用redis中zset进行存储
         Set<Map.Entry<String, Integer>> entries = map.entrySet();
         for (Map.Entry<String, Integer> entry : entries) {
             redisTemplate.boundZSetOps("HotTags").add(entry.getKey(),entry.getValue());
         }
-
         log.info("The time is now {}", dateFormat.format(new Date()));
     }
 }

@@ -90,6 +90,11 @@ public class AuthController extends BaseController {
         response.addCookie(cookie);
         return "redirect:";
     }
+
+    /**
+     * 登录日志
+     * @param user
+     */
     private void addLoginLog(User user){
         LoginLog loginLog = new LoginLog();
         String ip = IPUtil.getIpAddr(request);
