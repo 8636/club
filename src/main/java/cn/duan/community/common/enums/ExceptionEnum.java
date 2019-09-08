@@ -24,6 +24,7 @@ public enum ExceptionEnum{
     USER_NOT_FOUND(2014,"用户不存在"),
     FOCUS_TOPIC_FAIL(2015,"关注话题失败"),
     LOGIN_NOT_ALLOW(2016,"暂支持github登陆"),
+    FOCUS_TOPIC_AGAIN(2017,"重复关注话题"),
     ;
 
      Integer code;

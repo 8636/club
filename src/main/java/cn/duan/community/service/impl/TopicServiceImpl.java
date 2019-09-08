@@ -1,5 +1,7 @@
 package cn.duan.community.service.impl;
 
+import cn.duan.community.common.enums.ExceptionEnum;
+import cn.duan.community.common.exception.CustomException;
 import cn.duan.community.dto.QuestionDTO;
 import cn.duan.community.dto.QuestionQueryDTO;
 import cn.duan.community.mapper.QuestionMapper;
@@ -13,6 +15,7 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import tk.mybatis.mapper.entity.Example;
 
 import java.util.List;
@@ -28,6 +31,7 @@ public class TopicServiceImpl implements TopicService {
     private UserMapper userMapper;
     @Autowired
     private UserService userService;
+
     @Override
     public List<Topic> list() {
         List<Topic> topicList = topicMapper.selectAll();
@@ -35,8 +39,8 @@ public class TopicServiceImpl implements TopicService {
     }
 
     @Override
-    public PageInfo<QuestionDTO> findQuestionListByName(String topicName,Integer page,Integer size) {
-        PageHelper.startPage(page,size);
+    public PageInfo<QuestionDTO> findQuestionListByName(String topicName, Integer page, Integer size) {
+        PageHelper.startPage(page, size);
         QuestionQueryDTO questionQueryDTO = new QuestionQueryDTO();
         Long topicId = findIdByName(topicName);
         questionQueryDTO.setTopicId(topicId);
@@ -48,7 +52,7 @@ public class TopicServiceImpl implements TopicService {
     @Override
     public Long findIdByName(String name) {
         Long topicId = topicMapper.findIdByName(name);
-        if (topicId == null){
+        if (topicId == null) {
             return null;
         }
         return topicId;
@@ -64,9 +68,9 @@ public class TopicServiceImpl implements TopicService {
     public Topic findByName(String name) {
         Example example = new Example(Topic.class);
         example.createCriteria()
-                .andEqualTo("name",name);
+                .andEqualTo("name", name);
         List<Topic> topicList = topicMapper.selectByExample(example);
-        if (topicList == null || topicList.size()== 0){
+        if (topicList == null || topicList.size() == 0) {
             return null;
         }
         return topicList.get(0);
@@ -96,7 +100,8 @@ public class TopicServiceImpl implements TopicService {
     }
 
     /**
-     *  查询 新创建的话题
+     * 查询 新创建的话题
+     *
      * @return
      */
     @Override
@@ -110,6 +115,7 @@ public class TopicServiceImpl implements TopicService {
 
     /**
      * 查询用户关注的话题
+     *
      * @param username
      * @return
      */
@@ -122,11 +128,21 @@ public class TopicServiceImpl implements TopicService {
 
     /**
      * 关注问题
+     *
      * @param id
      * @param topicId
      */
     @Override
-    public int focusTopic(Long id, String topicId) {
-        return topicMapper.focusTopic(id,topicId);
+    @Transactional
+    public int focusTopic(Long id, Long topicId) {
+        //避免重复关注
+        List<Long> topicIds = topicMapper.listUserTopics(id);
+        if (topicIds != null && topicIds.size() > 0){
+            if (topicIds.contains(topicId)){
+                throw new CustomException(ExceptionEnum.FOCUS_TOPIC_AGAIN);
+            }
+        }
+        topicMapper.insLoveCount(topicId);
+        return topicMapper.focusTopic(id, topicId);
     }
 }

@@ -38,4 +38,11 @@
     <insert id="focusTopic">
         insert  into tb_user_topic value (#{id},#{topicId})
     </insert>
+
+    <select id="listUserTopics" parameterType="long" resultType="long">
+        select topic_id from tb_user_topic where user_id = #{id}
+    </select>
+    <update id="insLoveCount" parameterType="long">
+        update tb_topic set love_count = love_count + 1 where id = #{id};
+    </update>
 </mapper>

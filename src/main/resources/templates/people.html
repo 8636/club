@@ -16,7 +16,7 @@
                         <div class="mod-head">
                             <img th:src="${user.avatarUrl}" height="50px" width="50px"/>
                             <span class="pull-right operate"> </span>
-                            <h1>sailershen </h1>
+                            <h1 th:text="${user.name}"></h1>
                             <p class="text-color-999"></p>
                             <p class="aw-user-flag">
                             </p>
@@ -25,11 +25,11 @@
                             <ul class="nav nav-tabs aw-nav-tabs">
                                 <li class="active"><a href="#overview" id="page_overview" data-toggle="tab">概述</a></li>
                                 <li><a href="#questions" id="page_questions" data-toggle="tab">发问<span
-                                        class="badge">32</span></a></li>
+                                        class="badge"></span></a></li>
                                 <li><a href="#answers" id="page_answers" data-toggle="tab">回复<span
-                                        class="badge">32</span></a></li>
+                                        class="badge"></span></a></li>
                                 <li><a href="#articles" id="page_articles" data-toggle="tab">文章<span
-                                        class="badge">0</span></a></li>
+                                        class="badge"></span></a></li>
                                 <li><a href="#focus" id="page_focus" data-toggle="tab">关注</a></li>
                                 <li><a href="#actions" id="page_actions" data-toggle="tab">动态</a></li>
                                 <li><a href="#detail" id="page_detail" data-toggle="tab">详细资料</a></li>
@@ -40,6 +40,7 @@
 
                     <div class="aw-user-center-tab">
                         <div class="tab-content">
+                            <!--概述start-->
                             <div class="tab-pane active" id="overview">
                                 <!-- 回复 -->
                                 <div class="aw-mod">
@@ -51,7 +52,8 @@
                                         <div class="aw-profile-answer-list">
                                             <div class="aw-item" th:each="comment : ${comment}">
                                                 <div class="mod-head">
-                                                    <h4 th:text="${comment.content}"><a th:href="@{'/question/' + ${comment.parentId}}"></a></h4>
+                                                    <h4 th:text="${comment.content}"><a
+                                                            th:href="@{'/question/' + ${comment.parentId}}"></a></h4>
                                                 </div>
                                                 <div class="mod-body">
                                                     <p class="aw-hide-txt" th:text="${comment.content}">
@@ -78,12 +80,13 @@
                                                            th:text="${question.title}"></a></h4>
                                                 </div>
                                                 <div class="mod-body">
-                                                    <span class="aw-border-radius-5 count pull-left"></span>
                                                     <span class="text-desc"><span
                                                             th:text="${question.commentCount}"></span> 个回复 •
                                                     <span th:text="${question.viewCount}"></span> 次浏览 •<span
-                                                                th:text="${#dates.format(question.gmtCreate,'yyyy-MM-dd HH:mm')}"></span>
+                                                                th:text="${#dates.format(question.gmtCreate,'yyyy-MM-dd HH:mm')}">
 
+                                                        </span>
+                                                    </span>
                                                 </div>
                                             </div>
                                         </div>
@@ -115,6 +118,9 @@
                                     </div>
                                 </div>
                             </div>
+                            <!--概述end-->
+
+                            <!--问题开始-->
                             <div class="tab-pane" id="questions">
                                 <div class="aw-mod">
                                     <div class="mod-head">
@@ -132,6 +138,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <!--问题结束-->
                             <div class="tab-pane" id="answers">
                                 <div class="aw-mod">
                                     <div class="mod-head">
@@ -166,6 +173,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <!--关注开始-->
                             <div class="tab-pane" id="focus">
                                 <!-- 自定义切换 -->
                                 <div class="aw-mod">
@@ -247,12 +255,11 @@
                             <a onclick="$('#page_focus').click();$('#focus .aw-tabs ul li').eq(0).click();$.scrollTo($('#focus').offset()['top'], 600, {queue:true})"
                                class="pull-right font-size-12">更多 »</a>
                             <span>
-                                关注 <em class="aw-text-color-blue">16</em> 人                            </span>
+                                关注 <em class="aw-text-color-blue"></em>人</span>
                             <p>
-                                <a class="aw-user-name" data-id="10785"
-                                   href="https://elasticsearch.cn/people/xxz0904"><img
-                                        src="https://elasticsearch.cn/uploads/avatar/000/01/07/85_avatar_mid.jpg"
-                                        alt="xxz0904"/></a>
+                                <a class="aw-user-name" data-id="10785" href="">
+                                    <img  src=""/>
+                                </a>
                             </p>
                         </div>
                     </div>
@@ -261,13 +268,14 @@
                             <a onclick="$('#page_focus').click();$('#focus .aw-tabs ul li').eq(1).click();$.scrollTo($('#focus').offset()['top'], 600, {queue:true})"
                                class="pull-right font-size-12">更多 »</a>
                             <span>
-                                被 <em class="aw-text-color-blue">0</em> 人关注                            </span>
-
+                                被 <em class="aw-text-color-blue">0</em> 人关注
+                            </span>
                         </div>
                     </div>
                     <div class="aw-mod people-following">
                         <div class="mod-body">
-                            关注 <em class="aw-text-color-blue" th:text="${topicList.size()} == null ? 0:${topicList.size()}"></em> 话题
+                            关注 <em class="aw-text-color-blue"
+                                   th:text="${topicList.size()} == null ? 0:${topicList.size()}"></em> 话题
                             <div class="aw-topic-bar">
                                 <div class="tag-bar clearfix" th:each="topic : ${topicList}">
                                      <span class="topic-tag">

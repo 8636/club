@@ -31,5 +31,5 @@ public interface TopicService {
 
     List<Topic> findTopicByUserName(String username);
 
-    int focusTopic(Long id, String topicId);
+    int focusTopic(Long id, Long topicId);
 }

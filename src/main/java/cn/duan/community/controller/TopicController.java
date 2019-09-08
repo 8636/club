@@ -55,7 +55,7 @@ public class TopicController {
 
     @GetMapping("/focusTopic/{id}")
     public ModelAndView focusTopic(HttpServletRequest request,
-                                   @PathVariable("id") String topicId){
+                                   @PathVariable("id") Long topicId){
         User user = (User)request.getSession().getAttribute("user");
         int i = topicService.focusTopic(user.getId(), topicId);
         if (i==0){
@@ -64,6 +64,5 @@ public class TopicController {
         ModelAndView mv = new ModelAndView();
         mv.setViewName("people");
         return mv;
-
     }
 }

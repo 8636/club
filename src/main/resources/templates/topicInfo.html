@@ -17,6 +17,7 @@
                             <h2 class="pull-left" th:text="${topic.name}"><i class="aw-icon i-lock" title="已锁定"></i>
                             </h2>
                             <div class="aw-topic-operate text-color-999">
+                                <button th:if="${session.user} != null and ${!#lists.contains(userList,session.user)}" th:topic-id="${topic.id}" onclick="attentionTopic(this)">关注话题</button>
                             </div>
                         </div>
                     </div>
@@ -117,10 +118,6 @@
 
                         <div class="mod-body">
                             <dl>
-                                <dt class="pull-left aw-border-radius-5">
-                                    <a href="/people/维他">
-                                </dt>
-
                                 <dd class="pull-left">
                                 </dd>
                             </dl>
@@ -153,4 +150,13 @@
         </div>
     </div>
 </body>
+<script>
+    function attentionTopic(e) {
+        var topicId = e.getAttribute("topic-id");
+        var url = "/focusTopic/"+topicId
+        $.get(url,function (data){
+        })
+        alert(topicId)
+    }
+</script>
 </html>

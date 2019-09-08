@@ -8,6 +8,14 @@
     <script src="/js/tocbot/tocbot.min.js"></script>
     <link rel="stylesheet" href="/js/tocbot/tocbot.css">
     <link rel="stylesheet" href="js/tocbot/styles.css">
+    <style>
+        #btn_top {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            display: none;
+        }
+    </style>
 
 </head>
 <body>
@@ -159,11 +167,14 @@
                 </ul>
             </div>
             <hr class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" >
-                <nav class=" toc toc-right js-toc">
-                </nav>
+            <!--问题目录-->
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 toc toc-right js-toc">
             </div>
+            <hr class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         </div>
+        <button id="btn_top" title="回到顶部">
+            回到顶部
+        </button>
         <!--右边信息块结束-->
 
         <!--<div id="go-top" onclick="goTop(this);">
@@ -192,6 +203,20 @@
             positionFixedClass: 'is-position-fixed',
             fixedSidebarOffset: 'auto',
         });
+    });
+
+    $(function () {
+        $(window).scroll(function () {
+            if ($(window).scrollTop() >= 50) {
+                $('#btn_top').fadeIn();
+            }
+            else {
+                $('#btn_top').fadeOut();
+            }
+        });
+    });
+    $('#btn_top').click(function () {
+        $('html,body').animate({ scrollTop: 0 }, 500);
     });
 </script>
 </body>

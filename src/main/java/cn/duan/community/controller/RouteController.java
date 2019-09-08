@@ -3,6 +3,7 @@ package cn.duan.community.controller;
 import cn.duan.community.common.cache.TagCache;
 import cn.duan.community.model.Topic;
 import cn.duan.community.service.TopicService;
+import jdk.nashorn.internal.runtime.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -12,7 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.List;
 
 @Controller
-public class RounteController {
+public class RouteController {
 
     @Value("${github.client.id}")
     private String id ;
@@ -52,5 +53,9 @@ public class RounteController {
     @GetMapping("/people")
     public String people(){
         return "people";
+    }
+    @GetMapping("/1")
+    public String test(){
+        return "1";
     }
 }
