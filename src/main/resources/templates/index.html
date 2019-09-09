@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>论坛</title>
     <head th:insert="~{import :: head}"></head>
-    <head th:insert="~{import :: copy}"></head>
 </head>
 <body>
 <div th:insert="~{header :: head}"></div>
@@ -93,25 +92,11 @@
                 <!--相关问题-->
                 <hr class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="border: 1px">
-                    <h4>热门话题</h4>
-                    <div class="mod-body clearfix">
-                        <div class="aw-topic-bar">
-                            <div class="topic-bar clearfix" th:each="tag : ${tags}">
-                                    <span class="topic-tag">
-                                        <a class="text" th:text="${tag}"
-                                           th:href="@{/(page=1,search=${search},tag=${tag},sort=${sort})}">
-                                        </a>
-                                    </span>
-                            </div>
-                        </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <h4>热门话题</h4>
+                        <a th:each="tag : ${tags}" th:href="@{/(page=1,search=${search},tag=${tag},sort=${sort})}"
+                           th:text="${tag}" class="community-tag"></a>
                     </div>
-<!--                    <ul class="question-related">-->
-<!--                        <li th:each="tag : ${tags}">-->
-<!--                            <a style="font-size: 15px"-->
-<!--                               th:href="@{/(page=1,search=${search},tag=${tag},sort=${sort})}"-->
-<!--                               th:text="${tag}"></a>-->
-<!--                        </li>-->
-<!--                    </ul>-->
                 </div>
                 <hr class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             </div>

@@ -135,13 +135,6 @@ public class TopicServiceImpl implements TopicService {
     @Override
     @Transactional
     public int focusTopic(Long id, Long topicId) {
-        //避免重复关注
-        List<Long> topicIds = topicMapper.listUserTopics(id);
-        if (topicIds != null && topicIds.size() > 0){
-            if (topicIds.contains(topicId)){
-                throw new CustomException(ExceptionEnum.FOCUS_TOPIC_AGAIN);
-            }
-        }
         topicMapper.insLoveCount(topicId);
         return topicMapper.focusTopic(id, topicId);
     }

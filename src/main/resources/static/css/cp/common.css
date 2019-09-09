@@ -104,7 +104,19 @@ a.aw-load-more-content{display: block;}
 .aw-topic-bar .close{display: none;}
 .aw-topic-bar.active .topic-tag .text{border-radius: 4px 0 0 4px;}
 .aw-topic-bar.active .topic-tag .close{display: inline-block;}
-.aw-topic-bar .topic-tag{float: left;margin:0 5px 5px 0}
+.aw-topic-bar .topic-tag{
+    text-decoration-line: none;
+    cursor: pointer;
+    display: inline-block;
+    height: 20px;
+    line-height: 16px;
+    padding: 2px 5px;
+    background-color: #99cfff;
+    font-size: 12px;
+    color: #fff !important;
+    border-radius: 4px;
+    margin: 4px;
+}
 .topic-tag a{float: left;}
 .topic-tag .text{display:inline-block;height:20px;line-height:16px;padding:2px 5px;background-color:#99cfff;font-size:12px;color: #fff;border-radius: 4px;}
 .topic-tag .text:hover, .topic-tag .text:active, .topic-tag .close:hover, .topic-tag .close:active{background-color: #339dff;}

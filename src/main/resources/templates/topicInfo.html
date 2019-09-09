@@ -17,7 +17,7 @@
                             <h2 class="pull-left" th:text="${topic.name}"><i class="aw-icon i-lock" title="已锁定"></i>
                             </h2>
                             <div class="aw-topic-operate text-color-999">
-                                <button th:if="${session.user} != null and ${!#lists.contains(userList,session.user)}" th:topic-id="${topic.id}" onclick="attentionTopic(this)">关注话题</button>
+                                <button type="button" class="btn btn-info" th:if="${session.user} != null and ${!#lists.contains(userList,session.user)}" th:topic-id="${topic.id}" onclick="attentionTopic(this)">关注话题</button>
                             </div>
                         </div>
                     </div>
@@ -149,14 +149,28 @@
             </div>
         </div>
     </div>
+</div>
 </body>
 <script>
     function attentionTopic(e) {
         var topicId = e.getAttribute("topic-id");
-        var url = "/focusTopic/"+topicId
-        $.get(url,function (data){
+        var url = "/focusTopic/" + topicId
+        $.get(url, function (data) {
+            if (data.code == "200") {
+                toastr.success("关注话题成功")
+                clear_toastr(200);
+            }
+            if (data.code == "2017") {
+                toastr.info(data.message)
+                clear_toastr(200);
+            }
         })
-        alert(topicId)
+
+        // 动态设置消息提示时间
+        function clear_toastr(time) {
+            setTimeout(function () {
+                toastr.clear();}, time);
+        }
     }
 </script>
 </html>
