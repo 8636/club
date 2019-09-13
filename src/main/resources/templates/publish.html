@@ -25,7 +25,7 @@
                     <input type="hidden" name="select_val" id="select_val" value="">
                     <select  type="text" class="form-control" id="topic" name="topic">
                         <option value=""> -- 请选择话题 -- </option>
-                        <option th:each="topic : ${topicList}" th:value="${topic.id}" th:text="${topic.name}" >选择话题</option>
+                        <option th:each="topic : ${session.topicList}" th:value="${topic.id}" th:text="${topic.name}" >选择话题</option>
                     </select>
                 </div>
                 <!--问题分类结束-->
@@ -52,7 +52,7 @@
                         </ul>
                         <div class="tab-content">
                             <div role="tabpanel" th:id="${selectCategory.categoryName}"
-                                 th:each="selectCategory: ${tags}"
+                                 th:each="selectCategory: ${session.tags}"
                                  th:class="${selectCategoryStat.first ? 'active tab-pane':'tab-pane'}">
                                 <span>
                                     <span class="label label-info" th:each="selectTag: ${selectCategory.tags}">

@@ -52,11 +52,10 @@ public class PublishController {
         mv.addObject("title", questionDTO.getTitle());
         mv.addObject("description", questionDTO.getDescription());
         mv.addObject("questionTag", questionDTO.getTag());
-        mv.addObject("tags",TagCache.get());
         mv.addObject("question", questionDTO);
-        List<Topic> topicList = topicService.list();
-        mv.addObject("topicList", topicList);
-
+//        List<Topic> topicList = topicService.list();
+//        mv.addObject("tags",TagCache.get());
+//        mv.addObject("topicList", topicList);
         mv.setViewName("publish");
         return mv;
     }
@@ -74,7 +73,7 @@ public class PublishController {
         model.addAttribute("tag", tag);
         model.addAttribute("topic", topic);
 
-        if (title == null || title == "") {
+        if (StringUtils.isBlank(tag)) {
             model.addAttribute("error", "标题不能为空");
             return "publish";
         }
