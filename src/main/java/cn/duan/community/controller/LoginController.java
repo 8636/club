@@ -16,6 +16,7 @@ public class LoginController {
     @PostMapping("/user/login")
     public ResultDTO login(String username, String password, String code, Boolean remember){
         log.info(username,password);
+        log.info("11111");
         throw  new CustomException(ExceptionEnum.LOGIN_NOT_ALLOW);
     }
 
